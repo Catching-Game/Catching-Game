@@ -1,0 +1,33 @@
+#Greenfoot properties
+#Sat Nov 15 15:20:32 CET 2014
+target1.editor.x=40
+target1.type=ClassTarget
+project.charset=UTF-8
+class.Run.superclass=greenfoot.World
+target2.type=ClassTarget
+version=2.6.0
+target2.editor.width=900
+target2.editor.height=700
+target2.y=10
+target2.x=70
+target1.typeParameters=
+target2.editor.y=43
+target2.editor.x=40
+world.lastInstantiated=Run
+target1.height=50
+target2.width=80
+target1.width=80
+target2.typeParameters=
+target1.editor.height=700
+class.Test.superclass=greenfoot.Actor
+target1.editor.width=900
+package.numDependencies=0
+target1.y=10
+target1.x=160
+package.numTargets=2
+target1.name=Test
+target1.showInterface=false
+target2.showInterface=false
+target2.name=Run
+target2.height=50
+target1.editor.y=43
