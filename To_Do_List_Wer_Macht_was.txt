@@ -1,4 +1,4 @@
-Projekt Catching Game:
+﻿Projekt Catching Game:
 
 Themenaufteilung:
 
@@ -8,6 +8,7 @@ UML: Heiko
 XML: Simon
 		-Wird gebraucht für die Variablen die im Projekt benötigt werden zu verhinden von Magic Nr.
 		?? Simon hilft bei Fragen von Spriteeinbindung ??
+		Logic für Spieler heißt Wänder nich durchlaufbar etc ?
 
 Map(Landschaft): Matze
 		- Wo sind wände wie groß ist die Karte.(Bitte mich machen lassen. Ty. Ideen einbringen grundsätzlich willkommen, jedoch nicht im Code rummachen bitte.)
