@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+	<worlddata>
+		<width>11</width>
+		<height>8</height>
+		<cellsize>60</cellsize>
+		<background>images/background.jpg</background>
+	</worlddata>
+	<player>
+		<speed>5</speed>
+		<player1>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+			<image>images/player1.gif</image>
+		</player1>
+		<player2>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+			<image>images/player2.gif</image>
+		</player2>
+		<player3>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+			<image>images/player3.gif</image>
+		</player3>
+		<player4>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+			<image>images/player4.gif</image>
+		</player4>
+	</player>
+	<walls>
+		<image>images/wall.gif</image>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+		<wall>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</wall>
+	</walls>
+	<mice>
+		<image>images/wall.gif</image>
+		<speed>5</speed>
+		<mouse>
+			<position_direction>0</position_direction>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</mouse>
+		<mouse>
+			<position_direction>1</position_direction>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</mouse>
+		<mouse>
+			<position_direction>2</position_direction>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</mouse>
+		<mouse>
+			<position_direction>3</position_direction>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</mouse>
+		<mouse>
+			<position_direction>4</position_direction>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</mouse>
+	</mice>
+	<trees>
+		<image>images/tree.gif</image>
+		<tree>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</tree>
+		<tree>
+			<position_x> 10 </position_x>
+			<position_y> 10 </position_y>
+		</tree>
+	</trees>
+</map>
