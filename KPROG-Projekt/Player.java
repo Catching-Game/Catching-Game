@@ -1,14 +1,10 @@
- 
-
- 
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Player here.
  * 
- * @author Simon Hoinkis, Matthias Köhler, Heiko Rehder, Max Schmidt 
- * @version 21.11.2014 - 14:38
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Player extends Actor
 {

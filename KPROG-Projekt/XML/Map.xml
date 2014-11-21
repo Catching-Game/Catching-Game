@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <map>
 	<worlddata>
-		<width>11</width>
-		<height>8</height>
-		<cellsize>60</cellsize>
+		<width>500</width>
+		<height>500</height>
+		<cellsize>1</cellsize>
 		<background>images/background.jpg</background>
 	</worlddata>
 	<player>

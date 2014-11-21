@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=posX\ posY
+comment0.target=Position(int,\ int)
+comment0.text=\r\n\ Constructor\ of\ class\ position\r\n\ @param\ posX\ the\ y\ position\ of\ the\ object\r\n\ @param\ posY\ the\ y\ position\ of\ the\ object\r\n
+comment1.params=
+comment1.target=int\ getPosX()
+comment1.text=\r\n\ Returns\ the\ x\ position\r\n\ @return\ The\ x\ position\r\n
+comment2.params=posX
+comment2.target=void\ setPosX(int)
+comment2.text=\r\n\ Sets\ a\ new\ x\ position\r\n\ @param\ posX\ New\ x\ position\r\n
+comment3.params=
+comment3.target=int\ getPosY()
+comment3.text=\r\n\ Returns\ the\ y\ position\r\n\ @return\ The\ y\ position\r\n
+comment4.params=posY
+comment4.target=void\ setPosY(int)
+comment4.text=\r\n\ Sets\ the\ y\ position\r\n\ @param\ posY\ the\ y\ position\r\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\r\n\ Returns\ the\ status\ of\ an\ position\ object\r\n\ @return\ Status\ of\ the\ object\r\n
+numComments=6

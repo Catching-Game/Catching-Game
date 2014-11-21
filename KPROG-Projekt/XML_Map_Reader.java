@@ -12,10 +12,14 @@ import org.jdom2.input.SAXBuilder;
  * @author simonhoinkis
  * @version 1.0
  */
-public class XML_Map_Reader {
+public final class XML_Map_Reader {
 	private static final String XML_MAP_FILEPATH = "XML/Map.xml";
 	//private static final String XML_SAVESTATE_FILEPATH = "XML/Savestate.xml";
 	//private static final String XML_GAMELOGIC_FILEPATH = "XML/Gamelogic.xml";
+	
+	private XML_Map_Reader(){
+		
+	}
 	
 	/**
 	 * Tests the XML Reader
@@ -138,7 +142,7 @@ public class XML_Map_Reader {
 	 * @return The background image path
 	 */
 	public static String getWorldBackgroundImage() {
-		return XML_Map_Reader.getWorlddata().getChildText("background");
+		return XML_Map_Reader.getWorlddata().getChildText("wiese_klein.jpg");
 	}
 	
 	/**
