@@ -1,7 +1,5 @@
  
 
- 
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -12,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Schachgesicht extends World
 {
+    private Actor enemy = new Actor() {} ;
 
     /**
      * Constructor for objects of class Schachgesicht.
@@ -22,5 +21,11 @@ public class Schachgesicht extends World
         //blabla
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        
+        addObject(enemy, 200, 200);
+        enemy.setLocation(200, 200);
+        
+        
+        
     }
 }
