@@ -1,3 +1,5 @@
+ 
+
 /**
  * This enumeration represents the directions objects in the game can have
  * @author simonhoinkis

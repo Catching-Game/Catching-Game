@@ -1,3 +1,5 @@
+ 
+
 /**
  * This class is an extended Position that means it also has a direction
  * @author simonhoinkis
