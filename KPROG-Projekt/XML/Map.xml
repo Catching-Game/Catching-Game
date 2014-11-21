@@ -9,81 +9,61 @@
 	<player>
 		<speed>5</speed>
 		<player1>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_x>10</position_x>
+			<position_y>10</position_y>
 			<image>images/player1.gif</image>
 		</player1>
 		<player2>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_x>10</position_x>
+			<position_y>10</position_y>
 			<image>images/player2.gif</image>
 		</player2>
 		<player3>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_x>10</position_x>
+			<position_y>10</position_y>
 			<image>images/player3.gif</image>
 		</player3>
 		<player4>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_x>10</position_x>
+			<position_y>10</position_y>
 			<image>images/player4.gif</image>
 		</player4>
 	</player>
 	<walls>
 		<image>images/wall.gif</image>
 		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_x>10</position_x>
+			<position_y>10</position_y>
 		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-		<wall>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
-		</wall>
-	</walls>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>10</position_y>
+        </wall>
+    </walls>
 	<mice>
 		<image>images/wall.gif</image>
 		<speed>5</speed>
