@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -8,9 +10,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Wall extends Actor
 {    
-    public Wall(int positionX,int positionY)
+	private static ArrayList<Wall> wallList;
+    public Wall()
     {
-        setLocation(positionX,positionY);
+        setWallLocations();
     }
     
     /**
@@ -22,8 +25,15 @@ public class Wall extends Actor
         // Add your action code here.
     }
     
-    public void setPosition(int x, int y)
+    public void setWallLocations()
     {
-        setLocation(this.x,this.y);
+    	wallList = new ArrayList<Wall>();
+    	
+        for(Position position : XML_Map_Reader.getWallPositions())
+        {
+            Wall wall = new Wall();
+        	wallList.add(wall);
+        	wall.setLocation(position.getPosX(),position.getPosY());
+        }
     }
 }

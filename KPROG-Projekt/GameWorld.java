@@ -35,8 +35,7 @@ public class GameWorld extends World
     
     private void setWalls()
     {
-        int positionX = XML_Map_Reader.
-        Wall wall = new Wall(XML_Map_Reader.);
+
         
     }
     
