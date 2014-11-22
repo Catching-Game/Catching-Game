@@ -16,7 +16,7 @@ public final class XML_Map_Reader {
 	
 	/**
 	 * Tests the XML_Map_Reader
-	 *TODO Hier lässt sich einfach ein GUnit Test fuer spaeter umsetzen 
+	 *TODO Hier laesst sich einfach ein GUnit Test fuer spaeter umsetzen 
 	 */
 	public static void test() {    
 		System.out.println(XML_Map_Reader.getMiceCount());
