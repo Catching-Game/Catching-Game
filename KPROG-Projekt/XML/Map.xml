@@ -4,7 +4,7 @@
 		<width>500</width>
 		<height>500</height>
 		<cellsize>1</cellsize>
-		<background>images/background.jpg</background>
+		<background>images/wiese_klein.jpg</background>
 	</worlddata>
 	<player>
 		<speed>5</speed>

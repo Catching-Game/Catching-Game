@@ -142,7 +142,7 @@ public final class XML_Map_Reader {
 	 * @return The background image path
 	 */
 	public static String getWorldBackgroundImage() {
-		return XML_Map_Reader.getWorlddata().getChildText("wiese_klein.jpg");
+		return XML_Map_Reader.getWorlddata().getChildText("background");
 	}
 	
 	/**

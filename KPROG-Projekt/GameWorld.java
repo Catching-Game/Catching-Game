@@ -9,18 +9,35 @@ import java.awt.Toolkit;
  */
 public class GameWorld extends World
 {
-	
+    private static int worldHeight      = XML_Map_Reader.getWorldHeight();
+    private static int worldWidth       = XML_Map_Reader.getWorldWidth();
+    private static int worldCellSize    = XML_Map_Reader.getWorldCellsize();
+    
+    
+    
     /**
      * Constructor for objects of class GameWorld.
      * 
      */
     public GameWorld()
     {
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(XML_Map_Reader.getWorldHeight(), XML_Map_Reader.getWorldWidth(), 
-        		XML_Map_Reader.getWorldCellsize()); 
-        
-        setBackground(getWorldBackgroundImage());
+        super(worldHeight, worldWidth, worldCellSize);
+        //setWorld();
+        setBackground();
+        setWalls();
+    }
+ 
+    
+    private void setBackground()
+    {
+        super.setBackground(XML_Map_Reader.getWorldBackgroundImage());
+    }
+    
+    private void setWalls()
+    {
+        int positionX = XML_Map_Reader.
+        Wall wall = new Wall(XML_Map_Reader.);
         
     }
+    
 }
