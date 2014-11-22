@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gamelogic>
+	<gametime>120</gametime>
+	<player>
+		<life>7</life>
+		<speed>5</speed>
+	</player>
+	<hound>
+		<speed>5</speed>
+		<!-- KI logic einfügen?-->
+	</hound>
+	<mouse>
+		<speed>5</speed>
+		<sight_range>1</sight_range>
+		<life_increase>1</life_increase>
+	</mouse>
+</gamelogic>

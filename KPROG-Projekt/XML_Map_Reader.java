@@ -1,34 +1,27 @@
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.jdom2.Element;
-import org.jdom2.Document;
-import org.jdom2.JDOMException;
-import org.jdom2.input.SAXBuilder;
 
 /**
  * This class provides access to all variables that are contained by our Map.xml data
  * @author simonhoinkis
- * @version 1.0
+ * @version 1.1
  */
 public final class XML_Map_Reader {
-	private static final String XML_MAP_FILEPATH = "XML/Map.xml";
-	//private static final String XML_SAVESTATE_FILEPATH = "XML/Savestate.xml";
-	//private static final String XML_GAMELOGIC_FILEPATH = "XML/Gamelogic.xml";
-	
-	private XML_Map_Reader(){
-		
+	private static final String FILEPATH = "XML/Map.xml";
+
+	private XML_Map_Reader() {
 	}
 	
 	/**
-	 * Tests the XML Reader
+	 * Tests the XML_Map_Reader
+	 *TODO Hier lässt sich einfach ein GUnit Test fuer spaeter umsetzen 
 	 */
 	public static void test() {    
 		System.out.println(XML_Map_Reader.getMiceCount());
 		System.out.println(XML_Map_Reader.getMiceImage());
 		System.out.println(XML_Map_Reader.getPlayerImage(PlayerID.THIRD));
-		System.out.println(XML_Map_Reader.getPlayerSpeed());
 		System.out.println(XML_Map_Reader.getTreeCount());
 		System.out.println(XML_Map_Reader.getWallCount());
 		System.out.println(XML_Map_Reader.getWallImage());
@@ -40,33 +33,11 @@ public final class XML_Map_Reader {
 	}
 	
 	/**
-	 * Get Map root
-	 * @return The Map root
-	 */
-	private static Element getMapRoot() {
-		Element mapRoot = null;
-		try {
-			
-			//read the Map information from the XML file into a JDOM Document
-			Document xmlMap = new SAXBuilder().build(XML_Map_Reader.XML_MAP_FILEPATH);
-			
-			mapRoot = xmlMap.getRootElement();
-		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-		return mapRoot;
-	}
-	
-	/**
 	 * Get the world data
 	 * @return The world data element ("worlddata")
 	 */
 	private static Element getWorlddata() {
-		return XML_Map_Reader.getMapRoot().getChild("worlddata");
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("worlddata");
 	}
 	
 	/**
@@ -74,7 +45,7 @@ public final class XML_Map_Reader {
 	 * @return The player data
 	 */
 	private static Element getPlayer() {
-		return XML_Map_Reader.getMapRoot().getChild("player");
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("player");
 	}
 	
 	/**
@@ -82,7 +53,7 @@ public final class XML_Map_Reader {
 	 * @return The Walls
 	 */
 	private static Element getWalls() {
-		return XML_Map_Reader.getMapRoot().getChild("walls");
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("walls");
 	}
 	
 	/**
@@ -90,7 +61,7 @@ public final class XML_Map_Reader {
 	 * @return The mice
 	 */
 	private static Element getMice() {
-		return XML_Map_Reader.getMapRoot().getChild("mice");
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("mice");
 	}
 	
 	/**
@@ -98,19 +69,7 @@ public final class XML_Map_Reader {
 	 * @return the trees
 	 */
 	private static Element getTrees() {
-		return XML_Map_Reader.getMapRoot().getChild("trees");
-	}
-	
-	private static int xmlIntParser(String str) {
-		int parseNumber = 0;
-		
-		try {
-			parseNumber = Integer.parseInt(str);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return parseNumber;
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("trees");
 	}
 
 	/**
@@ -118,7 +77,7 @@ public final class XML_Map_Reader {
 	 * @return The width of the world
 	 */
 	public static int getWorldWidth() {
-		return XML_Map_Reader.xmlIntParser(XML_Map_Reader.getWorlddata().getChildText("width"));		
+		return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("width"));		
 	}
 	
 	/**
@@ -126,7 +85,7 @@ public final class XML_Map_Reader {
 	 * @return The height of the world
 	 */
 	public static int getWorldHeight() {
-		return XML_Map_Reader.xmlIntParser(XML_Map_Reader.getWorlddata().getChildText("height"));
+		return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("height"));
 	}
 	
 	/**
@@ -134,7 +93,7 @@ public final class XML_Map_Reader {
 	 * @return The cell size of the world
 	 */
 	public static int getWorldCellsize() {
-		return XML_Map_Reader.xmlIntParser(XML_Map_Reader.getWorlddata().getChildText("cellsize"));
+		return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("cellsize"));
 	}
 	
 	/**
@@ -142,15 +101,7 @@ public final class XML_Map_Reader {
 	 * @return The background image path
 	 */
 	public static String getWorldBackgroundImage() {
-		return XML_Map_Reader.getWorlddata().getChildText("background");
-	}
-	
-	/**
-	 * Returns the player speed
-	 * @return The player speed
-	 */
-	public static int getPlayerSpeed() {
-		return XML_Map_Reader.xmlIntParser((XML_Map_Reader.getPlayer().getChildText("speed")));
+		return XML_Map_Reader.getWorlddata().getChildText("wiese_klein.jpg");
 	}
 	
 	/**
@@ -166,8 +117,8 @@ public final class XML_Map_Reader {
 		
 		
 		
-		playerPosition = new Position(XML_Map_Reader.xmlIntParser(player.getChildText("position_x")), 
-										XML_Map_Reader.xmlIntParser(player.getChildText("position_y")));
+		playerPosition = new Position(XML_Helper.parseStrToInt(player.getChildText("position_x")), 
+									XML_Helper.parseStrToInt(player.getChildText("position_y")));
 		
 		return playerPosition;
 	}
@@ -200,14 +151,18 @@ public final class XML_Map_Reader {
 		return getWalls().getChildren("wall").size();
 	}
 	
+	/**
+	 * Returns an Array containing the Positions of the Wall
+	 * @return The Wall Positions
+	 */
 	public static ArrayList<Position> getWallPositions() {
 		List<Element> walls = getWalls().getChildren("wall");
 		ArrayList<Position> wallPositions = new ArrayList<Position>();
 		
 		//add the positions to a list
 		for(Element wall : walls) {
-			wallPositions.add(new Position(XML_Map_Reader.xmlIntParser(wall.getChildText("position_x")),
-										XML_Map_Reader.xmlIntParser(wall.getChildText("position_y"))));
+			wallPositions.add(new Position(XML_Helper.parseStrToInt(wall.getChildText("position_x")),
+										XML_Helper.parseStrToInt(wall.getChildText("position_y"))));
 		}
 		
 		return wallPositions;
@@ -239,8 +194,8 @@ public final class XML_Map_Reader {
 		
 		//add the positions to a list
 		for(Element mouse : mice) {
-			mousePositions.add(new PositionWithDirection(XML_Map_Reader.xmlIntParser(mouse.getChildText("position_x")),
-											XML_Map_Reader.xmlIntParser(mouse.getChildText("position_y")),
+			mousePositions.add(new PositionWithDirection(XML_Helper.parseStrToInt(mouse.getChildText("position_x")),
+														XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
 											Direction.valueOf(mouse.getChildText("direction"))));
 		}
 		
@@ -274,8 +229,8 @@ public final class XML_Map_Reader {
 		
 		//add the positions to a list
 		for(Element tree : trees) {
-			treePositions.add(new Position(XML_Map_Reader.xmlIntParser(tree.getChildText("position_x")),
-										XML_Map_Reader.xmlIntParser(tree.getChildText("position_y"))));
+			treePositions.add(new Position(XML_Helper.parseStrToInt(tree.getChildText("position_x")),
+											XML_Helper.parseStrToInt(tree.getChildText("position_y"))));
 		}
 		
 		return treePositions;
