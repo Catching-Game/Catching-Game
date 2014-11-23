@@ -39,6 +39,7 @@ public class GameWorld extends World
     	this.setWalls();
     	this.setPlayer();
     	this.setTrees();
+    	this.setMice();
     }
     
     private void setWalls()
@@ -58,6 +59,19 @@ public class GameWorld extends World
     	//TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
     }
     
+    /**
+     * Set up Mouse Image from xml
+     */
+    private void setMice() 
+    {
+    	for(int zaehler = 0;zaehler < XML_Map_Reader.getMiceCount(); zaehler = zaehler + 1)
+    	{
+    		int posY = XML_Map_Reader.getMicePositions().get(zaehler).getY();
+    		int posX = XML_Map_Reader.getMicePositions().get(zaehler).getX();
+    		int cellSize = this.getCellSize();
+    		this.addObject(new Mouse(cellSize), posX, posY);
+    	}
+    }
     /**
      * Set up Tree Image from xml
      */

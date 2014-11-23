@@ -203,7 +203,7 @@ public final class XML_Map_Reader {
 		for(Element mouse : mice) {
 			mousePositions.add(new PositionWithDirection(XML_Helper.parseStrToInt(mouse.getChildText("position_x")),
 														XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
-											Direction.valueOf(mouse.getChildText("direction"))));
+											Direction.valueOf(mouse.getChildText("position_direction"))));
 		}
 		
 		return mousePositions;
