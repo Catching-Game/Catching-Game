@@ -14,7 +14,7 @@ public class Mouse extends Actor
      */
     
     public Mouse(){
-    	init():
+    	init();
     }
     
 
