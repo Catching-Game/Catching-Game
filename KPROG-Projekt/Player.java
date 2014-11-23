@@ -10,7 +10,6 @@ public class Player extends Actor
 	private int lifes;
 	private int speed;
 	private Direction wantedDir; //the direction the player wants to walk
-	private Direction walkedDir; //the direction the player took the last time
 	
 	public Player(int cellSize) {
 		init(cellSize);
@@ -69,26 +68,12 @@ public class Player extends Actor
     private void move() {
     	if(this.canWalkUP() && this.wantedDir == Direction.UP) {
     		this.setLocation(this.getX(), this.getY() - this.speed);
-    		walkedDir = Direction.UP;
     	} else if(this.canWalkDOWN() && this.wantedDir == Direction.DOWN) {
     		this.setLocation(this.getX(), this.getY() + this.speed);
-    		walkedDir = Direction.DOWN;
     	} else if(this.canWalkLEFT() && this.wantedDir == Direction.LEFT) {
     		this.setLocation(this.getX() - this.speed, this.getY());
-    		walkedDir = Direction.LEFT;
     	} else if(this.canWalkRIGHT() && this.wantedDir == Direction.RIGHT) {
     		this.setLocation(this.getX() + this.speed, this.getY());
-    		walkedDir = Direction.RIGHT;
-    	} else {
-    	   	if(this.canWalkUP() && this.walkedDir == Direction.UP) {
-    	   		this.setLocation(this.getX(), this.getY() - this.speed);
-        	} else if(this.canWalkDOWN() && this.walkedDir == Direction.DOWN) {
-        		this.setLocation(this.getX(), this.getY() + this.speed);
-        	} else if(this.canWalkLEFT() && this.walkedDir == Direction.LEFT) {
-        		this.setLocation(this.getX() - this.speed, this.getY());
-        	} else if(this.canWalkRIGHT() && this.walkedDir == Direction.RIGHT) {
-        		this.setLocation(this.getX() + this.speed, this.getY());
-        	}
     	}
     }
     
