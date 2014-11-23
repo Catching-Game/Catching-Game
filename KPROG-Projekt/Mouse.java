@@ -12,8 +12,17 @@ public class Mouse extends Actor
     private int sightRange;
  
     
+<<<<<<< HEAD
     public Mouse(int cellSize){
     	init(cellSize);
+=======
+    /*
+     * init all variables of the actor
+     */
+    
+    public Mouse(){
+    	init();
+>>>>>>> FETCH_HEAD
     }
     
     /**
