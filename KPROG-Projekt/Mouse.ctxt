@@ -1,12 +1,15 @@
 #BlueJ class context
-comment0.params=cellSize
-comment0.target=Mouse(int)
-comment1.params=cellSize
-comment1.target=void\ init(int)
-comment1.text=\n\ init\ all\ variables\ of\ the\ actor.\n
-comment2.params=cellSize
-comment2.target=void\ setUpImage(int)
-comment2.text=\n\ Sets\ up\ the\ Image\ of\ the\ mouse\n\ \n\ @param\ cellSize\n
-comment3.params=
-comment3.target=void\ act()
-numComments=4
+comment0.params=
+<<<<<<< HEAD
+comment0.target=void\ act()
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ Mouse\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=1
+=======
+comment0.target=Mouse()
+comment0.text=\r\n\ init\ all\ variables\ of\ the\ actor\r\n
+comment1.params=
+comment1.target=void\ init()
+comment2.params=
+comment2.target=void\ act()
+numComments=3
+>>>>>>> FETCH_HEAD
