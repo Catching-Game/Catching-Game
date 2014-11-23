@@ -71,5 +71,4 @@ public class GameWorld extends World
     		this.addObject(new Tree(cellSize), posX, posY);
     	}
     }
-    
 }
