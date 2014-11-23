@@ -7,13 +7,13 @@ public class Tree extends Actor{
 
 	public Tree(int cellSize)
 	{
-		setUpImage(cellSize);
+	//	setUpImage(cellSize);
 	}
 	
 	/**
 	 * Set up the Image from the Tree in the World
 	 * @param cellSize
-	 */
+	 *
 	private void setUpImage(int cellSize)
 	{
 		GreenfootImage image = new GreenfootImage(TREEIMAGEPATH);
@@ -21,6 +21,7 @@ public class Tree extends Actor{
 		this.setImage(image);
 		
 	}
+	*/
 	
 	/**
 	 * 

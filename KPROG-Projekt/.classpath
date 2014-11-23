@@ -13,5 +13,8 @@
 	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/GitHub/Catching-Game/KPROG-Projekt/jdom-2.0.5/jdom-2.0.5-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/GitHub/Catching-Game/KPROG-Projekt/jdom-2.0.5/jdom-2.0.5-junit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Maximilian/Documents/GitHub/Catching-Game/KPROG-Projekt/jdom-2.0.5/jdom-2.0.5-sources.jar"/>
+	<classpathentry kind="lib" path="/Applications/Greenfoot 2.4.0/greenfoot.jar"/>
+	<classpathentry kind="lib" path="/Applications/Greenfoot 2.4.0/submitter.jar"/>
+	<classpathentry kind="lib" path="/Users/Heiko/Documents/Software Engineering/WS 2014:15/KProg/Blockwoche/Catching-Game/KPROG-Projekt/jdom-2.0.5/jdom-2.0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
