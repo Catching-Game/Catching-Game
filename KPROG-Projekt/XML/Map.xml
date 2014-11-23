@@ -64,7 +64,7 @@
         </wall>
     </walls>
 	<mice>
-		<image>images/mouse.gif</image>
+		<image>images/mouse.png</image>
 		<mouse>
 			<position_direction>0</position_direction>
 			<position_x> 10 </position_x>
