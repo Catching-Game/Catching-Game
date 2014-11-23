@@ -2,8 +2,8 @@
 <gamelogic>
 	<gametime>120</gametime>
 	<player>
-		<life>7</life>
-		<speed>5</speed>
+		<lifes>7</lifes>
+		<speed>1</speed>
 	</player>
 	<hound>
 		<speed>5</speed>

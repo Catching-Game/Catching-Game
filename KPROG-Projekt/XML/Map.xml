@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <map>
 	<worlddata>
-		<width>500</width>
-		<height>500</height>
-		<cellsize>1</cellsize>
-		<background>images/wiese_klein.jpg</background>
+		<width>10</width>   <!-- Positions going from 0 to width (excluding) -->
+		<height>10</height> <!-- Positions going from 0 to height (excluding) -->
+		<cellsize>50</cellsize>
+		<image>images/wiese.jpg</image>
 	</worlddata>
 	<player>
 		<player1>
 			<position_x>10</position_x>
 			<position_y>10</position_y>
-			<image>images/player1.gif</image>
+			<image>images/player.png</image>
 		</player1>
 		<player2>
 			<position_x>10</position_x>
@@ -29,38 +29,38 @@
 		</player4>
 	</player>
 	<walls>
-		<image>images/wall.gif</image>
+		<image>images/wall.jpg</image>
 		<wall>
-			<position_x>10</position_x>
-			<position_y>10</position_y>
+			<position_x>2</position_x>
+			<position_y>1</position_y>
 		</wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>3</position_x>
+            <position_y>1</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>4</position_x>
+            <position_y>1</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>5</position_x>
+            <position_y>1</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>8</position_x>
+            <position_y>8</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>8</position_x>
+            <position_y>7</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>8</position_x>
+            <position_y>6</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
-            <position_y>10</position_y>
+            <position_x>8</position_x>
+            <position_y>5</position_y>
         </wall>
     </walls>
 	<mice>

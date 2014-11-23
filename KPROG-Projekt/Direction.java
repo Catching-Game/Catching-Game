@@ -3,4 +3,4 @@
  * @author simonhoinkis
  * @version 1.0
  */
-public enum Direction { TOP, DOWN, LEFT, RIGHT };
+public enum Direction {UP, DOWN, LEFT, RIGHT, NONE}; 

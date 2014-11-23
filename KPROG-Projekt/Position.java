@@ -4,49 +4,49 @@
  * @version 1.0
  */
 public class Position {
-	private int posX;
-	private int posY;
+	private int x;
+	private int y;
 	
 	/**
 	 * Constructor of class position
 	 * @param posX the y position of the object
 	 * @param posY the y position of the object
 	 */
-	Position (int posX, int posY) {
-		this.posX = posX;
-		this.posY = posY;
+	Position (int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
 	/**
 	 * Returns the x position
 	 * @return The x position
 	 */
-	public int getPosX() {
-		return posX;
+	public int getX() {
+		return x;
 	}
 
 	/**
 	 * Sets a new x position
-	 * @param posX New x position
+	 * @param x New x position
 	 */
-	public void setPosX(int posX) {
-		this.posX = posX;
+	public void setX(int x) {
+		this.x = x;
 	}
 
 	/**
 	 * Returns the y position
 	 * @return The y position
 	 */
-	public int getPosY() {
-		return posY;
+	public int getY() {
+		return y;
 	}
 
 	/**
 	 * Sets the y position
 	 * @param posY the y position
 	 */
-	public void setPosY(int posY) {
-		this.posY = posY;
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	/**
@@ -55,6 +55,6 @@ public class Position {
 	 */
 	@Override
 	public String toString() {
-		return "Position [posX=" + posX + ", posY=" + posY + "]";
+		return "Position [x=" + x + ", y=" + y + "]";
 	}
 }

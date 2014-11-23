@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=XML_Helper()
+comment1.params=filepath
+comment1.target=org.jdom2.Element\ getRoot(java.lang.String)
+comment1.text=\n\ Returns\ the\ root\ of\ a\ XML\ File\n\ @param\ filepath\ The\ XML\ File\n\ @return\ The\ Root\ Element\n
+comment2.params=str
+comment2.target=int\ parseStrToInt(java.lang.String)
+comment2.text=\n\ parses\ a\ string\ into\ an\ integer\n\ @param\ str\ The\ string\ to\ be\ converted\n\ @return\ The\ integer\ that\ is\ converted\n
+numComments=3
