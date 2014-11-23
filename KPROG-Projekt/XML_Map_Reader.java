@@ -189,7 +189,7 @@ public final class XML_Map_Reader {
 	 * @return The Mice positions
 	 */
 	public static ArrayList<PositionWithDirection> getMicePositions() {
-		List<Element> mice = getWalls().getChildren("mouse");
+		List<Element> mice = getMice().getChildren("mouse");
 		ArrayList<PositionWithDirection> mousePositions = new ArrayList<PositionWithDirection>();
 		
 		//add the positions to a list
@@ -224,7 +224,7 @@ public final class XML_Map_Reader {
 	 * @return The tree positions
 	 */
 	public static ArrayList<Position> getTreePositions() {
-		List<Element> trees = getWalls().getChildren("tree");
+		List<Element> trees = getTrees().getChildren("tree");
 		ArrayList<Position> treePositions = new ArrayList<Position>();
 		
 		//add the positions to a list
