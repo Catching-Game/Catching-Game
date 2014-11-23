@@ -71,6 +71,13 @@ public final class XML_Map_Reader {
 	private static Element getTrees() {
 		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("trees");
 	}
+	
+	/**
+	 * 
+	 */
+	private static Element getHounds(){
+		return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("hounds");
+	}
 
 	/**
 	 * Returns the width of the world
@@ -234,5 +241,25 @@ public final class XML_Map_Reader {
 		}
 		
 		return treePositions;
+	}
+	
+	/**
+	 * Returns the Hound Image Path
+	 * @return a String with the Hound Image Path
+	 */
+	public static String getHoundImage(){
+		return XML_Map_Reader.getHounds().getChildrenText("image");
+	}
+	
+	/**
+	 * Returns the quantity of the Hound objects
+	 * @return a int with the qantity of Hount objects
+	 */
+	public static int getHoundCount(){
+		return null;
+	}
+	
+	public static ArrayList<Positon> getHoundPosition(){
+		return null;
 	}
 }
