@@ -3,7 +3,7 @@ import greenfoot.*;
 
 public class Tree extends Actor{
 	
-	private Static final String TREEIMAGEPATH = XML_Map_Reader.getTreeImage();
+	private static final String TREEIMAGEPATH = XML_Map_Reader.getTreeImage();
 
 	public Tree(int cellSize)
 	{
@@ -16,8 +16,8 @@ public class Tree extends Actor{
 	 */
 	private void setUpImage(int cellSize)
 	{
-		GreenfoodImage image = new GreenfoodImage(TREEIMAGEPATH);
-		image.scale(cellsize,cellsize);
+		GreenfootImage image = new GreenfootImage(TREEIMAGEPATH);
+		image.scale(cellSize,cellSize);
 		this.setImage(image);
 		
 	}
