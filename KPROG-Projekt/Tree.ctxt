@@ -1,9 +1,12 @@
 #BlueJ class context
 comment0.params=cellSize
 comment0.target=Tree(int)
-comment1.params=
-comment1.target=java.lang.String\ getTreeImagePath()
-comment1.text=\r\n\ \r\n\ @return\ String\ ImagePath\r\n
+comment1.params=cellSize
+comment1.target=void\ setUpImage(int)
+comment1.text=\n\ Set\ up\ the\ Image\ from\ the\ Tree\ in\ the\ World\n\ @param\ cellSize\n
 comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment2.target=java.lang.String\ getTreeImagePath()
+comment2.text=\n\ \n\ @return\ String\ ImagePath\n
+comment3.params=
+comment3.target=void\ act()
+numComments=4

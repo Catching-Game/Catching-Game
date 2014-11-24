@@ -66,29 +66,29 @@
 	<mice>
 		<image>images/mouse.png</image>
 		<mouse>
-			<position_direction>0</position_direction>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_direction>NONE</position_direction>
+			<position_x>1</position_x>
+			<position_y>2</position_y>
 		</mouse>
 		<mouse>
-			<position_direction>1</position_direction>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_direction>NONE</position_direction>
+			<position_x>3</position_x>
+			<position_y>4</position_y>
 		</mouse>
 		<mouse>
-			<position_direction>2</position_direction>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_direction>NONE</position_direction>
+			<position_x>5</position_x>
+			<position_y>6</position_y>
 		</mouse>
 		<mouse>
-			<position_direction>3</position_direction>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_direction>NONE</position_direction>
+			<position_x>7</position_x>
+			<position_y>8</position_y>
 		</mouse>
 		<mouse>
-			<position_direction>4</position_direction>
-			<position_x> 10 </position_x>
-			<position_y> 10 </position_y>
+			<position_direction>NONE</position_direction>
+			<position_x>9</position_x>
+			<position_y>10</position_y>
 		</mouse>
 	</mice>
 	<trees>

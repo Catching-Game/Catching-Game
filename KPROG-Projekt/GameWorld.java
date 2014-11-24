@@ -40,6 +40,7 @@ public class GameWorld extends World
     	this.setPlayer();
     	this.setTrees();
     	this.setHounds();
+    	this.setMice();
     }
     
     private void setWalls()
@@ -86,4 +87,14 @@ public class GameWorld extends World
     		this.addObject(new Hound(cellSize),posX,posY);
     	}
     }
+    
+    private void setMice(){
+    	for(int zaehler = 0;zaehler < XML_Map_Reader.getMiceCount(); zaehler = zaehler +1)
+    	{
+    		int posY = XML_Map_Reader.getMicePositions().get(zaehler).getY();
+    		int posX = XML_Map_Reader.getMicePositions().get(zaehler).getX();
+    		int cellSize = this.getCellSize();
+    		this.addObject(new Mouse(cellSize),posX,posY);
+    }
+}
 }
