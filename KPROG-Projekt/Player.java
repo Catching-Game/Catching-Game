@@ -29,7 +29,7 @@ public class Player extends Actor
 	 * @param cellSize
 	 */
 	private void setUpImage(int cellSize) {
-    	GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
+    	GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayer().getChildText("image");
     	image.scale(cellSize, cellSize);
     	this.setImage(image);    
 	}

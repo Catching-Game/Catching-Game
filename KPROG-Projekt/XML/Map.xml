@@ -7,6 +7,7 @@
 		<image>images/wiese.jpg</image>
 	</worlddata>
 	<player>
+            <image>images/cat_stands.png</image>
 		<player1>
 			<position_x>10</position_x>
 			<position_y>10</position_y>
@@ -105,16 +106,16 @@
 	<hounds>
 		<image>images/dog_stands.png</image>                
 		<hound>
-			<position_x>3</position_x>
-			<position_y>3</position_y>
+                    <position_x>3</position_x>
+                    <position_y>3</position_y>
 		</hound>
 		<hound>
-			<position_x>5</position_x>
-			<position_y>5</position_y>
+                    <position_x>5</position_x>
+                    <position_y>5</position_y>
 		</hound>
 		<hound>
-		<position_x>7</position_x>
-		<position_y>7</position_y>
+                    <position_x>7</position_x>
+                    <position_y>7</position_y>
 		</hound>
 	</hounds>
 	
