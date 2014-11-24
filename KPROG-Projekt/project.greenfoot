@@ -1,58 +1,12 @@
-<<<<<<< HEAD
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=Updated\ upstream
->>>>>>>=Stashed\ changes
+>>>>>>>=FETCH_HEAD
 class.Direction.superclass=
 class.GameWorld.image=wiese_klein.jpg
 class.GameWorld.superclass=greenfoot.World
 class.Hound.superclass=greenfoot.Actor
 class.Mouse.superclass=greenfoot.Actor
-=======
-#Greenfoot properties
-#Mon Nov 24 14:10:56 CET 2014
-target2.name=Player
-target9.name=Direction
-dependency11.type=UsesDependency
-dependency18.type=UsesDependency
-dependency15.from=Player
-dependency8.to=XML_Map_Reader
-target5.naviview.expanded=true
-target14.type=ClassTarget
-simulation.speed=27
-dependency25.type=UsesDependency
-dependency22.from=Hound
-target7.type=ClassTarget
-target11.width=150
-dependency25.to=Direction
-target1.typeParameters=
-target10.editor.y=0
-target10.editor.x=0
-dependency2.to=Position
-target6.naviview.expanded=true
-target6.editor.width=900
-dependency1.type=UsesDependency
-class.XML_Helper.superclass=
-target14.editor.width=900
-dependency8.type=UsesDependency
-dependency5.from=XML_Map_Reader
-target12.y=130
-target12.x=10
-target3.editor.y=23
-target3.editor.x=0
-project.charset=UTF-8
-target12.typeParameters=
-dependency15.to=XML_Map_Reader
-target5.height=50
-target1.name=PlayerID
-target11.naviview.expanded=true
-version=2.6.0
-target8.name=GameWorld
-dependency10.type=UsesDependency
-dependency17.type=UsesDependency
-dependency14.from=GameWorld
-package.numTargets=14
->>>>>>> FETCH_HEAD
 class.Player.superclass=greenfoot.Actor
 class.PlayerID.superclass=
 class.Position.superclass=
@@ -320,8 +274,8 @@ target7.x=10
 target7.y=250
 target8.editor.height=730
 target8.editor.width=1280
-target8.editor.x=83
-target8.editor.y=40
+target8.editor.x=0
+target8.editor.y=23
 target8.height=50
 target8.name=XML_Map_Reader
 target8.naviview.expanded=true

@@ -54,11 +54,7 @@ comment24.target=int\ getHoundCount()
 comment24.text=\n\ Returns\ the\ quantity\ of\ the\ Hound\ objects\n\ @return\ a\ int\ with\ the\ qantity\ of\ Hount\ objects\n
 comment25.params=
 comment25.target=java.util.ArrayList\ getHoundPositions()
-<<<<<<< HEAD
 comment25.text=\n\ Returns\ a\ PositionArrayList\ with\ Position\ x\ and\ Position\ y\n\ @return\ ArrayList<Position>\ with\ Position\ x\ and\ Position\ y\n
-=======
-comment25.text=\r\n\ Returns\ a\ PositionArrayList\ with\ Position\ x\ and\ Position\ y\r\n\ @return\ ArrayList<Position>\ with\ Position\ x\ and\ Position\ y\r\n
->>>>>>> FETCH_HEAD
 comment3.params=
 comment3.target=org.jdom2.Element\ getPlayer()
 comment3.text=\n\ Get\ Player\n\ @return\ The\ player\ data\n
