@@ -14,7 +14,7 @@ public class Mouse extends Actor {
 
 	public Mouse(int cellSize, Direction dir) {
 		init(cellSize,dir);
-		this.wantedDir = dir;
+		
 	}
 
 	/**
