@@ -12,20 +12,24 @@ public class Mouse extends Actor {
 	private int sightRange;
 	private Direction wantedDir;
 
-	public Mouse(int cellSize) {
-		init(cellSize);
-		
+	public Mouse(int cellSize, Direction dir) {
+		init(cellSize,dir);
+		this.wantedDir = dir;
 	}
 
 	/**
 	 * init all variables of the actor.
 	 */
 
-	public void init(int cellSize) {
-		this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
+	public void init(int cellSize, Direction dir) {
+		this.speed = XML_Gamelogic_Reader.getMouseSpeed();
 		this.lifeIncrease = XML_Gamelogic_Reader.getMouseLifeIncrease();
-		this.sightRange = XML_Gamelogic_Reader.getMouseLifeIncrease();
-		// this.wantedDir = XML_Map_Reader.getMicePositions().getDir();
+		this.sightRange = XML_Gamelogic_Reader.getMouseSightRange();
+		this.wantedDir = dir;
+		
+		
+		
+		
 		this.setUpImage(cellSize);
 	}
 
@@ -52,7 +56,6 @@ public class Mouse extends Actor {
     private void move() {
     	if(this.canWalkUP() && this.wantedDir == Direction.UP) {
     		this.setLocation(this.getX(), this.getY() - this.speed);
-    	
     	} else if(this.canWalkDOWN() && this.wantedDir == Direction.DOWN) {
     		this.setLocation(this.getX(), this.getY() + this.speed);
     	} else if(this.canWalkLEFT() && this.wantedDir == Direction.LEFT) {

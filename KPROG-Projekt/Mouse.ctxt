@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.params=cellSize
-comment0.target=Mouse(int)
-comment1.params=cellSize
-comment1.target=void\ init(int)
+comment0.params=cellSize\ dir
+comment0.target=Mouse(int,\ Direction)
+comment1.params=cellSize\ dir
+comment1.target=void\ init(int,\ Direction)
 comment1.text=\n\ init\ all\ variables\ of\ the\ actor.\n
 comment2.params=cellSize
 comment2.target=void\ setUpImage(int)

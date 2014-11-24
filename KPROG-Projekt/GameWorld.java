@@ -65,10 +65,10 @@ public class GameWorld extends World
      */
     private void setTrees()
     {
-    	for(int zaehler = 0;zaehler < XML_Map_Reader.getTreeCount(); zaehler = zaehler + 1)
+    	for(int i = 0;i < XML_Map_Reader.getTreeCount(); i = i + 1)
     	{
-    		int posY = XML_Map_Reader.getTreePositions().get(zaehler).getY();
-    		int posX = XML_Map_Reader.getTreePositions().get(zaehler).getX();
+    		int posY = XML_Map_Reader.getTreePositions().get(i).getY();
+    		int posX = XML_Map_Reader.getTreePositions().get(i).getX();
     		int cellSize = this.getCellSize();
     		this.addObject(new Tree(cellSize), posX, posY);
     	}
@@ -79,22 +79,23 @@ public class GameWorld extends World
      */
     private void setHounds()
     {
-    	for(int zaehler = 0;zaehler < XML_Map_Reader.getHoundCount(); zaehler = zaehler +1)
+    	for(int i = 0; i < XML_Map_Reader.getHoundCount(); i = i +1)
     	{
-    		int posY = XML_Map_Reader.getHoundPositions().get(zaehler).getY();
-    		int posX = XML_Map_Reader.getHoundPositions().get(zaehler).getX();
+    		int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
+    		int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
     		int cellSize = this.getCellSize();
     		this.addObject(new Hound(cellSize),posX,posY);
     	}
     }
     
     private void setMice(){
-    	for(int zaehler = 0;zaehler < XML_Map_Reader.getMiceCount(); zaehler = zaehler +1)
+    	for(int i = 0;i < XML_Map_Reader.getMiceCount(); i = i +1)
     	{
-    		int posY = XML_Map_Reader.getMicePositions().get(zaehler).getY();
-    		int posX = XML_Map_Reader.getMicePositions().get(zaehler).getX();
+    		int posY = XML_Map_Reader.getMicePositions().get(i).getY();
+    		int posX = XML_Map_Reader.getMicePositions().get(i).getX();
+    		Direction dir = XML_Map_Reader.getMicePositions().get(i).getDir();
     		int cellSize = this.getCellSize();
-    		this.addObject(new Mouse(cellSize),posX,posY);
+    		this.addObject(new Mouse(cellSize,dir),posX,posY);
     }
 }
 }
