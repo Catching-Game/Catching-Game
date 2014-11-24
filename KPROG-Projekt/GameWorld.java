@@ -16,6 +16,7 @@ public class GameWorld extends World
     private static final int WORLD_WIDTH      = XML_Map_Reader.getWorldWidth();
     private static final int WORLD_HEIGHT      = XML_Map_Reader.getWorldHeight();
     private static final int WORLD_CELLSIZE    = XML_Map_Reader.getWorldCellsize();
+    int totalWalls;
 
     /**
      * Constructor for objects of class GameWorld.
@@ -27,6 +28,7 @@ public class GameWorld extends World
 
         this.setBackground();
         this.setUpWorld();
+        this.totalWalls = 0;
     }
  
     private void setBackground()
@@ -45,11 +47,13 @@ public class GameWorld extends World
     
     private void setWalls()
     {
+        
     	//Iteration to set up the walls
-    	for (int i = 0; i < XML_Map_Reader.getWallCount(); i = i + 1) {
+    	for (int i = 0; i <= XML_Map_Reader.getWallCount(); totalWalls = i + 1) {
     		this.addObject(new Wall(this.getCellSize()), 
     				XML_Map_Reader.getWallPositions().get(i).getX(), 
-    										XML_Map_Reader.getWallPositions().get(i).getY());
+    				XML_Map_Reader.getWallPositions().get(i).getY());
+                i++;
     	}
     }
     

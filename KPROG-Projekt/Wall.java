@@ -9,23 +9,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Wall extends Actor
-{    
+{
+    public final static int CELLSIZE = 50;
 	/**
 	 * Constructor of a Wall
 	 * @param cellSize The CellSize of the World
 	 */
-    public Wall(int cellSize)
+    public Wall(int i)
     {
-    	setUpImage(cellSize);
+    	setUpImage(Wall.CELLSIZE);
     }
     
     /**
      * Sets up the image
      * @param cellSize The CellSize of the World
      */
-    private void setUpImage(int cellSize) {
+    private void setUpImage(int i) {
     	GreenfootImage image = new GreenfootImage(XML_Map_Reader.getWallImage());
-    	image.scale(cellSize, cellSize);
+    	image.scale(Wall.CELLSIZE, Wall.CELLSIZE);
     	this.setImage(image);    	
     }
     

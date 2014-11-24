@@ -55,6 +55,14 @@ public final class XML_Map_Reader {
     private static Element getWalls() {
         return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("walls");
     }
+    /**
+     * Get all Walls
+     * @ return a list with all walls
+     */
+    private static List<Element> getWallsAll()
+    {
+        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChildren("walls");
+    }
     
     /**
      * Get Mice 
@@ -155,7 +163,7 @@ public final class XML_Map_Reader {
      * @return The wall count
      */
     public static int getWallCount() {
-        return getWalls().getChildren("wall").size();
+        return getWalls().getChildren("walls").size();
     }
     
     /**
