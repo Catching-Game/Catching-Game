@@ -31,53 +31,53 @@
     <walls>
         <image>images/wall.jpg</image>
         <wall>
-            <position_x>2</position_x>
-            <position_y>1</position_y>
-        </wall>
-        <wall>
-            <position_x>1</position_x>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
+            <position_y>0</position_y>
         </wall>
         <wall>
             <position_x>2</position_x>
-            <position_y>2</position_y>
+            <position_x>2</position_x>
+        </wall>
+        <!-- <wall>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>3</position_x>
-            <position_y>3</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
          <wall>
-            <position_x>4</position_x>
-            <position_y>4</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>                         
-            <position_x>3</position_x>
-            <position_y>1</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>4</position_x>
-            <position_y>1</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>5</position_x>
-            <position_y>1</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>8</position_x>
-            <position_y>8</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>8</position_x>
-            <position_y>7</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>8</position_x>
-            <position_y>6</position_y>
+            <position_x></position_x>
+            <position_y></position_y>
         </wall>
         <wall>
-            <position_x>8</position_x>
-            <position_y>5</position_y>
-        </wall>
+            <position_x></position_x>
+            <position_y></position_y>
+        </wall> -->
     </walls>
     <mice>
         <image>images/mouse.png</image>
