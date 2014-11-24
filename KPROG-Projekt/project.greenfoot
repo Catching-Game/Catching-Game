@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Nov 24 10:15:27 CET 2014
+#Mon Nov 24 14:10:56 CET 2014
 target2.name=Player
 target9.name=Direction
 dependency11.type=UsesDependency
@@ -34,8 +34,8 @@ target12.typeParameters=
 dependency15.to=XML_Map_Reader
 target5.height=50
 target1.name=PlayerID
-version=2.6.0
 target11.naviview.expanded=true
+version=2.6.0
 target8.name=GameWorld
 dependency10.type=UsesDependency
 dependency17.type=UsesDependency
