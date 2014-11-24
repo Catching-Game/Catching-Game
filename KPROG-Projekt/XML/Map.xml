@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <map>
 	<worlddata>
-		<width>10</width>   <!-- Positions going from 0 to width (excluding) -->
-		<height>10</height> <!-- Positions going from 0 to height (excluding) -->
+		<width>30</width>   <!-- Positions going from 0 to width (excluding) -->
+		<height>15</height> <!-- Positions going from 0 to height (excluding) -->
 		<cellsize>50</cellsize>
 		<image>images/wiese.jpg</image>
 	</worlddata>
