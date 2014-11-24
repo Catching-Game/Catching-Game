@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=GameWorld()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameWorld.\r\n\ \r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ GameWorld.\n\ \n
 comment1.params=
 comment1.target=void\ setBackground()
 comment2.params=
@@ -12,10 +12,10 @@ comment4.params=
 comment4.target=void\ setPlayer()
 comment5.params=
 comment5.target=void\ setTrees()
-comment5.text=\r\n\ Set\ up\ Tree\ Image\ from\ xml\r\n
+comment5.text=\n\ Set\ up\ Tree\ Image\ from\ xml\n
 comment6.params=
 comment6.target=void\ setHounds()
-comment6.text=\r\n\ Set\ up\ the\ Hounds\ in\ the\ Gameworld\r\n
+comment6.text=\n\ Set\ up\ the\ Hounds\ in\ the\ Gameworld\n
 comment7.params=
 comment7.target=void\ setMice()
 numComments=8
