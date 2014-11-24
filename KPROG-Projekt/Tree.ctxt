@@ -1,21 +1,9 @@
 #BlueJ class context
 comment0.params=cellSize
 comment0.target=Tree(int)
-<<<<<<< Updated upstream
-comment1.params=cellSize
-comment1.target=void\ setUpImage(int)
-comment1.text=\r\n\ Set\ up\ the\ Image\ from\ the\ Tree\ in\ the\ World\r\n\ @param\ cellSize\r\n
-comment2.params=
-comment2.target=java.lang.String\ getTreeImagePath()
-comment2.text=\r\n\ \r\n\ @return\ String\ ImagePath\r\n
-comment3.params=
-comment3.target=void\ act()
-numComments=4
-=======
 comment1.params=
 comment1.target=java.lang.String\ getTreeImagePath()
-comment1.text=\n\ \n\ @return\ String\ ImagePath\n
+comment1.text=\r\n\ \r\n\ @return\ String\ ImagePath\r\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3
->>>>>>> Stashed changes

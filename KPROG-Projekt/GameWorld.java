@@ -39,6 +39,7 @@ public class GameWorld extends World
     	this.setWalls();
     	this.setPlayer();
     	this.setTrees();
+    	this.setHounds();
     }
     
     private void setWalls()
@@ -54,7 +55,7 @@ public class GameWorld extends World
     private void setPlayer() 
     {	
     	this.addObject(new Player(this.getCellSize()), XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getX(),
-    								XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getY());
+    								                   XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getY());
     	//TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
     }
     
@@ -69,6 +70,20 @@ public class GameWorld extends World
     		int posX = XML_Map_Reader.getTreePositions().get(zaehler).getX();
     		int cellSize = this.getCellSize();
     		this.addObject(new Tree(cellSize), posX, posY);
+    	}
+    }
+    
+    /**
+     * Set up the Hounds in the Gameworld
+     */
+    private void setHounds()
+    {
+    	for(int zaehler = 0;zaehler < XML_Map_Reader.getHoundCount(); zaehler = zaehler +1)
+    	{
+    		int posY = XML_Map_Reader.getHoundPositions().get(zaehler).getY();
+    		int posX = XML_Map_Reader.getHoundPositions().get(zaehler).getX();
+    		int cellSize = this.getCellSize();
+    		this.addObject(new Hound(cellSize),posX,posY);
     	}
     }
 }

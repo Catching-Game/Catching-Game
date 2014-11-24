@@ -29,14 +29,14 @@ public class Hound extends Actor
     }    
 	
 	private void init(int cellSize){
-		this.speed = XML_Gamelogic.getHoundSpeed();
+		this.speed = XML_Gamelogic_Reader.getHoundSpeed();
 		this.setUpImage(cellSize);
 	}
 	
 	private void setUpImage(int cellSize){
-//		GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayer);
-//		image.scale(cellSize,cellSize);
-//		this.setImage(image);
+		GreenfootImage image = new GreenfootImage(XML_Map_Reader.getHoundImage());
+		image.scale(cellSize,cellSize);
+		this.setImage(image);
 	}
 
     
