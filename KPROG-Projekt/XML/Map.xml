@@ -10,7 +10,7 @@
 		<player1>
 			<position_x>10</position_x>
 			<position_y>10</position_y>
-			<image>images/player.png</image>
+			<image>images/cat_stands.png</image>
 		</player1>
 		<player2>
 			<position_x>10</position_x>
@@ -29,7 +29,7 @@
 		</player4>
 	</player>
 	<walls>
-		<image>images/wall.jpg</image>
+		<image>images/Wall.jpg</image>
 		<wall>
 			<position_x>2</position_x>
 			<position_y>1</position_y>
@@ -103,7 +103,7 @@
 		</tree>
 	</trees>
 	<hounds>
-		<image>images/hound.png</image>
+		<image>images/dog_stands.png</image>                
 		<hound>
 			<position_x>3</position_x>
 			<position_y>3</position_y>

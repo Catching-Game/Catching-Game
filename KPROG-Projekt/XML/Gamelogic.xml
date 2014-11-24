@@ -7,6 +7,12 @@
 	</player>
 	<hound>
 		<speed>5</speed>
+                <image>
+                    <image_stands>images/dog_stands.png</image_stands>
+                    <image_left>images/dog_left.png</image_left>
+                    <image_right>images/dog_right.png</image_right>
+                </image>
+                
 		<!-- KI logic einfügen?-->
 	</hound>
 	<mouse>
