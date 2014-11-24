@@ -137,18 +137,9 @@ public final class XML_Map_Reader {
      */
     public static String getPlayerImage(PlayerID playerID) {
         //get the current player
-      Element playerImage = null;
-      try
-      {
-        playerImage = XML_Map_Reader.getPlayer().getChild("image");
-        return playerImage.getChildText("image");
-      }
-      catch (NullPointerException e)
-      {
-        System.out.println("We have a NullPointerEx. at XML_Map_Reader line 148.");
-      }
+        Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
         
-        return "ERROR at XML_MAP_Reader line 151.";
+        return player.getChildText("image");
     }
     
     /**
