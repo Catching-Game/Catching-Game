@@ -203,7 +203,7 @@ public final class XML_Map_Reader {
         for(Element mouse : mice) {
             mousePositions.add(new PositionWithDirection(XML_Helper.parseStrToInt(mouse.getChildText("position_x")),
                                                         XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
-                                            Direction.valueOf(mouse.getChildText("direction"))));
+                                            Direction.valueOf(mouse.getChildText("position_direction"))));
         }
         
         return mousePositions;
@@ -268,7 +268,7 @@ public final class XML_Map_Reader {
         
         //add the positions to a list
         for(Element hound : hounds){
-            houndPositions.add(new Position(XML_Helper.parseStrToInt(hound.getChildText("postion_x")),
+            houndPositions.add(new Position(XML_Helper.parseStrToInt(hound.getChildText("position_x")),
                                              XML_Helper.parseStrToInt(hound.getChildText("position_y"))
                                              ));
         }

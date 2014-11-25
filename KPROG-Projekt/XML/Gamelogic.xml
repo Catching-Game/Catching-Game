@@ -3,14 +3,20 @@
 	<gametime>120</gametime>
 	<player>
 		<lifes>7</lifes>
-		<speed>1</speed>
+		<speed>2</speed>
 	</player>
 	<hound>
 		<speed>5</speed>
+                <image>
+                    <image_stands>images/dog_stands.png</image_stands>
+                    <image_left>images/dog_left.png</image_left>
+                    <image_right>images/dog_right.png</image_right>
+                </image>
+                
 		<!-- KI logic einfügen?-->
 	</hound>
 	<mouse>
-		<speed>5</speed>
+		<speed>2</speed>
 		<sight_range>1</sight_range>
 		<life_increase>1</life_increase>
 	</mouse>
