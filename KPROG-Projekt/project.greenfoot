@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Nov 25 12:55:33 CET 2014
+#Tue Nov 25 15:03:43 CET 2014
 target2.name=Player
 target9.name=Direction
 dependency11.type=UsesDependency
@@ -301,6 +301,6 @@ class.PositionWithDirection.superclass=Position
 class.Wall.superclass=greenfoot.Actor
 class.Tree.superclass=greenfoot.Actor
 target1.height=50
-mainWindow.width=1616
+mainWindow.width=1612
 target4.typeParameters=
 =\=\=\=\=\=\=

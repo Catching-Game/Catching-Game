@@ -16,7 +16,7 @@
 		<!-- KI logic einfügen?-->
 	</hound>
 	<mouse>
-		<speed>2</speed>
+		<speed>1</speed>
 		<sight_range>1</sight_range>
 		<life_increase>1</life_increase>
 	</mouse>

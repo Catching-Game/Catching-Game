@@ -78,7 +78,7 @@
             <position_x>9</position_x>
             <position_y>15</position_y>
         </wall>
-=======
+<wall>
             <position_x>1</position_x>
             <position_y>3</position_y>
         </wall>
@@ -383,7 +383,7 @@
             <position_y>9</position_y>
 	</wall>
         
->>>>>>> FETCH_HEAD
+
     </walls>
     <mice>
         <image>images/mouse.png</image>
