@@ -31,172 +31,348 @@
     <walls>
         <image>images/wall.jpg</image>
         <wall>
-            <position_x>1</position_x> <!-- Begin from top left to bottom left -->
+            <position_x>0</position_x> <!-- Begin from top left to bottom left -->
+            <position_y>0</position_y>
+        </wall>
+        <wall>
+            <position_x>0</position_x>
             <position_y>1</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>2</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>3</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>4</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>5</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>6</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>7</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>8</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>9</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>10</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>11</position_y>
         </wall>
         <wall>
-            <position_x>1</position_x>
+            <position_x>0</position_x>
             <position_y>12</position_y>
-        </wall>
+	</wall>
         <wall>
-            <position_x>1</position_x>
-            <position_y>13</position_y> <!-- End from top left to bottom left-->
-        </wall>
-        <wall>
-            <position_x>2</position_x> <!-- Begin from bottom left to bottom right-->
+            <position_x>0</position_x>
             <position_y>13</position_y>
+	</wall>
+        <wall>
+            <position_x>0</position_x>
+            <position_y>14</position_y> <!-- End from top left to bottom left-->
+        </wall>
+        <wall>
+            <position_x>1</position_x> <!-- Begin from bottom left to bottom right-->
+            <position_y>14</position_y>
+        </wall>
+        <wall>
+            <position_x>2</position_x>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>3</position_x>
-            <position_y>13</position_y>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>4</position_x>
-            <position_y>13</position_y>
-        </wall>
+            <position_y>14</position_y>
+	</wall>
         <wall>
             <position_x>5</position_x>
-            <position_y>13</position_y>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>6</position_x>
-            <position_y>13</position_y>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>7</position_x>
-            <position_y>13</position_y>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>8</position_x>
-            <position_y>13</position_y>
+            <position_y>14</position_y>
         </wall>
         <wall>
             <position_x>9</position_x>
+            <position_y>14</position_y>
+        </wall>
+        <wall>
+            <position_x>10</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>11</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>12</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>13</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>14</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>15</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>16</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>17</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>18</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>19</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>20</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>21</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>22</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>23</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>24</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>25</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>26</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>27</position_x>
+            <position_y>14</position_y>
+	</wall>
+           <wall>
+            <position_x>28</position_x>
+            <position_y>14</position_y>
+	</wall>
+        <wall>
+            <position_x>29</position_x>
+            <position_y>14</position_y> <!-- End from bottom left to bottom right-->
+        </wall>
+        <wall>
+            <position_x>29</position_x><!-- Begin from bottom right to top rigth-->
             <position_y>13</position_y>
         </wall>
-        <wall>
-            <position_x>10</position_x>
-            <position_y>13</position_y> <!-- End from bottom left to bottom right-->
-        </wall>
-        <wall>
-            <position_x>10</position_x><!-- Begin from bottom right to top rigth-->
+           <wall>
+            <position_x>29</position_x>
             <position_y>12</position_y>
-        </wall>
+	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>11</position_y>
         </wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>10</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>9</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>8</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>7</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>6</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>5</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>4</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>3</position_y>
 	</wall>
         <wall>
-            <position_x>10</position_x>
+            <position_x>29</position_x>
             <position_y>2</position_y>
 	</wall>
+           <wall>
+            <position_x>29</position_x>
+            <position_y>1</position_y>
+	</wall>
         <wall>
+            <position_x>29</position_x>
+            <position_y>0</position_y> <!-- End from bottom right to top right-->
+	</wall>
+        <wall>
+            <position_x>28</position_x><!-- Begin from top right to top left-->
+            <position_y>0</position_y>
+	</wall>
+        <wall>
+            <position_x>27</position_x>
+            <position_y>0</position_y>
+	</wall>
+        <wall>
+            <position_x>26</position_x>
+            <position_y>0</position_y>
+	</wall>        
+        <wall>
+            <position_x>25</position_x>
+            <position_y>0</position_y>
+	</wall>
+        <wall>
+            <position_x>24</position_x>
+            <position_y>0</position_y>
+	</wall>
+        <wall>
+            <position_x>23</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>22</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>21</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>20</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>19</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>18</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>17</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>16</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>15</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>14</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>13</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>12</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
+            <position_x>11</position_x>
+            <position_y>0</position_y>
+	</wall>
+           <wall>
             <position_x>10</position_x>
-            <position_y>1</position_y> <!-- End from bottom right to top right-->
+            <position_y>0</position_y>
 	</wall>
-        <wall>
-            <position_x>9</position_x><!-- Begin from top right to top left-->
-            <position_y>1</position_y>
+           <wall>
+            <position_x>9</position_x>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>8</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>7</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>6</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>5</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>4</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>3</position_x>
-            <position_y>1</position_y>
+            <position_y>0</position_y>
 	</wall>
-        <wall>
+           <wall>
             <position_x>2</position_x>
-            <position_y>1</position_y> <!-- End from top right to top left -->
+            <position_y>0</position_y>
+	</wall>        
+        <wall>
+            <position_x>1</position_x>
+            <position_y>0</position_y> <!-- End from top right to top left -->
 	</wall>
         <wall>
             <position_x>11</position_x> <!-- Begin top middle left to top middle right -->
@@ -331,16 +507,28 @@
             <position_y>6</position_y>
 	</wall>
         <wall>
-            <position_x>25</position_x> <!-- Begin bottom -->
+            <position_x>25</position_x> <!-- Begin to bottom -->
             <position_y>7</position_y>
 	</wall>
         <wall>
             <position_x>25</position_x>
-            <position_y>8</position_y> <!-- End bottom -->
+            <position_y>8</position_y> <!-- End to bottom -->
 	</wall>
         <wall>
-            <position_x>24</position_x>
+            <position_x>24</position_x> <!-- 1 x bottom 1x left -->
             <position_y>9</position_y>
+	</wall>
+        <wall>
+            <position_x>14</position_x>
+            <position_y>14</position_y>
+	</wall>
+        <wall>
+            <position_x>12</position_x>
+            <position_y>13</position_y>
+	</wall>
+        <wall>
+            <position_x>12</position_x>
+            <position_y>12</position_y>
 	</wall>
         
     </walls>
