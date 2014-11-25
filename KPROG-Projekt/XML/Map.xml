@@ -43,7 +43,15 @@
             <position_y>2</position_y>
         </wall>
         <wall>
+<<<<<<< HEAD
             <position_x>0</position_x>
+=======
+            <position_x>9</position_x>
+            <position_y>15</position_y>
+        </wall>
+<wall>
+            <position_x>1</position_x>
+>>>>>>> abdd7c3db1134899fe532db3b847fc81015710b9
             <position_y>3</position_y>
         </wall>
         <wall>
@@ -531,6 +539,10 @@
             <position_y>12</position_y>
 	</wall>
         
+<<<<<<< HEAD
+=======
+
+>>>>>>> abdd7c3db1134899fe532db3b847fc81015710b9
     </walls>
     <mice>
         <image>images/mouse.png</image>
