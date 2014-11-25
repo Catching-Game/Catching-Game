@@ -8,8 +8,8 @@ import javax.swing.text.Position;
 /**
  * Write a description of class GameWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author simonhoinkis
+ * @version 0.2
  */
 public class GameWorld extends World
 {    
@@ -31,11 +31,17 @@ public class GameWorld extends World
         prepare();
     }
 
+    /**
+     * Sets the Background
+     */
     private void setBackground()
     {
         this.setBackground(XML_Map_Reader.getWorldBackgroundImage());
     }
 
+    /**
+     * Sets up the World
+     */
     private void setUpWorld() 
     {
         this.setWalls();
@@ -45,16 +51,22 @@ public class GameWorld extends World
         this.setMice();
     }
 
+    /**
+     * Sets up the walls
+     */
     private void setWalls()
     {
         //Iteration to set up the walls
-        for (int i = 0; i < XML_Map_Reader.getWallCount(); i = i + 1) {
+        for (int i = 0; i < XML_Map_Reader.getWallCount(); i++) {
             this.addObject(new Wall(this.getCellSize()), 
                 XML_Map_Reader.getWallPositions().get(i).getX(), 
                 XML_Map_Reader.getWallPositions().get(i).getY());
         }
     }
 
+    /**
+     * Sets up the player in the Gameworld
+     */
     private void setPlayer() 
     {	
         this.addObject(new Player(this.getCellSize()), XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getX(),
@@ -67,7 +79,7 @@ public class GameWorld extends World
      */
     private void setTrees()
     {
-        for(int i = 0;i < XML_Map_Reader.getTreeCount(); i = i + 1)
+        for (int i = 0; i < XML_Map_Reader.getTreeCount(); i++)
         {
             int posY = XML_Map_Reader.getTreePositions().get(i).getY();
             int posX = XML_Map_Reader.getTreePositions().get(i).getX();
@@ -81,7 +93,7 @@ public class GameWorld extends World
      */
     private void setHounds()
     {
-    	for(int i = 0; i < XML_Map_Reader.getHoundCount(); i = i +1)
+    	for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++)
     	{
     		int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
     		int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
@@ -91,8 +103,11 @@ public class GameWorld extends World
 
     }
 
+    /**
+     * Set up the Mice in the Gameworld
+     */
     private void setMice(){
-        for(int i = 0;i < XML_Map_Reader.getMiceCount(); i = i +1)
+        for (int i = 0;i < XML_Map_Reader.getMiceCount(); i++)
         {
             int posY = XML_Map_Reader.getMicePositions().get(i).getY();
             int posX = XML_Map_Reader.getMicePositions().get(i).getX();

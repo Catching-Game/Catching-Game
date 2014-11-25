@@ -1,10 +1,14 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 import java.util.Random;
+
+
+
 /**
  * this class represents our mouse in the game
  * 
- * @author heikorehder
- * @version 0.1 / 23.11.2014
+ * @author heikorehder&simonhoinkis
+ * @version 0.3 / 23.11.2014
  */
 public class Mouse extends Actor {
     private int speed;
@@ -15,7 +19,6 @@ public class Mouse extends Actor {
         
     public Mouse(int cellSize, Direction dir) {
         init(cellSize, dir);
-
     }
 
     /**
@@ -33,7 +36,7 @@ public class Mouse extends Actor {
     /**
      * Sets up the Image of the mouse
      * 
-     * @param cellSize
+     * @param cellSize The cell size of the world
      */
     private void setUpImage(int cellSize) {
         GreenfootImage image = new GreenfootImage(XML_Map_Reader.getMiceImage());
@@ -43,95 +46,145 @@ public class Mouse extends Actor {
     }
 
     public void act() {
-        // input();
-
         move();
     }
 
 
+    /**
+     * Move Method
+     */
+    private void move() {   
+        for (int i = 0; i < this.speed; i++) {
+            if(this.canWalk(wantedDir) && !mouseSeesCat()) {
+                this.walk(this.wantedDir);
+            } else {
+                boolean foundSolution = false;
+                while(!foundSolution) {
+                    Direction dir = this.randomDir(wantedDir);
+                        
+                    if(this.canWalk(dir)) {
+                        foundSolution = true;
+                        this.walk(dir);
+                        wantedDir = dir;
+                    }
+                }
+            }
+        }
+    }
     
-    private void move() {
-    	do{
-    		walkRIGHT();
-    	}while(XML_Map_Reader.getWorldWidth-1 != this.getX()&& this.getX() != 0 &&
-    			(XML_Map_Reader.getWorldHeigth-1 != this.getY()&& this.getY() != 0 &&
-    			canWalkRIGHT());
-    		if(){
-    			
-    		}
-         }
-
     /**
-     * Checks if mouse can walk up
-     * 
-     * @return true if yes, no if not
+     * Walks into a certain direction
+     * @param dir The direction you want to walk
      */
-    private boolean canWalkUP() {
-        if (this.getOneObjectAtOffset(0, -speed, Wall.class) != null) {
-            return false;
+    private void walk(Direction dir) {
+        if(dir == Direction.UP) {
+            this.setLocation(this.getX(), this.getY() -1);
+        } else if (dir == Direction.DOWN) {
+            this.setLocation(this.getX(), this.getY() +1);
+        } else if (dir == Direction.LEFT) {
+            this.setLocation(this.getX() -1, this.getY());
+        } else if (dir == Direction.RIGHT) {
+            this.setLocation(this.getX() +1, this.getY());
         }
-
+    }
+    
+    /**
+     * Checks if u can walk into some Directions
+     * @param dir The direction you want walk to
+     * @return True if you can, false if not 
+     */
+    private boolean canWalk(Direction dir) {
+        //some collision stuff
+        //TODO simplify
+        if(dir == Direction.UP) {
+            if (this.getOneObjectAtOffset(0, -1, Wall.class) != null || 
+                this.getOneObjectAtOffset(0, -1, Mouse.class) != null || 
+                this.getOneObjectAtOffset(0, -1, Hound.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.DOWN) {
+            if (this.getOneObjectAtOffset(0, +1, Wall.class) != null ||
+                this.getOneObjectAtOffset(0, +1, Mouse.class) != null||
+                this.getOneObjectAtOffset(0, +1, Hound.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.LEFT) {
+            if (this.getOneObjectAtOffset(-1, 0, Wall.class) != null ||
+            this.getOneObjectAtOffset(-1, 0, Mouse.class) != null ||
+                this.getOneObjectAtOffset(-1, 0, Hound.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.RIGHT) {
+            if (this.getOneObjectAtOffset(1, 0, Wall.class) != null ||
+                this.getOneObjectAtOffset(1, 0, Mouse.class) != null ||
+                this.getOneObjectAtOffset(1, 0, Hound.class) != null) {
+                return false;
+            }
+        }
+        
+        //TODO verschachtelte Variante entschachteln
         return true;
     }
+    
+    /**
+     * Checks if a mouse sees a cat (sightRange)
+     * @return True if so, false if not
+     */
+    private boolean mouseSeesCat() {
+        //TODO Simpler Version?
+        for (int i = 0; i <= this.sightRange; i++) {
+            if (wantedDir == Direction.UP) {
+                if(this.getOneObjectAtOffset(0, -i, Player.class) != null) {
+                    return true;
+                }
+            } else if (wantedDir == Direction.DOWN) {
+                if(this.getOneObjectAtOffset(0, +i, Player.class) != null) {
+                    return true;
+                }
+            } else if (wantedDir == Direction.LEFT) {
+                if(this.getOneObjectAtOffset(-i, 0, Player.class) != null) {
+                    return true;
+                }
+            } else if (wantedDir == Direction.RIGHT) {
+                if(this.getOneObjectAtOffset(i, 0, Player.class) != null) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     /**
-     * Checks if mouse can walk down
-     * 
-     * @return true if yes, no if not
+     * Returns a random direction that is not the oldDirection
+     * @param oldDir The old Direction
+     * @return A direction other than the old
      */
-    private boolean canWalkDOWN() {
-        if (this.getOneObjectAtOffset(0, +speed, Wall.class) != null) {
-            return false;
-        }
-
-        return true;
+    private Direction randomDir(Direction oldDir) {
+        Direction dir = Direction.NONE;
+        
+        do {
+            Random random = new Random();
+            int ranDir = random.nextInt(4);
+            
+            if(Direction.UP.ordinal() == ranDir) {
+                dir = Direction.UP;
+            } else if(Direction.DOWN.ordinal() == ranDir) {
+                dir = Direction.DOWN;
+            } else if(Direction.LEFT.ordinal() == ranDir) {
+                dir = Direction.LEFT;
+            } else if(Direction.RIGHT.ordinal() == ranDir) {
+                dir = Direction.RIGHT;
+            }
+        } while (oldDir == dir);
+        
+        return dir;
     }
-
+    
     /**
-     * Checks if mouse can walk left
-     * 
-     * @return true if yes, no if not
+     * Returns the life increasement gained through a mouse
+     * @return The life increasement
      */
-    private boolean canWalkLEFT() {
-        if (this.getOneObjectAtOffset(-speed, 0, Wall.class) != null) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Checks if mouse can walk right
-     * 
-     * @return true if yes, no if not
-     */
-    private boolean canWalkRIGHT() {
-        if (this.getOneObjectAtOffset(+speed, 0, Wall.class) != null) {
-            return false;
-        }
-
-        return true;
-    }
-
-    private void walkUP() {
-        this.setLocation(this.getX(), this.getY() - this.speed);
-    }
-
-    private void walkDOWN() {
-        this.setLocation(this.getX(), this.getY() + this.speed);
-    }
-
-    private void walkLEFT() {
-        this.setLocation(this.getX() - this.speed, this.getY());
-    }
-
-    private void walkRIGHT() {
-        this.setLocation(this.getX() + this.speed, this.getY());
-    }
-
-    public int randomDir() {
-        Random random = new Random();
-        return random.nextInt(3);
-
+    public int getLifeIncreasement() {
+    	return this.lifeIncrease;
     }
 }

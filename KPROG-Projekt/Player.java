@@ -42,6 +42,7 @@ public class Player extends Actor
     {
     	this.input();
     	this.move();
+    	this.eat();
         // Add your action code here.
     }
     
@@ -66,62 +67,65 @@ public class Player extends Actor
      * The Player Movement
      */
     private void move() {
-    	if(this.canWalkUP() && this.wantedDir == Direction.UP) {
-    		this.setLocation(this.getX(), this.getY() - this.speed);
-    	} else if(this.canWalkDOWN() && this.wantedDir == Direction.DOWN) {
-    		this.setLocation(this.getX(), this.getY() + this.speed);
-    	} else if(this.canWalkLEFT() && this.wantedDir == Direction.LEFT) {
-    		this.setLocation(this.getX() - this.speed, this.getY());
-    	} else if(this.canWalkRIGHT() && this.wantedDir == Direction.RIGHT) {
-    		this.setLocation(this.getX() + this.speed, this.getY());
+    	for (int i = 0; i < this.speed; i++) {
+    		if(this.canWalk(this.wantedDir)) {
+    			this.walk(wantedDir);
+    		}
     	}
     }
     
     /**
-     * Checks if player can walk up
-     * @return true if yes, no if not
+     * Walks into a certain direction
+     * @param dir The direction
      */
-    private boolean canWalkUP() {
-    	if(this.getOneObjectAtOffset(0, -speed, Wall.class) != null) {
-    		return false;
-    	}
-    	
-    	return true;
-    }
-
-    /**
-     * Checks if player can walk down
-     * @return true if yes, no if not
-     */
-    private boolean canWalkDOWN() {
-    	if(this.getOneObjectAtOffset(0, +speed, Wall.class) != null) {
-    		return false;
-    	}
-    	
-    	return true;  	
+    private void walk(Direction dir) {
+        if(dir == Direction.UP) {
+            this.setLocation(this.getX(), this.getY() -1);
+        } else if (dir == Direction.DOWN) {
+            this.setLocation(this.getX(), this.getY() +1);
+        } else if (dir == Direction.LEFT) {
+            this.setLocation(this.getX() -1, this.getY());
+        } else if (dir == Direction.RIGHT) {
+            this.setLocation(this.getX() +1, this.getY());
+        }
     }
     
     /**
-     * Checks if player can walk left
-     * @return true if yes, no if not
+     * Checks if a player can walk into a certain direction
+     * @param dir The direction
+     * @return True if we can walk into this direction, false if not
      */
-    private boolean canWalkLEFT() {
-    	if(this.getOneObjectAtOffset(-speed, 0, Wall.class) != null) {
-    		return false;
-    	}
-    	
-    	return true;
+    private boolean canWalk(Direction dir) {
+        //some collision stuff
+        //TODO simplify
+        if(dir == Direction.UP) {
+            if (this.getOneObjectAtOffset(0, -1, Wall.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.DOWN) {
+            if (this.getOneObjectAtOffset(0, +1, Wall.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.LEFT) {
+            if (this.getOneObjectAtOffset(-1, 0, Wall.class) != null) {
+                return false;
+            }
+        } else if (dir == Direction.RIGHT) {
+            if (this.getOneObjectAtOffset(1, 0, Wall.class) != null) {
+                return false;
+            }
+        }
+        return true;
     }
     
     /**
-     * Checks if player can walk right
-     * @return true if yes, no if not
+     * Checks if a player touches a mouse, eats it and increases life if so
      */
-    private boolean canWalkRIGHT() {
-    	if(this.getOneObjectAtOffset(+speed, 0, Wall.class) != null) {
-    		return false;
+    private void eat() {
+    	if (this.isTouching(Mouse.class)) {
+    		Mouse mouse = (Mouse) this.getOneIntersectingObject(Mouse.class);
+    		this.lifes += mouse.getLifeIncreasement();
+    		this.removeTouching(Mouse.class);
     	}
-    	
-    	return true;
     }
 }
