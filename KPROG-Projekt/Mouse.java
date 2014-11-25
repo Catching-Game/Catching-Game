@@ -1,6 +1,5 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
-
 /**
  * this class represents our mouse in the game
  * 
@@ -12,8 +11,13 @@ public class Mouse extends Actor {
 	private int lifeIncrease;
 	private int sightRange;
 	private Direction wantedDir;
+<<<<<<< HEAD
 	
 
+=======
+	private boolean up = true;
+        
+>>>>>>> FETCH_HEAD
 	public Mouse(int cellSize, Direction dir) {
 		init(cellSize, dir);
 

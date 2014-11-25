@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Greenfoot project file
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+=======
+#Greenfoot project file
+=\=\=\=\=\=\=
+<<<<<<<=Updated\ upstream
+>>>>>>> FETCH_HEAD
 >>>>>>>=FETCH_HEAD
 class.Direction.superclass=
 class.GameWorld.image=wiese_klein.jpg
@@ -94,6 +100,7 @@ dependency30.type=UsesDependency
 dependency31.from=GameWorld
 dependency31.to=Direction
 dependency31.type=UsesDependency
+<<<<<<< HEAD
 dependency32.from=Mouse
 dependency32.to=Hound
 dependency32.type=UsesDependency
@@ -103,6 +110,8 @@ dependency33.type=UsesDependency
 dependency34.from=Hound
 dependency34.to=Mouse
 dependency34.type=UsesDependency
+=======
+>>>>>>> FETCH_HEAD
 dependency4.from=XML_Map_Reader
 dependency4.to=PositionWithDirection
 dependency4.type=UsesDependency
@@ -121,6 +130,7 @@ dependency8.type=UsesDependency
 dependency9.from=Wall
 dependency9.to=Position
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 mainWindow.height=731
 mainWindow.width=1280
 mainWindow.x=0
@@ -129,6 +139,16 @@ package.numDependencies=34
 package.numTargets=14
 project.charset=UTF-8
 simulation.speed=20
+=======
+mainWindow.height=1102
+mainWindow.width=1942
+mainWindow.x=-11
+mainWindow.y=-11
+package.numDependencies=31
+package.numTargets=14
+project.charset=UTF-8
+simulation.speed=24
+>>>>>>> FETCH_HEAD
 target1.editor.height=722
 target1.editor.width=900
 target1.editor.x=0
@@ -183,8 +203,13 @@ target12.x=70
 target12.y=70
 target13.editor.height=700
 target13.editor.width=900
+<<<<<<< HEAD
 target13.editor.x=254
 target13.editor.y=53
+=======
+target13.editor.x=427
+target13.editor.y=105
+>>>>>>> FETCH_HEAD
 target13.height=50
 target13.name=Mouse
 target13.naviview.expanded=true
@@ -287,8 +312,13 @@ target7.x=10
 target7.y=250
 target8.editor.height=730
 target8.editor.width=1280
+<<<<<<< HEAD
 target8.editor.x=0
 target8.editor.y=25
+=======
+target8.editor.x=83
+target8.editor.y=40
+>>>>>>> FETCH_HEAD
 target8.height=50
 target8.name=XML_Map_Reader
 target8.naviview.expanded=true
@@ -313,6 +343,7 @@ target9.x=170
 target9.y=190
 version=2.6.0
 world.lastInstantiated=GameWorld
+<<<<<<< HEAD
 =======
 #Greenfoot properties
 #Tue Nov 25 12:55:33 CET 2014
@@ -620,4 +651,6 @@ target1.height=50
 mainWindow.width=1616
 target4.typeParameters=
 =\=\=\=\=\=\=
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
