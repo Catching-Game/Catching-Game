@@ -262,15 +262,15 @@ public final class XML_Map_Reader {
      * Returns a PositionArrayList with Position x and Position y
      * @return ArrayList<Position> with Position x and Position y
      */
-    public static ArrayList<PositionWithDirection> getHoundPositions(){
+    public static ArrayList<Position> getHoundPositions(){
         List<Element> hounds = getHounds().getChildren("hound");
-        ArrayList<PositionWithDirection> houndPositions = new ArrayList<PositionWithDirection>();
+        ArrayList<Position> houndPositions = new ArrayList<Position>();
         
         //add the positions to a list
         for(Element hound : hounds){
-            houndPositions.add(new PositionWithDirection(XML_Helper.parseStrToInt(hound.getChildText("position_x")),
-                                             XML_Helper.parseStrToInt(hound.getChildText("position_y")),
-                                             Direction.valueOf(hound.getChildText("position_direction"))));
+            houndPositions.add(new Position(XML_Helper.parseStrToInt(hound.getChildText("position_x")),
+                                             XML_Helper.parseStrToInt(hound.getChildText("position_y"))
+                                             ));
         }
         return houndPositions;
     }

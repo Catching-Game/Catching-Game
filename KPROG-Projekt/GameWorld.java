@@ -86,10 +86,8 @@ public class GameWorld extends World
     	{
     		int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
     		int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
-    		Direction dir = XML_Map_Reader.getHoundPositions().get(i).getDir();
     		int cellSize = this.getCellSize();
-    		
-    		this.addObject(new Hound(cellSize, dir),posX,posY);
+    		this.addObject(new Hound(cellSize),posX,posY);
     	}
 =======
         for(int i = 0; i < XML_Map_Reader.getHoundCount(); i = i +1)
