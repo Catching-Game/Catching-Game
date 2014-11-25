@@ -11,17 +11,8 @@ public class Mouse extends Actor {
 	private int lifeIncrease;
 	private int sightRange;
 	private Direction wantedDir;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
-	private boolean up = true;
->>>>>>> parent of 0e07259... Kollisionsabfragen Mouse + Hound
-
-=======
 	private boolean up = true;
         
->>>>>>> FETCH_HEAD
 	public Mouse(int cellSize, Direction dir) {
 		init(cellSize, dir);
 

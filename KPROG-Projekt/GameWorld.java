@@ -81,7 +81,6 @@ public class GameWorld extends World
      */
     private void setHounds()
     {
-<<<<<<< HEAD
     	for(int i = 0; i < XML_Map_Reader.getHoundCount(); i = i +1)
     	{
     		int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
@@ -89,15 +88,7 @@ public class GameWorld extends World
     		int cellSize = this.getCellSize();
     		this.addObject(new Hound(cellSize),posX,posY);
     	}
-=======
-        for(int i = 0; i < XML_Map_Reader.getHoundCount(); i = i +1)
-        {
-            int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
-            int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
-            int cellSize = this.getCellSize();
-            this.addObject(new Hound(cellSize),posX,posY);
-        }
->>>>>>> FETCH_HEAD
+
     }
 
     private void setMice(){
