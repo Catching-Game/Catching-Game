@@ -12,7 +12,7 @@ public class Mouse extends Actor {
 	private int lifeIncrease;
 	private int sightRange;
 	private Direction wantedDir;
-	private boolean up = true;
+	
 
 	public Mouse(int cellSize, Direction dir) {
 		init(cellSize, dir);
@@ -52,158 +52,47 @@ public class Mouse extends Actor {
 
 	
 	private void move() {
-//		while(XML_Map_Reader.getWorldHeight() != this.getX()&&XML_Map_Reader.getWorldWidth() != this.getY()){
-//			walkLEFT();
-//		}
-//		
-//		if(XML_Map_Reader.getWorldHeight() != this.getX()||XML_Map_Reader.getWorldWidth() != this.getY()){
-//			if(canWalkUP()){
-//				walkUP();
-//			}else if(canWalkLEFT()){
-//				walkLEFT();
-//			} else if(canWalkRIGHT()){
-//				walkRIGHT();
-//			} else if(canWalkDOWN()){
-//				walkDOWN();}
-//		}
-//		if (this.canWalkUP() && this.wantedDir == Direction.UP) {
-//			do{
-//		    walkDOWN();}
-//			while(XML_Map_Reader.getWorldHeight()-1 != this.getX()||XML_Map_Reader.getWorldWidth()-1 != this.getY());
-//			System.out.println(getX());
-//			System.out.println(getY());
-//			System.out.println(XML_Map_Reader.getWorldHeight());
-//			if(XML_Map_Reader.getWorldHeight()-1 == this.getX()||XML_Map_Reader.getWorldWidth()-1 == this.getY()){
-//				
-//		if(canWalkUP()){
-//			walkUP();
-//		}else if(canWalkLEFT()){
-//			walkLEFT();
-//		} else if(canWalkRIGHT()){
-//			walkRIGHT();
-//		} else if(canWalkDOWN()){
-//			walkDOWN();}
-//		}}
-//		
-//
-//		
+
 		
 		 if (this.canWalkUP() && this.wantedDir == Direction.UP) {
 			walkUP();
-//			if (!this.canWalkUP()) {
-//				if (randomDir() == 0) {
-//					
-//					walkDOWN();
-//					this.wantedDir = Direction.DOWN;
-//				} else if (randomDir() == 1) {
-//					walkLEFT();
-//					this.wantedDir = Direction.LEFT;
-//				} else if (randomDir() == 2) {
-//					walkRIGHT();
-//					this.wantedDir = Direction.RIGHT;
-//				}
-//				else if (randomDir() == 3){
-//					walkUP();
-//					this.wantedDir = Direction.UP;
-//				}
-//				
-//			}
+			this.wantedDir = Direction.UP;
 		}
 		 else if (this.canWalkDOWN() && this.wantedDir == Direction.DOWN) {
 			walkDOWN();
-//			if (!this.canWalkDOWN()) {
-//				if (randomDir() == 0) {
-//					walkDOWN();
-//					this.wantedDir = Direction.DOWN;
-//				} else if (randomDir() == 1) {
-//					walkLEFT();
-//					this.wantedDir = Direction.LEFT;
-//				} else if (randomDir() == 2) {
-//					walkRIGHT();
-//					this.wantedDir = Direction.RIGHT;
-//				}
-//				else if (randomDir() == 3){
-//					
-//					walkUP();
-//					this.wantedDir = Direction.UP;
-//				}
-//			}
+			this.wantedDir = Direction.DOWN;
 		}
 			
 		 else if (this.canWalkLEFT() && this.wantedDir == Direction.LEFT) {
 			walkLEFT();
-//			if (!this.canWalkLEFT()) {
-//				if (randomDir() == 0) {
-//					walkDOWN();
-//					this.wantedDir = Direction.DOWN;
-//				} else if (randomDir() == 1) {
-//					walkLEFT();
-//					this.wantedDir = Direction.LEFT;
-//				} else if (randomDir() == 2) {
-//					
-//					walkRIGHT();
-//					this.wantedDir = Direction.RIGHT;
-//				}
-//				else if (randomDir() == 3){
-//					walkUP();
-//					this.wantedDir = Direction.UP;
-//				}
-//			}
+			this.wantedDir = Direction.LEFT;
 		}
 		 else if (this.canWalkRIGHT() && this.wantedDir == Direction.RIGHT) {
 			walkRIGHT();
-//			if (!this.canWalkRIGHT()) {
-//				if (randomDir() == 0) {
-//					walkDOWN();
-//					this.wantedDir = Direction.DOWN;
-//				} else if (randomDir() == 1) {
-//					
-//					walkLEFT();
-//					this.wantedDir = Direction.LEFT;
-//				} else if (randomDir() == 2) {
-//					walkRIGHT();
-//					this.wantedDir = Direction.RIGHT;
-//				}
-//				else if (randomDir() == 3){
-//					walkUP();
-//					this.wantedDir = Direction.UP;
-//				}
-//		}
-
+			this.wantedDir = Direction.RIGHT;
 	}
 		 else {
-			 if (randomDir() == 0) {
+			 
+			 if (randomDir() == 0 && this.canWalkDOWN()) {
 					walkDOWN();
 					this.wantedDir = Direction.DOWN;
-				} else if (randomDir() == 1) {
+				} else if (randomDir() == 1 && this.canWalkLEFT()) {
 					walkLEFT();
 					this.wantedDir = Direction.LEFT;
-				} else if (randomDir() == 2) {
+				} else if (randomDir() == 2 && this.canWalkRIGHT()) {
 					walkRIGHT();
 					this.wantedDir = Direction.RIGHT;
 				}
-				else if (randomDir() == 3){
+				else if (randomDir() == 3 && this.canWalkUP()){
 					
 					walkUP();
 					this.wantedDir = Direction.UP;
 				}
+			 
 		 }
-//		 else{
-//				if (randomDir() == 0) {
-//					walkDOWN();
-//					this.wantedDir = Direction.DOWN;
-//				} else if (randomDir() == 1) {
-//					walkLEFT();
-//					this.wantedDir = Direction.LEFT;
-//				} else if (randomDir() == 2) {
-//					walkRIGHT();
-//					this.wantedDir = Direction.RIGHT;
-//				}
-//				else if (randomDir() == 3){
-//					walkUP();
-//					this.wantedDir = Direction.UP;
-//				}
-		 }
+	}
+
+		 
 	
 	
 	
@@ -217,6 +106,13 @@ public class Mouse extends Actor {
 		if (this.getOneObjectAtOffset(0, -speed, Wall.class) != null) {
 			return false;
 		}
+		else if(this.getOneObjectAtOffset(0, -speed, Mouse.class) != null){
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(0, -speed, Hound.class) != null){
+			return false;
+		}
+		
 
 		return true;
 	}
@@ -228,6 +124,12 @@ public class Mouse extends Actor {
 	 */
 	private boolean canWalkDOWN() {
 		if (this.getOneObjectAtOffset(0, +speed, Wall.class) != null) {
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(0, +speed, Mouse.class) != null){
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(0, +speed, Hound.class) != null){
 			return false;
 		}
 
@@ -243,6 +145,12 @@ public class Mouse extends Actor {
 		if (this.getOneObjectAtOffset(-speed, 0, Wall.class) != null) {
 			return false;
 		}
+		else if(this.getOneObjectAtOffset(-speed, 0, Mouse.class) != null){
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(-speed, 0, Hound.class) != null){
+			return false;
+		}
 
 		return true;
 	}
@@ -254,6 +162,12 @@ public class Mouse extends Actor {
 	 */
 	private boolean canWalkRIGHT() {
 		if (this.getOneObjectAtOffset(+speed, 0, Wall.class) != null) {
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(+speed, 0, Mouse.class) != null){
+			return false;
+		}
+		else if(this.getOneObjectAtOffset(+speed, 0, Hound.class) != null){
 			return false;
 		}
 
@@ -278,7 +192,7 @@ public class Mouse extends Actor {
 
 	public int randomDir() {
 		Random random = new Random();
-		return random.nextInt(3);
+		return random.nextInt(4);
 
 	}
 }
