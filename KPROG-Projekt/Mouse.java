@@ -1,5 +1,6 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
+
 /**
  * this class represents our mouse in the game
  * 
@@ -11,7 +12,7 @@ public class Mouse extends Actor {
 	private int lifeIncrease;
 	private int sightRange;
 	private Direction wantedDir;
-
+	private boolean up = true;
 
 	public Mouse(int cellSize, Direction dir) {
 		init(cellSize, dir);
@@ -44,75 +45,168 @@ public class Mouse extends Actor {
 
 	public void act() {
 		// input();
+
 		move();
 	}
 
-	private void move() {
-		if (this.canWalkUP() && this.wantedDir == Direction.UP) {
-			walkUP();
-			if (isAtEdge()) {
-				if (randomDir() == 0) {
-					walkDOWN();
-				} else if (randomDir() == 1) {
-					walkLEFT();
-				} else if (randomDir() == 2) {
-					walkRIGHT();
-				}
-				else if (randomDir() == 3){
-					walkUP();
-				}
-			}
-		}
 
+	
+	private void move() {
+//		while(XML_Map_Reader.getWorldHeight() != this.getX()&&XML_Map_Reader.getWorldWidth() != this.getY()){
+//			walkLEFT();
+//		}
+//		
+//		if(XML_Map_Reader.getWorldHeight() != this.getX()||XML_Map_Reader.getWorldWidth() != this.getY()){
+//			if(canWalkUP()){
+//				walkUP();
+//			}else if(canWalkLEFT()){
+//				walkLEFT();
+//			} else if(canWalkRIGHT()){
+//				walkRIGHT();
+//			} else if(canWalkDOWN()){
+//				walkDOWN();}
+//		}
+//		if (this.canWalkUP() && this.wantedDir == Direction.UP) {
+//			do{
+//		    walkDOWN();}
+//			while(XML_Map_Reader.getWorldHeight()-1 != this.getX()||XML_Map_Reader.getWorldWidth()-1 != this.getY());
+//			System.out.println(getX());
+//			System.out.println(getY());
+//			System.out.println(XML_Map_Reader.getWorldHeight());
+//			if(XML_Map_Reader.getWorldHeight()-1 == this.getX()||XML_Map_Reader.getWorldWidth()-1 == this.getY()){
+//				
+//		if(canWalkUP()){
+//			walkUP();
+//		}else if(canWalkLEFT()){
+//			walkLEFT();
+//		} else if(canWalkRIGHT()){
+//			walkRIGHT();
+//		} else if(canWalkDOWN()){
+//			walkDOWN();}
+//		}}
+//		
+//
+//		
 		
+		 if (this.canWalkUP() && this.wantedDir == Direction.UP) {
+			walkUP();
+//			if (!this.canWalkUP()) {
+//				if (randomDir() == 0) {
+//					
+//					walkDOWN();
+//					this.wantedDir = Direction.DOWN;
+//				} else if (randomDir() == 1) {
+//					walkLEFT();
+//					this.wantedDir = Direction.LEFT;
+//				} else if (randomDir() == 2) {
+//					walkRIGHT();
+//					this.wantedDir = Direction.RIGHT;
+//				}
+//				else if (randomDir() == 3){
+//					walkUP();
+//					this.wantedDir = Direction.UP;
+//				}
+//				
+//			}
+		}
 		 else if (this.canWalkDOWN() && this.wantedDir == Direction.DOWN) {
 			walkDOWN();
-			if (isAtEdge()) {
-				if (randomDir() == 0) {
-					walkDOWN();
-				} else if (randomDir() == 1) {
-					walkLEFT();
-				} else if (randomDir() == 2) {
-					walkRIGHT();
-				}
-				else if (randomDir() == 3){
-					walkUP();
-				}
-			}
+//			if (!this.canWalkDOWN()) {
+//				if (randomDir() == 0) {
+//					walkDOWN();
+//					this.wantedDir = Direction.DOWN;
+//				} else if (randomDir() == 1) {
+//					walkLEFT();
+//					this.wantedDir = Direction.LEFT;
+//				} else if (randomDir() == 2) {
+//					walkRIGHT();
+//					this.wantedDir = Direction.RIGHT;
+//				}
+//				else if (randomDir() == 3){
+//					
+//					walkUP();
+//					this.wantedDir = Direction.UP;
+//				}
+//			}
 		}
 			
 		 else if (this.canWalkLEFT() && this.wantedDir == Direction.LEFT) {
 			walkLEFT();
-			if (isAtEdge()) {
-				if (randomDir() == 0) {
-					walkDOWN();
-				} else if (randomDir() == 1) {
-					walkLEFT();
-				} else if (randomDir() == 2) {
-					walkRIGHT();
-				}
-				else if (randomDir() == 3){
-					walkUP();
-				}
-			}
+//			if (!this.canWalkLEFT()) {
+//				if (randomDir() == 0) {
+//					walkDOWN();
+//					this.wantedDir = Direction.DOWN;
+//				} else if (randomDir() == 1) {
+//					walkLEFT();
+//					this.wantedDir = Direction.LEFT;
+//				} else if (randomDir() == 2) {
+//					
+//					walkRIGHT();
+//					this.wantedDir = Direction.RIGHT;
+//				}
+//				else if (randomDir() == 3){
+//					walkUP();
+//					this.wantedDir = Direction.UP;
+//				}
+//			}
 		}
 		 else if (this.canWalkRIGHT() && this.wantedDir == Direction.RIGHT) {
 			walkRIGHT();
-			if (isAtEdge()) {
-				if (randomDir() == 0) {
-					walkDOWN();
-				} else if (randomDir() == 1) {
-					walkLEFT();
-				} else if (randomDir() == 2) {
-					walkRIGHT();
-				}
-				else if (randomDir() == 3){
-					walkUP();
-				}
-		}
+//			if (!this.canWalkRIGHT()) {
+//				if (randomDir() == 0) {
+//					walkDOWN();
+//					this.wantedDir = Direction.DOWN;
+//				} else if (randomDir() == 1) {
+//					
+//					walkLEFT();
+//					this.wantedDir = Direction.LEFT;
+//				} else if (randomDir() == 2) {
+//					walkRIGHT();
+//					this.wantedDir = Direction.RIGHT;
+//				}
+//				else if (randomDir() == 3){
+//					walkUP();
+//					this.wantedDir = Direction.UP;
+//				}
+//		}
 
 	}
-	}
+		 else {
+			 if (randomDir() == 0) {
+					walkDOWN();
+					this.wantedDir = Direction.DOWN;
+				} else if (randomDir() == 1) {
+					walkLEFT();
+					this.wantedDir = Direction.LEFT;
+				} else if (randomDir() == 2) {
+					walkRIGHT();
+					this.wantedDir = Direction.RIGHT;
+				}
+				else if (randomDir() == 3){
+					
+					walkUP();
+					this.wantedDir = Direction.UP;
+				}
+		 }
+//		 else{
+//				if (randomDir() == 0) {
+//					walkDOWN();
+//					this.wantedDir = Direction.DOWN;
+//				} else if (randomDir() == 1) {
+//					walkLEFT();
+//					this.wantedDir = Direction.LEFT;
+//				} else if (randomDir() == 2) {
+//					walkRIGHT();
+//					this.wantedDir = Direction.RIGHT;
+//				}
+//				else if (randomDir() == 3){
+//					walkUP();
+//					this.wantedDir = Direction.UP;
+//				}
+		 }
+	
+	
+	
 
 	/**
 	 * Checks if mouse can walk up
