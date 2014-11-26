@@ -143,6 +143,8 @@ public final class XML_Map_Reader {
     }
     /**
      * Returns player image path for going left.
+     * @param playerID the player which image should be returned.
+     * @return the player image
      */
     public static String getPlayerImageLeft(PlayerID playerID)
     {
@@ -150,6 +152,19 @@ public final class XML_Map_Reader {
         Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
         
         return player.getChildText("image_left");
+    }
+    
+     /**
+     * Returns player image path for going right.
+     * @param playerID the player which image should be returned.
+     * @return the player image
+     */
+    public static String getPlayerImageRight(PlayerID playerID)
+    {
+        //get current player
+        Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
+        
+        return player.getChildText("image_right");
     }
     
     /**

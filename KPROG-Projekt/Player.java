@@ -55,21 +55,24 @@ public class Player extends Actor {
     private void input() {
         if (Greenfoot.isKeyDown("up")) {
             this.wantedDir = Direction.UP;
+            //change image to default.
+            setUpImage(this.cellsize);
         } else if (Greenfoot.isKeyDown("down")) {
             this.wantedDir = Direction.DOWN;
-
-            //change image to default
-            GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
-            image.scale(this.cellsize, this.cellsize);
-            this.setImage(image);
+            //change image to default.
+            setUpImage(this.cellsize);
         } else if (Greenfoot.isKeyDown("left")) {
             this.wantedDir = Direction.LEFT;
-            //change image for moving left
+            //change image to moving left.
             GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImageLeft(PlayerID.FIRST));
             image.scale(this.cellsize, this.cellsize);
             this.setImage(image);
         } else if (Greenfoot.isKeyDown("right")) {
             this.wantedDir = Direction.RIGHT;
+            //change image to moving right.
+            GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImageRight(PlayerID.FIRST));
+            image.scale(this.cellsize, this.cellsize);
+            this.setImage(image);
         } else {
             this.wantedDir = Direction.NONE;
         }
