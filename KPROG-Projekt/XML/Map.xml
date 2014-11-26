@@ -521,15 +521,7 @@
         <wall>
             <position_x>14</position_x>
             <position_y>14</position_y>
-        </wall>
-        <wall>
-            <position_x>12</position_x>
-            <position_y>13</position_y>
-        </wall>
-        <wall>
-            <position_x>12</position_x>
-            <position_y>12</position_y>
-        </wall>
+        </wall>       
         <wall>
             <position_x>0</position_x>
             <position_y>15</position_y>
@@ -570,6 +562,46 @@
             <position_x>9</position_x>
             <position_y>15</position_y>
         </wall>
+         <wall>
+            <position_x>2</position_x>
+            <position_y>12</position_y>
+        </wall>
+        <wall>
+            <position_x>3</position_x>
+            <position_y>12</position_y>
+        </wall>
+         <wall>
+            <position_x>5</position_x>
+            <position_y>12</position_y>
+        </wall>
+        <wall>
+            <position_x>2</position_x>
+            <position_y>11</position_y>
+        </wall>
+         <wall>
+            <position_x>5</position_x>
+            <position_y>11</position_y>
+        </wall>
+        <wall>
+            <position_x>5</position_x>
+            <position_y>10</position_y>
+        </wall>
+         <wall>
+            <position_x>5</position_x>
+            <position_y>9</position_y>
+        </wall>
+        <wall>
+            <position_x>4</position_x>
+            <position_y>9</position_y>
+        </wall>
+         <wall>
+            <position_x>3</position_x>
+            <position_y>9</position_y>
+        </wall>
+        <wall>
+            <position_x>2</position_x>
+            <position_y>9</position_y>
+        </wall>
     </walls>
     <mice>
         <image>images/mouse.png</image>
@@ -603,7 +635,7 @@
         <image>images/tree.png</image>
         <tree>
             <position_x>4</position_x>
-            <position_y>4</position_y>
+            <position_y>10</position_y>
         </tree>
         <tree>
             <position_x>6</position_x>
