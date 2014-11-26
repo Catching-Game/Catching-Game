@@ -8,16 +8,16 @@ import java.util.Random;
  * this class represents our mouse in the game
  * 
  * @author heikorehder&simonhoinkis
- * @version 0.3 / 23.11.2014
+ * @version 0.4 / 26.11.2014
  */
-public class Mouse extends Actor {
+public class Mouse extends MovableActor {
     private int speed;
     private int lifeIncrease;
     private int sightRange;
     private Direction wantedDir;
-    private boolean up = true;
         
     public Mouse(int cellSize, Direction dir) {
+        super(cellSize, XML_Map_Reader.getMiceImage());
         init(cellSize, dir);
     }
 
@@ -30,20 +30,8 @@ public class Mouse extends Actor {
         this.lifeIncrease = XML_Gamelogic_Reader.getMouseLifeIncrease();
         this.sightRange = XML_Gamelogic_Reader.getMouseSightRange();
         this.wantedDir = dir;
-        this.setUpImage(cellSize);
     }
 
-    /**
-     * Sets up the Image of the mouse
-     * 
-     * @param cellSize The cell size of the world
-     */
-    private void setUpImage(int cellSize) {
-        GreenfootImage image = new GreenfootImage(XML_Map_Reader.getMiceImage());
-        image.scale(cellSize, cellSize);
-        this.setImage(image);
-
-    }
 
     public void act() {
         move();
@@ -59,32 +47,17 @@ public class Mouse extends Actor {
                 this.walk(this.wantedDir);
             } else {
                 boolean foundSolution = false;
-                while(!foundSolution) {
+                int tryCount = 0;
+                while(!foundSolution && tryCount != 5) {
                     Direction dir = this.randomDir(wantedDir);
-                        
                     if(this.canWalk(dir)) {
                         foundSolution = true;
                         this.walk(dir);
                         wantedDir = dir;
                     }
+                    tryCount++;
                 }
             }
-        }
-    }
-    
-    /**
-     * Walks into a certain direction
-     * @param dir The direction you want to walk
-     */
-    private void walk(Direction dir) {
-        if(dir == Direction.UP) {
-            this.setLocation(this.getX(), this.getY() -1);
-        } else if (dir == Direction.DOWN) {
-            this.setLocation(this.getX(), this.getY() +1);
-        } else if (dir == Direction.LEFT) {
-            this.setLocation(this.getX() -1, this.getY());
-        } else if (dir == Direction.RIGHT) {
-            this.setLocation(this.getX() +1, this.getY());
         }
     }
     

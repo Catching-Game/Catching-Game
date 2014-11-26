@@ -5,10 +5,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Wall here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author simonhoinkis
+ * @version 1.0
  */
-public class Wall extends Actor
+public class Wall extends DrawableActor
 {    
 	/**
 	 * Constructor of a Wall
@@ -16,17 +16,7 @@ public class Wall extends Actor
 	 */
     public Wall(int cellSize)
     {
-    	setUpImage(cellSize);
-    }
-    
-    /**
-     * Sets up the image
-     * @param cellSize The CellSize of the World
-     */
-    private void setUpImage(int cellSize) {
-    	GreenfootImage image = new GreenfootImage(XML_Map_Reader.getWallImage());
-    	image.scale(cellSize, cellSize);
-    	this.setImage(image);    	
+    	super(cellSize, XML_Map_Reader.getWallImage());
     }
     
     /**
@@ -35,8 +25,6 @@ public class Wall extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        //The wall doesn't want to do anything
     }
-    
-
 }

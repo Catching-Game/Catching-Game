@@ -4,38 +4,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * this class represents our Player in the game
  *
  * @author simonhoinkis
- * @version 0.1
+ * @version 0.2
  */
-public class Player extends Actor {
+public class Player extends MovableActor {
 
     private int lifes;
     private int speed;
-    private int cellsize; // the cellsize for scaling an image
     private Direction wantedDir; //the direction the player wants to walk
 
     public Player(int cellSize) {
-        init(cellSize);
-        this.cellsize = cellSize;
+        super(cellSize, XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
+        init();
     }
 
     /**
      * init all variables of the actor
      */
-    private void init(int cellSize) {
+    private void init() {
         this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
         this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
-        this.setUpImage(cellSize);
-    }
-
-    /**
-     * Sets up the Image of the player
-     *
-     * @param cellSize
-     */
-    private void setUpImage(int cellSize) {
-        GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
-        image.scale(cellSize, cellSize);
-        this.setImage(image);
     }
 
     /**
@@ -55,24 +42,12 @@ public class Player extends Actor {
     private void input() {
         if (Greenfoot.isKeyDown("up")) {
             this.wantedDir = Direction.UP;
-            //change image to default.
-            setUpImage(this.cellsize);
         } else if (Greenfoot.isKeyDown("down")) {
             this.wantedDir = Direction.DOWN;
-            //change image to default.
-            setUpImage(this.cellsize);
         } else if (Greenfoot.isKeyDown("left")) {
             this.wantedDir = Direction.LEFT;
-            //change image to moving left.
-            GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImageLeft(PlayerID.FIRST));
-            image.scale(this.cellsize, this.cellsize);
-            this.setImage(image);
         } else if (Greenfoot.isKeyDown("right")) {
             this.wantedDir = Direction.RIGHT;
-            //change image to moving right.
-            GreenfootImage image = new GreenfootImage(XML_Map_Reader.getPlayerImageRight(PlayerID.FIRST));
-            image.scale(this.cellsize, this.cellsize);
-            this.setImage(image);
         } else {
             this.wantedDir = Direction.NONE;
         }
@@ -86,23 +61,6 @@ public class Player extends Actor {
             if (this.canWalk(this.wantedDir)) {
                 this.walk(wantedDir);
             }
-        }
-    }
-
-    /**
-     * Walks into a certain direction
-     *
-     * @param dir The direction
-     */
-    private void walk(Direction dir) {
-        if (dir == Direction.UP) {
-            this.setLocation(this.getX(), this.getY() - 1);
-        } else if (dir == Direction.DOWN) {
-            this.setLocation(this.getX(), this.getY() + 1);
-        } else if (dir == Direction.LEFT) {
-            this.setLocation(this.getX() - 1, this.getY());
-        } else if (dir == Direction.RIGHT) {
-            this.setLocation(this.getX() + 1, this.getY());
         }
     }
 
