@@ -139,7 +139,17 @@ public final class XML_Map_Reader {
         //get the current player
         Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
         
-        return player.getChildText("image");
+        return player.getChildText("image_stands");
+    }
+    /**
+     * Returns player image path for going left.
+     */
+    public static String getPlayerImageLeft(PlayerID playerID)
+    {
+        //get current player
+        Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
+        
+        return player.getChildText("image_left");
     }
     
     /**
