@@ -124,4 +124,11 @@ public class GameWorld extends World
     private void prepare()
     {
     }
+    
+    private void setLivecounter(int anzahlSpieler){
+    	for(int i = 0; i < anzahlSpieler;i = i + 1){
+    	    String s = "Spieler:";
+    		new Counter(s);
+    	}
+    }
 }
