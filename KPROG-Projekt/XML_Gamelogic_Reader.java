@@ -1,4 +1,6 @@
 import org.jdom2.Element;
+import java.util.List;
+import java.util.ArrayList;
 
 
 /**
@@ -63,7 +65,12 @@ public final class XML_Gamelogic_Reader {
 		 * @return The lifes of a player
 		 */
 		public static int getPlayerLifes() {
-			return XML_Helper.parseStrToInt(XML_Gamelogic_Reader.getPlayer().getChildText("lifes"));
+//			List<Element> playerlife = XML_Gamelogic_Reader.getPlayer().getChildren("lifes");
+//			ArrayList<Integer> playerlifes = new ArrayList<Integer>();
+//			for(Element life : playerlife){
+//				playerlifes.add(XML_Helper.parseStrToInt(life));
+//			}
+			return XML_Helper.parseStrToInt(XML_Helper.getRoot(XML_Gamelogic_Reader.FILEPATH).getChildText("life"));
 		}
 		
 		/**

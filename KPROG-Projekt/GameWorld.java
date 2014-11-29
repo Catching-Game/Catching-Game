@@ -69,7 +69,7 @@ public class GameWorld extends World
      * Sets up the player in the Gameworld
      */
     private void setPlayer() 
-    {	
+    {   
         this.addObject(new Player(this.getCellSize()), XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getX(),
             XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getY());
         //TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
@@ -94,13 +94,13 @@ public class GameWorld extends World
      */
     private void setHounds()
     {
-    	for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++)
-    	{
-    		int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
-    		int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
-    		int cellSize = this.getCellSize();
-    		this.addObject(new Hound(cellSize),posX,posY);
-    	}
+        for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++)
+        {
+            int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
+            int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
+            int cellSize = this.getCellSize();
+            this.addObject(new Hound(cellSize),posX,posY);
+        }
 
     }
 
@@ -127,10 +127,12 @@ public class GameWorld extends World
     }
     
     private void setLiveCounter(int anzahlSpieler){
-    	for(int i = 0; i < anzahlSpieler;i = i + 1){
-    	    String s = "Spieler:";
-    		Zaehleranzeige zaehler = new Zaehleranzeige(s,7,14,14);
-    		addObject(zaehler.getCounter(),zaehler.getX(),zaehler.getY());
-    	}
+        for(int i = 0; i < anzahlSpieler;i = i + 1){
+            String s = "Spieler:";
+            int posX = XML_Map_Reader.getCounterPosition().get(i).getX();
+            Zaehleranzeige zaehler = new Zaehleranzeige(s,7,posX,
+                                                            XML_Map_Reader.getCounterPosition().get(i).getY());
+            addObject(zaehler.getCounter(),zaehler.getX(),zaehler.getY());
+        }
     }
 }

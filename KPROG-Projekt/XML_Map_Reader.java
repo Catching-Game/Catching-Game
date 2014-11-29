@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-
 import org.jdom2.Element;
 
 /**
@@ -312,5 +311,22 @@ public final class XML_Map_Reader {
      */
     public static String getCounterImage(){
     	return XML_Map_Reader.getCounter().getChildText("image");
+    }
+    
+    /**
+     * Returns a PositionArrayList with Position x and Position y
+     * @return ArrayList<Position> with Position x and Position y
+     */
+    public static ArrayList<Position> getCounterPosition(){
+    	List<Element> counters = getCounter().getChildren("counter");
+    	ArrayList<Position> counterPosition = new ArrayList<Position>();
+    	
+    	for(Element counter : counters){
+    		counterPosition.add(new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
+    				                         XML_Helper.parseStrToInt(counter.getChildText("position_y"))
+    				                         ));
+    	}
+    	
+    	return counterPosition;
     }
 }
