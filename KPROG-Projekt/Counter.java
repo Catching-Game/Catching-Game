@@ -33,7 +33,7 @@ import java.awt.Color;
  */
 public class Counter extends Actor
 {
-    private static final Color transparent = new Color(0,0,0,0);
+    private static final Color transparent = new Color(50,50,50,50);
     private GreenfootImage background;
     private int spielerleben;
     private int minLeben;
@@ -49,7 +49,7 @@ public class Counter extends Actor
      */
     public Counter(String name,int leben)
     {
-        background = getImage();  // get image from class
+        background = new GreenfootImage(XML_Map_Reader.getCounterImage());  // get image from class
         spielerleben =  leben;
         minLeben = 0;
         this.spielerName = name;
@@ -113,7 +113,7 @@ public class Counter extends Actor
      */
     private void updateImage()
     {
-        GreenfootImage image = new GreenfootImage(background);
+        GreenfootImage image = new GreenfootImage(XML_Map_Reader.getCounterImage());
         GreenfootImage text = new GreenfootImage(spielerName + spielerleben, 22, Color.BLACK, transparent);
         
         if (text.getWidth() > image.getWidth() - 20)

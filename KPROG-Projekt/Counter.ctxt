@@ -1,17 +1,17 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Counter()
-comment1.params=prefix
-comment1.target=Counter(java.lang.String)
+comment0.params=name
+comment0.target=Counter(java.lang.String)
+comment1.params=name\ leben
+comment1.target=Counter(java.lang.String,\ int)
 comment1.text=\r\n\ Create\ a\ new\ counter,\ initialised\ to\ 0.\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Animate\ the\ display\ to\ count\ up\ (or\ down)\ to\ the\ current\ target\ value.\r\n
 comment3.params=score
-comment3.target=void\ add(int)
+comment3.target=void\ erhoehen(int)
 comment3.text=\r\n\ Add\ a\ new\ score\ to\ the\ current\ counter\ value.\ \ This\ will\ animate\r\n\ the\ counter\ over\ consecutive\ frames\ until\ it\ reaches\ the\ new\ value.\r\n
 comment4.params=
-comment4.target=int\ getValue()
+comment4.target=int\ getminLeben()
 comment4.text=\r\n\ Return\ the\ current\ counter\ value.\r\n
 comment5.params=newValue
 comment5.target=void\ setValue(int)

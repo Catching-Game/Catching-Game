@@ -26,4 +26,6 @@ comment7.text=\r\n\ Set\ up\ the\ Mice\ in\ the\ Gameworld\r\n
 comment8.params=
 comment8.target=void\ prepare()
 comment8.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
-numComments=9
+comment9.params=anzahlSpieler
+comment9.target=void\ setLiveCounter(int)
+numComments=10

@@ -5,12 +5,14 @@ public class Zaehleranzeige {
 	private int posX;
 	private int posY;
 	private String spielerNamen;
+	private Counter count;
 	
 	public Zaehleranzeige(String name,int leben, int posX, int posY){
 		this.leben = leben;
 		this.spielerNamen = name;
-		Counter count = new Counter(name);
-		
+		count = new Counter(name,leben);
+		this.posX = posX;
+		this.posY = posY;
 		
 	}
 	
@@ -33,4 +35,10 @@ public class Zaehleranzeige {
 	public int getY(){
 		return posY;
 	}
+	
+	public Counter getCounter(){
+		return count;
+	}
+	
+
 }

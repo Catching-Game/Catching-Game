@@ -78,6 +78,13 @@ public final class XML_Map_Reader {
     private static Element getHounds(){
         return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("hounds");
     }
+    
+    /**
+     * Get Counter Image
+     */
+    private static Element getCounter(){
+    	return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("counter");
+    }
 
     /**
      * Returns the width of the world
@@ -298,5 +305,12 @@ public final class XML_Map_Reader {
                                              ));
         }
         return houndPositions;
+    }
+    
+    /**
+     * @return counter image
+     */
+    public static String getCounterImage(){
+    	return XML_Map_Reader.getCounter().getChildText("image");
     }
 }

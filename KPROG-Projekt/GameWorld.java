@@ -49,6 +49,7 @@ public class GameWorld extends World
         this.setTrees();
         this.setHounds();
         this.setMice();
+        this.setLiveCounter(1);
     }
 
     /**
@@ -125,10 +126,11 @@ public class GameWorld extends World
     {
     }
     
-    private void setLivecounter(int anzahlSpieler){
+    private void setLiveCounter(int anzahlSpieler){
     	for(int i = 0; i < anzahlSpieler;i = i + 1){
     	    String s = "Spieler:";
-    		new Counter(s);
+    		Zaehleranzeige zaehler = new Zaehleranzeige(s,7,14,14);
+    		addObject(zaehler.getCounter(),zaehler.getX(),zaehler.getY());
     	}
     }
 }
