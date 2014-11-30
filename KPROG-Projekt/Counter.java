@@ -31,7 +31,7 @@ import java.awt.Color;
  * @author Neil Brown and Michael Kölling 
  * @version 1.0
  */
-public class Counter extends Actor
+public class Counter extends Actor 
 {
     private static final Color transparent = new Color(50,50,50,50);
     private GreenfootImage background;
@@ -77,7 +77,7 @@ public class Counter extends Actor
      */
     public void erhoehen(int score)
     {
-        minLeben += score;
+        minLeben = score;
     }
 
     /**
@@ -93,7 +93,6 @@ public class Counter extends Actor
      */
     public void setValue(int newValue)
     {
-        minLeben = newValue;
         spielerleben = newValue;
         updateImage();
     }

@@ -11,8 +11,7 @@ import javax.swing.text.Position;
  * @author simonhoinkis
  * @version 0.2
  */
-public class GameWorld extends World
-{    
+public class GameWorld extends World{    
     private static final int WORLD_WIDTH      = XML_Map_Reader.getWorldWidth();
     private static final int WORLD_HEIGHT      = XML_Map_Reader.getWorldHeight();
     private static final int WORLD_CELLSIZE    = XML_Map_Reader.getWorldCellsize();
@@ -21,8 +20,7 @@ public class GameWorld extends World
      * Constructor for objects of class GameWorld.
      * 
      */
-    public GameWorld()
-    {
+    public GameWorld(){
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
 
         this.setBackground();
@@ -34,29 +32,34 @@ public class GameWorld extends World
     /**
      * Sets the Background
      */
-    private void setBackground()
-    {
+    private void setBackground(){
         this.setBackground(XML_Map_Reader.getWorldBackgroundImage());
     }
 
     /**
      * Sets up the World
      */
-    private void setUpWorld() 
-    {
+    private void setUpWorld(){
         this.setWalls();
         this.setPlayer();
         this.setTrees();
         this.setHounds();
         this.setMice();
+        //anstatt der 1 muss noch die genaue spieleranzahl eingefügt werden 
         this.setLiveCounter(1);
+    }
+    
+    /**
+     * Set up Load world from SaveXML
+     */
+    private void setUpLoadWorld(){
+    	
     }
 
     /**
      * Sets up the walls
      */
-    private void setWalls()
-    {
+    private void setWalls(){
         //Iteration to set up the walls
         for (int i = 0; i < XML_Map_Reader.getWallCount(); i++) {
             this.addObject(new Wall(this.getCellSize()), 
@@ -68,8 +71,7 @@ public class GameWorld extends World
     /**
      * Sets up the player in the Gameworld
      */
-    private void setPlayer() 
-    {   
+    private void setPlayer(){   
         this.addObject(new Player(this.getCellSize()), XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getX(),
             XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getY());
         //TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
@@ -78,10 +80,8 @@ public class GameWorld extends World
     /**
      * Set up Tree Image from xml
      */
-    private void setTrees()
-    {
-        for (int i = 0; i < XML_Map_Reader.getTreeCount(); i++)
-        {
+    private void setTrees(){
+        for (int i = 0; i < XML_Map_Reader.getTreeCount(); i++){
             int posY = XML_Map_Reader.getTreePositions().get(i).getY();
             int posX = XML_Map_Reader.getTreePositions().get(i).getX();
             int cellSize = this.getCellSize();
@@ -92,10 +92,8 @@ public class GameWorld extends World
     /**
      * Set up the Hounds in the Gameworld
      */
-    private void setHounds()
-    {
-        for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++)
-        {
+    private void setHounds(){
+        for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++){
             int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
             int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
             int cellSize = this.getCellSize();
@@ -108,8 +106,7 @@ public class GameWorld extends World
      * Set up the Mice in the Gameworld
      */
     private void setMice(){
-        for (int i = 0;i < XML_Map_Reader.getMiceCount(); i++)
-        {
+        for (int i = 0;i < XML_Map_Reader.getMiceCount(); i++){
             int posY = XML_Map_Reader.getMicePositions().get(i).getY();
             int posX = XML_Map_Reader.getMicePositions().get(i).getX();
             Direction dir = XML_Map_Reader.getMicePositions().get(i).getDir();
@@ -122,16 +119,16 @@ public class GameWorld extends World
      * Prepare the world for the start of the program. That is: create the initial
      * objects and add them to the world.
      */
-    private void prepare()
-    {
+    private void prepare(){
     }
     
     private void setLiveCounter(int anzahlSpieler){
         for(int i = 0; i < anzahlSpieler;i = i + 1){
-            String s = "Spieler:";
+            String name = "Spieler: ";
             int posX = XML_Map_Reader.getCounterPosition().get(i).getX();
-            Zaehleranzeige zaehler = new Zaehleranzeige(s,7,posX,
-                                                            XML_Map_Reader.getCounterPosition().get(i).getY());
+            int posY = XML_Map_Reader.getCounterPosition().get(i).getY();
+            int life = XML_Gamelogic_Reader.getPlayerLifes();
+            Zaehleranzeige zaehler = new Zaehleranzeige(name,life,posX,posY);
             addObject(zaehler.getCounter(),zaehler.getX(),zaehler.getY());
         }
     }
