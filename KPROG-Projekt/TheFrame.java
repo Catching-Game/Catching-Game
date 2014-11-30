@@ -19,6 +19,9 @@ public class TheFrame {
 	private JComboBox<Integer> combo;
 	private Container contentPane;
 	private Integer[] inhalt = {2,3,4};
+	private int playerquantity;
+	private boolean isNewGame;
+	private boolean isLoadGame;
 
 	public TheFrame(){
 		init();
@@ -71,7 +74,31 @@ public class TheFrame {
 		myFrame.setVisible(true);
 
 	} 
-
+	
+	private void setPlayerquantitiy(int quantitiy){
+		this.playerquantity = quantitiy;
+	}
+	
+	public int getPlayerquantity(){
+		return playerquantity;
+	}
+	
+	private void setisNewGame(boolean newGame){
+		this.isNewGame = newGame;
+	}
+	
+	public boolean getisNewGame(){
+		return isNewGame;
+	}
+	
+	public void setisLoadGame(boolean loadGame){
+		this.isLoadGame = loadGame;
+	}
+	
+	public boolean getisLoadGame(){
+		return isLoadGame;
+	}
+	
 	/**
 	 * Action Listener Class for the Buttons
 	 * @author Max
@@ -85,8 +112,14 @@ public class TheFrame {
 			if(arg0.getSource() == newGame){
 				System.out.println("Button neues Spiel gedueckt");
 				System.out.println(combo.getSelectedItem());
+				setPlayerquantitiy((Integer)combo.getSelectedItem());
+				setisNewGame(true);
+				setisLoadGame(false);
+				
 			} else if(arg0.getSource() == loadGame){
 				System.out.println("Spiel Laden gedrueckt");
+				setisNewGame(false);
+				setisLoadGame(true);
 			}
 
 		}

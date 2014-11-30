@@ -22,12 +22,9 @@ public class GameWorld extends World{
      */
     public GameWorld(){
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-        
         this.startFrame();
         this.setBackground();
         this.setUpWorld();
-
-        prepare();
     }
 
     /**
@@ -54,7 +51,24 @@ public class GameWorld extends World{
      * Show input Dialog 
      */
     private void startFrame(){
-    	FrameWorker frame = new FrameWorker();
+    	TheFrame frame = new TheFrame();
+//    	do{
+//    		Greenfoot.stop();
+//    	}while(frame.getisNewGame() == frame.getisLoadGame());
+//    	if(frame.getisNewGame() != frame.getisLoadGame()){
+//    		if(frame.getisNewGame() == true){
+//    			Greenfoot.start();
+//    			System.out.print("newgame function");
+//    	        this.setBackground();
+//    	        this.setUpWorld();
+//    	        prepare();
+//    		}else if(frame.getisLoadGame() == true){
+//    			super.start();
+//    			System.out.print("loadgame function");
+//    	        this.setBackground();
+//    	        this.setUpWorld();
+//    		}
+//    	}
     }
     
     /**
