@@ -22,7 +22,8 @@ public class GameWorld extends World{
      */
     public GameWorld(){
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-
+        
+        this.startFrame();
         this.setBackground();
         this.setUpWorld();
 
@@ -45,8 +46,15 @@ public class GameWorld extends World{
         this.setTrees();
         this.setHounds();
         this.setMice();
-        //anstatt der 1 muss noch die genaue spieleranzahl eingefügt werden 
+        //TODO anstatt der 1 muss noch die genaue spieleranzahl eingefuegt werden 
         this.setLiveCounter(1);
+    }
+    
+    /**
+     * Show input Dialog 
+     */
+    private void startFrame(){
+    	FrameWorker frame = new FrameWorker();
     }
     
     /**
