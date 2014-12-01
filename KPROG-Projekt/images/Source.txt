@@ -1,2 +1,0 @@
-Cat: http://pngimg.com/img/animals/cat
-Dog: http://pngimg.com/img/animals/dog
