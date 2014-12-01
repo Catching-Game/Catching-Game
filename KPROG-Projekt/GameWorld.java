@@ -28,6 +28,7 @@ public class GameWorld extends World{
 
         this.setBackground();
         this.setUpWorld();
+        this.setGui();
         
         prepare();
     }
@@ -57,7 +58,7 @@ public class GameWorld extends World{
      * Set up Load world from SaveXML
      */
     private void setUpLoadWorld(){
-    	
+        
     }
 
     /**
@@ -137,39 +138,42 @@ public class GameWorld extends World{
             this.counteranzeige.add(counter);
             this.zaehleranzeige.add(zaehler);
             addObject(counter,zaehler.getX(),zaehler.getY());
-                  	
+                    
             }
         }
     private void initObserver(){
-    	this.getZaehler().addObserver(this.getCounteranzeige());
+        this.getZaehler().addObserver(this.getCounteranzeige());
     
     }
     
     private Zaehleranzeige getZaehler(){
-    	Zaehleranzeige player = null;
-    	for(Zaehleranzeige zaehler : zaehleranzeige){
-    	//	if(zaehler.getPlayerName().equals(getCounteranzeige().getPlayerName())){
-    		player = zaehler;
-    	//	}
-    		
-    			
-    	
-    	
+        Zaehleranzeige player = null;
+        for(Zaehleranzeige zaehler : zaehleranzeige){
+        //  if(zaehler.getPlayerName().equals(getCounteranzeige().getPlayerName())){
+            player = zaehler;
+        //  }
+            
+                
+        
+        
     }
     return player;
 }
     
     private Counter getCounteranzeige(){
-    	Counter player = null;
-    	for(Counter counter : counteranzeige){
-    	 //if(counter.getPlayerName().equals(getZaehler().getPlayerName())){
-    			player = counter;
-    		
-    			
-    //	}
-    	
+        Counter player = null;
+        for(Counter counter : counteranzeige){
+         //if(counter.getPlayerName().equals(getZaehler().getPlayerName()   )){
+                player = counter;
+            
+                
+    //  }        
     }
     
  return player;
 }
+
+   private void setGui(){
+       TheFrame frame = new TheFrame();
+   }
 }
