@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TheFrame()
+comment1.params=
+comment1.target=void\ init()
+comment2.params=quantitiy
+comment2.target=void\ setPlayerquantitiy(int)
+comment3.params=
+comment3.target=int\ getPlayerquantity()
+comment4.params=newGame
+comment4.target=void\ setisNewGame(boolean)
+comment5.params=
+comment5.target=boolean\ getisNewGame()
+comment6.params=loadGame
+comment6.target=void\ setisLoadGame(boolean)
+comment7.params=
+comment7.target=boolean\ getisLoadGame()
+numComments=8
