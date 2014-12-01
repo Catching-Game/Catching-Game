@@ -13,19 +13,24 @@ public class Player extends MovableActor {
     private Direction wantedDir; //the direction the player wants to walk
     private Zaehleranzeige zaehler;
     private String playerName;
+   
+    private PlayerID playerID;
 
-    public Player(int cellSize, String name) {
-        super(cellSize, XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
-        init(name);
+    public Player(int cellSize, String name, GameWorld gw, PlayerID playerID) {
+        super(cellSize, XML_Map_Reader.getPlayerImage(playerID));
+        this.playerID = playerID;
+        init(name, gw, playerID);
     }
 
     /**
      * init all variables of the actor
      */
-    private void init(String name) {
+    private void init(String name, GameWorld gw, PlayerID playerID) {
         this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
         this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
+        this.zaehler = new Zaehleranzeige(name, this.lifes, gw, playerID);
         this.playerName = name;
+        
     }
 
     /**
@@ -104,14 +109,12 @@ public class Player extends MovableActor {
             Mouse mouse = (Mouse) this.getOneIntersectingObject(Mouse.class);
             this.lifes += mouse.getLifeIncreasement();
             this.removeTouching(Mouse.class);
-            for(Zaehleranzeige anzeige : GameWorld.zaehleranzeige){
-            	if(anzeige.getPlayerName().equals(this.playerName)){
-            		anzeige.changeAnzeige();
+            zaehler.changeAnzeige(this.lifes);
             	}
             	
             }
         }
-    }
+    
     
 
-}
+

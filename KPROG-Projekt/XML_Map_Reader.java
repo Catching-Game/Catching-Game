@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 import org.jdom2.Element;
 
 /**
@@ -81,8 +82,8 @@ public final class XML_Map_Reader {
     /**
      * Get Counter Image
      */
-    private static Element getCounter(){
-    	return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("counter");
+    private static Element getCounters(){
+    	return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("counters");
     }
 
     /**

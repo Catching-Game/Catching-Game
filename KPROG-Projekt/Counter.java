@@ -45,10 +45,10 @@ public class Counter extends Actor implements Observer
     /**
      * Create a new counter, initialised to 0.
      */
-    public Counter(String name,int leben)
+    public Counter(String name,int lifes)
     {
         background = new GreenfootImage(XML_Map_Reader.getCounterImage());  // get image from class
-        spielerleben = leben;
+        spielerleben = lifes;
         minLeben = 0;
         this.spielerName = name;
         updateImage();
