@@ -173,6 +173,14 @@ public final class XML_Map_Reader {
         return player.getChildText("image_right");
     }
     
+    public static String getPlayerName(PlayerID playerID){
+    	//get current player name
+    	Element player = XML_Map_Reader.getPlayer().getChild("player" + playerID.getValue());
+    	
+    	return player.getChildText("player_name");
+    	
+    }
+    
     /**
      * Returns the wall image path
      * @return The wall image path

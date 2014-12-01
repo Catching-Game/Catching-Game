@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class Zaehleranzeige {
+public class Zaehleranzeige extends Observable {
 	
 	private int anzeige;
 	private int posX;
@@ -12,7 +12,8 @@ public class Zaehleranzeige {
 	public Zaehleranzeige(String name,int leben, int posX, int posY){
 		this.anzeige = leben;
 		this.spielerNamen = name;
-		count = new Counter(name,leben);
+		//count = new Counter(name,leben);
+		//this.addObserver(count);
 		this.posX = posX;
 		this.posY = posY;
 		
@@ -34,6 +35,27 @@ public class Zaehleranzeige {
 	public Counter getCounter(){
 		return count;
 	}
+	
+	/*
+	 * Change anzeige and notifies observers
+	 */
+	public void changeAnzeige(){
+		this.anzeige++;	
+		notifyObservers(this.anzeige);
+	}
+	
+	/*
+	 * Define Object as changed and notifies observers
+	 */
+	void notifyObservers(int life){
+		setChanged();
+		super.notifyObservers(life);
+	}
+	
+	public String getPlayerName(){
+		return this.spielerNamen;
+	}
+	
 	
 
 }

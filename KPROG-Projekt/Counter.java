@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
+import java.util.Observer; 
+import java.util.Observable;
 
 /**
  * A Counter class that allows you to display a numerical value on screen.
@@ -31,18 +33,14 @@ import java.awt.Color;
  * @author Neil Brown and Michael Kölling 
  * @version 1.0
  */
-public class Counter extends Actor 
+public class Counter extends Actor implements Observer
 {
     private static final Color transparent = new Color(50,50,50,50);
     private GreenfootImage background;
     private int spielerleben;
     private int minLeben;
     private String spielerName;
-    
-    public Counter(String name)
-    {
-       this.spielerName = name;
-    }
+
 
     /**
      * Create a new counter, initialised to 0.
@@ -50,7 +48,7 @@ public class Counter extends Actor
     public Counter(String name,int leben)
     {
         background = new GreenfootImage(XML_Map_Reader.getCounterImage());  // get image from class
-        spielerleben =  leben;
+        spielerleben = leben;
         minLeben = 0;
         this.spielerName = name;
         updateImage();
@@ -61,14 +59,6 @@ public class Counter extends Actor
      */
     public void act() 
     {
-        if (spielerleben < minLeben) {
-            spielerleben++;
-            updateImage();
-        }
-        else if (spielerleben > minLeben) {
-            spielerleben--;
-            updateImage();
-        }
     }
 
     /**
@@ -113,7 +103,7 @@ public class Counter extends Actor
     private void updateImage()
     {
         GreenfootImage image = new GreenfootImage(XML_Map_Reader.getCounterImage());
-        GreenfootImage text = new GreenfootImage(spielerName + spielerleben, 22, Color.BLACK, transparent);
+        GreenfootImage text = new GreenfootImage(spielerName.concat(":") + spielerleben, 22, Color.BLACK, transparent);
         
         if (text.getWidth() > image.getWidth() - 20)
         {
@@ -123,5 +113,18 @@ public class Counter extends Actor
         image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
                         (image.getHeight()-text.getHeight())/2);
         setImage(image);
+    }
+    
+    /*
+     * Gets update from Observeable.
+     */
+    
+    public void update(Observable o, Object life){
+    	setValue( (Integer) life);
+    
+    }
+    
+    public String getPlayerName(){
+    	return spielerName;
     }
 }

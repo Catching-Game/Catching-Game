@@ -7,22 +7,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 0.2
  */
 public class Player extends MovableActor {
-
+ 
     private int lifes;
     private int speed;
     private Direction wantedDir; //the direction the player wants to walk
+    private Zaehleranzeige zaehler;
+    private String playerName;
 
-    public Player(int cellSize) {
+    public Player(int cellSize, String name) {
         super(cellSize, XML_Map_Reader.getPlayerImage(PlayerID.FIRST));
-        init();
+        init(name);
     }
 
     /**
      * init all variables of the actor
      */
-    private void init() {
+    private void init(String name) {
         this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
         this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
+        this.playerName = name;
     }
 
     /**
@@ -101,6 +104,14 @@ public class Player extends MovableActor {
             Mouse mouse = (Mouse) this.getOneIntersectingObject(Mouse.class);
             this.lifes += mouse.getLifeIncreasement();
             this.removeTouching(Mouse.class);
+            for(Zaehleranzeige anzeige : GameWorld.zaehleranzeige){
+            	if(anzeige.getPlayerName().equals(this.playerName)){
+            		anzeige.changeAnzeige();
+            	}
+            	
+            }
         }
     }
+    
+
 }

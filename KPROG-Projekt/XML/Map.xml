@@ -13,21 +13,25 @@
             <image_stands>images/cat_stands.png</image_stands>
             <image_left>images/cat_left.png</image_left>
             <image_right>images/cat_right.png</image_right>
+            <player_name>Spieler1</player_name>
         </player1>
         <player2>
             <position_x>1</position_x>
             <position_y>13</position_y>
             <image>images/player2.gif</image>
+            <player_name>Spieler1</player_name>
         </player2>
         <player3>
             <position_x>28</position_x>
             <position_y>2</position_y>
             <image>images/player3.gif</image>
+            <player_name>Spieler3</player_name>
         </player3>
         <player4>
             <position_x>28</position_x>
             <position_y>13</position_y>
             <image>images/player4.gif</image>
+            <player_name>Spieler4</player_name>
         </player4>
     </player>
     <walls>
