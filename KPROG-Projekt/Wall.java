@@ -16,7 +16,7 @@ public class Wall extends DrawableActor
 	 */
     public Wall(int cellSize)
     {
-    	super(cellSize, XML_Map_Reader.getWallImage());
+    	super(cellSize, XMLMapReader.getWallImage());
     }
     
     /**

@@ -15,7 +15,7 @@ public class Hound extends MovableActor
 	 * @param cellSize
 	 */
 	public Hound(int cellSize) {
-	    super(cellSize, XML_Map_Reader.getHoundImage());
+	    super(cellSize, XMLMapReader.getHoundImage());
 		init(cellSize);
 	}
 	

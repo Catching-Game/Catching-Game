@@ -47,7 +47,7 @@ public class Counter extends Actor implements Observer
      */
     public Counter(String name,int lifes)
     {
-        background = new GreenfootImage(XML_Map_Reader.getCounterImage());  // get image from class
+        background = new GreenfootImage(XMLMapReader.getCounterImage());  // get image from class
         spielerleben = lifes;
         minLeben = 0;
         this.spielerName = name;
@@ -102,7 +102,7 @@ public class Counter extends Actor implements Observer
      */
     private void updateImage()
     {
-        GreenfootImage image = new GreenfootImage(XML_Map_Reader.getCounterImage());
+        GreenfootImage image = new GreenfootImage(XMLMapReader.getCounterImage());
         GreenfootImage text = new GreenfootImage(spielerName.concat(":") + spielerleben, 22, Color.BLACK, transparent);
         
         if (text.getWidth() > image.getWidth() - 20)

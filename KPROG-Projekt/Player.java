@@ -17,7 +17,7 @@ public class Player extends MovableActor {
     private PlayerID playerID;
 
     public Player(int cellSize, String name, GameWorld gw, PlayerID playerID) {
-        super(cellSize, XML_Map_Reader.getPlayerImage(playerID));
+        super(cellSize, XMLMapReader.getPlayerImage(playerID));
         this.playerID = playerID;
         init(name, gw, playerID);
     }

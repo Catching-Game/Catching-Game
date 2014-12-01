@@ -12,9 +12,9 @@ import javax.swing.text.Position;
  * @version 0.2
  */
 public class GameWorld extends World{    
-    private static final int WORLD_WIDTH      = XML_Map_Reader.getWorldWidth();
-    private static final int WORLD_HEIGHT      = XML_Map_Reader.getWorldHeight();
-    private static final int WORLD_CELLSIZE    = XML_Map_Reader.getWorldCellsize();
+    private static final int WORLD_WIDTH      = XMLMapReader.getWorldWidth();
+    private static final int WORLD_HEIGHT      = XMLMapReader.getWorldHeight();
+    private static final int WORLD_CELLSIZE    = XMLMapReader.getWorldCellsize();
     
 
 
@@ -36,7 +36,7 @@ public class GameWorld extends World{
      * Sets the Background
      */
     private void setBackground(){
-        this.setBackground(XML_Map_Reader.getWorldBackgroundImage());
+        this.setBackground(XMLMapReader.getWorldBackgroundImage());
     }
 
     /**
@@ -65,10 +65,10 @@ public class GameWorld extends World{
      */
     private void setWalls(){
         //Iteration to set up the walls
-        for (int i = 0; i < XML_Map_Reader.getWallCount(); i++) {
+        for (int i = 0; i < XMLMapReader.getWallCount(); i++) {
             this.addObject(new Wall(this.getCellSize()), 
-                XML_Map_Reader.getWallPositions().get(i).getX(), 
-                XML_Map_Reader.getWallPositions().get(i).getY());
+                XMLMapReader.getWallPositions().get(i).getX(), 
+                XMLMapReader.getWallPositions().get(i).getY());
         }
     }
 
@@ -76,8 +76,8 @@ public class GameWorld extends World{
      * Sets up the player in the Gameworld
      */
     private void setPlayer(){   
-        this.addObject(new Player(this.getCellSize(), XML_Map_Reader.getPlayerName(PlayerID.FIRST), this, PlayerID.FIRST), XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getX(),
-            XML_Map_Reader.getPlayerPosition(PlayerID.FIRST).getY());
+        this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(PlayerID.FIRST), this, PlayerID.FIRST), XMLMapReader.getPlayerPosition(PlayerID.FIRST).getX(),
+            XMLMapReader.getPlayerPosition(PlayerID.FIRST).getY());
         //TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
     }
 
@@ -85,9 +85,9 @@ public class GameWorld extends World{
      * Set up Tree Image from xml
      */
     private void setTrees(){
-        for (int i = 0; i < XML_Map_Reader.getTreeCount(); i++){
-            int posY = XML_Map_Reader.getTreePositions().get(i).getY();
-            int posX = XML_Map_Reader.getTreePositions().get(i).getX();
+        for (int i = 0; i < XMLMapReader.getTreeCount(); i++){
+            int posY = XMLMapReader.getTreePositions().get(i).getY();
+            int posX = XMLMapReader.getTreePositions().get(i).getX();
             int cellSize = this.getCellSize();
             this.addObject(new Tree(cellSize), posX, posY);
         }
@@ -97,9 +97,9 @@ public class GameWorld extends World{
      * Set up the Hounds in the Gameworld
      */
     private void setHounds(){
-        for (int i = 0; i < XML_Map_Reader.getHoundCount(); i++){
-            int posY = XML_Map_Reader.getHoundPositions().get(i).getY();
-            int posX = XML_Map_Reader.getHoundPositions().get(i).getX();
+        for (int i = 0; i < XMLMapReader.getHoundCount(); i++){
+            int posY = XMLMapReader.getHoundPositions().get(i).getY();
+            int posX = XMLMapReader.getHoundPositions().get(i).getX();
             int cellSize = this.getCellSize();
             this.addObject(new Hound(cellSize),posX,posY);
         }
@@ -110,10 +110,10 @@ public class GameWorld extends World{
      * Set up the Mice in the Gameworld
      */
     private void setMice(){
-        for (int i = 0;i < XML_Map_Reader.getMiceCount(); i++){
-            int posY = XML_Map_Reader.getMicePositions().get(i).getY();
-            int posX = XML_Map_Reader.getMicePositions().get(i).getX();
-            Direction dir = XML_Map_Reader.getMicePositions().get(i).getDir();
+        for (int i = 0;i < XMLMapReader.getMiceCount(); i++){
+            int posY = XMLMapReader.getMicePositions().get(i).getY();
+            int posX = XMLMapReader.getMicePositions().get(i).getX();
+            Direction dir = XMLMapReader.getMicePositions().get(i).getDir();
             int cellSize = this.getCellSize();
             this.addObject(new Mouse(cellSize,dir),posX,posY);
         }

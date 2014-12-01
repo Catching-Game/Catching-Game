@@ -17,7 +17,7 @@ public class Mouse extends MovableActor {
     private Direction wantedDir;
         
     public Mouse(int cellSize, Direction dir) {
-        super(cellSize, XML_Map_Reader.getMiceImage());
+        super(cellSize, XMLMapReader.getMiceImage());
         init(cellSize, dir);
     }
 

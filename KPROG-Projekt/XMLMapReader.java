@@ -82,8 +82,8 @@ public final class XMLMapReader {
      * Get Counter Image.
      * @return the image file path of the counter
      */
-    private static Element getCounter() {
-      return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("counter");
+    public static Element getCounter() {
+      return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("counters");
     }
 
     /**
@@ -213,7 +213,7 @@ public final class XMLMapReader {
      */
     public static ArrayList<Position> getWallPositions() {
         List<Element> walls = getWalls().getChildren("wall");
-        ArrayList<Position> wallPositions = new ArrayList<>();
+        ArrayList<Position> wallPositions = new ArrayList<Position>();
 
         //add the positions to a list
         for(Element wall : walls) {
@@ -336,16 +336,14 @@ public final class XMLMapReader {
      * Returns a PositionArrayList with Position x and Position y.
      * @return ArrayList<Position> with Position x and Position y
      */
-    public static ArrayList<Position> getCounterPosition() {
-    	List<Element> counters = getCounter().getChildren("counter");
-    	ArrayList<Position> counterPosition = new ArrayList<Position>();
+  public static Position getCounterPosition(PlayerID playerID) {
+        Position counterPosition;
+        
+        //get the current player
+        Element counter = XMLMapReader.getCounter().getChild("counter" + playerID.getValue());
 
-    	for(Element counter : counters){
-    		counterPosition.add(new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
-    				                         XML_Helper.parseStrToInt(counter.getChildText("position_y"))
-    				                         ));
-    	}
-
-    	return counterPosition;
+        counterPosition = new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
+                                    XML_Helper.parseStrToInt(counter.getChildText("position_y")));
+        return counterPosition;
     }
 }
