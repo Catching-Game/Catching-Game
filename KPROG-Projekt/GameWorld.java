@@ -29,6 +29,7 @@ public class GameWorld extends World{
         this.setBackground();
         this.setUpWorld();
         this.setGui();
+        this.playSound();
         
         prepare();
     }
@@ -38,6 +39,14 @@ public class GameWorld extends World{
      */
     private void setBackground(){
         this.setBackground(XML_Map_Reader.getWorldBackgroundImage());
+    }
+    
+    /**
+     * Play a sound
+     */
+    private void playSound()
+    {
+      Sound s = new Sound();
     }
 
     /**
