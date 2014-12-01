@@ -28,6 +28,7 @@ public class GameWorld extends World{
         this.setBackground();
         this.setUpWorld();
         this.setGui();
+        this.playSound();
         
         prepare();
     }
@@ -51,6 +52,14 @@ public class GameWorld extends World{
         //anstatt der 1 muss noch die genaue spieleranzahl eingefgt werden 
       
        
+    }
+    
+    /**
+     * Play a sound
+     */
+    private void playSound()
+    {
+      Sound s = new Sound();
     }
     
     /**
