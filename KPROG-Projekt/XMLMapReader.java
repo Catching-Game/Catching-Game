@@ -159,7 +159,7 @@ public final class XMLMapReader {
      * @param playerID the player which image should be returned.
      * @return the player image
      */
-    public static String getPlayerImageLeft(final PlayerID playerID)
+    public static String getPlayerImageLeft(PlayerID playerID)
     {
         //get current player
         Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
@@ -172,7 +172,7 @@ public final class XMLMapReader {
      * @param playerID the player which image should be returned.
      * @return the player image
      */
-    public static String getPlayerImageRight(final PlayerID playerID)
+    public static String getPlayerImageRight(PlayerID playerID)
     {
         //get current player
         Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
@@ -184,7 +184,7 @@ public final class XMLMapReader {
      * @param playerID the ID of the player
      * @return return the name of the player of the wanted playerID
      */
-    public static String getPlayerName(final PlayerID playerID) {
+    public static String getPlayerName(PlayerID playerID){
 //get current player name
     	Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
 
@@ -254,12 +254,12 @@ public final class XMLMapReader {
                                                         XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
                                             Direction.valueOf(mouse.getChildText("position_direction"))));
         }
-
+       
         return mousePositions;
     }
 
     /**
-     * Returns the Tree image path.
+     * Returns the Tree image path
      * @return The tree image path
      */
     public static String getTreeImage() {
@@ -311,7 +311,7 @@ public final class XMLMapReader {
      * Returns a PositionArrayList with Position x and Position y.
      * @return ArrayList<Position> with Position x and Position y
      */
-    public static ArrayList<Position> getHoundPositions() {
+    public static ArrayList<Position> getHoundPositions(){
         List<Element> hounds = getHounds().getChildren("hound");
         ArrayList<Position> houndPositions = new ArrayList<Position>();
 
