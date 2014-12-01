@@ -1,3 +1,5 @@
+
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import java.util.Observer; 
@@ -45,10 +47,10 @@ public class Counter extends Actor implements Observer
     /**
      * Create a new counter, initialised to 0.
      */
-    public Counter(String name,int lifes)
+    public Counter(String name,int leben)
     {
         background = new GreenfootImage(XMLMapReader.getCounterImage());  // get image from class
-        spielerleben = lifes;
+        spielerleben = leben;
         minLeben = 0;
         this.spielerName = name;
         updateImage();

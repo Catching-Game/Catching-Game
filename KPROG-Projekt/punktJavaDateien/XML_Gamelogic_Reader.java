@@ -70,7 +70,7 @@ public final class XML_Gamelogic_Reader {
 //			for(Element life : playerlife){
 //				playerlifes.add(XML_Helper.parseStrToInt(life));
 			//}
-			return XML_Helper.parseStrToInt(XML_Gamelogic_Reader.getPlayer().getChildText("lifes"));
+			return XML_Helper.parseStrToInt(XML_Helper.getRoot(XML_Gamelogic_Reader.FILEPATH).getChildText("life"));
 		}
 		
 		/**
