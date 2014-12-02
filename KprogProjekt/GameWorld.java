@@ -53,7 +53,59 @@ public class GameWorld extends World{
      * Set up Load world from SaveXML
      */
     private void setUpLoadWorld(){
+    	this.setWalls();
+    	this.setTrees();
+    	this.setLoadPlayers();
+    	this.setLoadHounds();
+    	this.setLoadMice();   	
+    }
+    
+    private void setLoadPlayers(){
+    	int playerCount = XMLSavestateReader.getPlayerCount();
+        PlayerID p;
         
+        if (playerCount == 4) {
+            p = PlayerID.FOURTH;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "5", "8", "7", "9"), XMLSavestateReader.getPlayerPosition(p).getX(),
+            		XMLSavestateReader.getPlayerPosition(p).getY());
+        }
+        if (playerCount >= 3) {
+            p = PlayerID.THIRD;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "t", "g", "f", "h"), XMLSavestateReader.getPlayerPosition(p).getX(),
+            		XMLSavestateReader.getPlayerPosition(p).getY());
+        }
+        if (playerCount >=2) {
+            p = PlayerID.SECOND;  
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "w", "s", "a", "d"), XMLSavestateReader.getPlayerPosition(p).getX(),
+            		XMLSavestateReader.getPlayerPosition(p).getY());
+            
+            p = PlayerID.FIRST;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "up", "down", "left", "right"), XMLSavestateReader.getPlayerPosition(p).getX(),
+            		XMLSavestateReader.getPlayerPosition(p).getY());
+        }
+    }
+    
+    private void setLoadHounds(){
+        for (int i = 0; i < XMLSavestateReader.getHoundCount(); i++){
+            int posY = XMLSavestateReader.getHoundPositions().get(i).getY();
+            int posX = XMLSavestateReader.getHoundPositions().get(i).getX();
+            int cellSize = this.getCellSize();
+            this.addObject(new Hound(cellSize),posX,posY);
+        }
+
+    }
+    
+    /**
+     * Set up the Load Mice in the Gameworld
+     */
+    private void setLoadMice(){
+        for (int i = 0;i < XMLSavestateReader.getMiceCount(); i++){
+            int posY = XMLSavestateReader.getMicePositions().get(i).getY();
+            int posX = XMLSavestateReader.getMicePositions().get(i).getX();
+            Direction dir = XMLSavestateReader.getMicePositions().get(i).getDir();
+            int cellSize = this.getCellSize();
+            this.addObject(new Mouse(cellSize,dir),posX,posY);
+        }
     }
 
     /**
