@@ -17,11 +17,6 @@ public class Sound {
     public GreenfootSound soundtrack;
 
     /**
-     * Button to stop the song
-     */
-    private Button buttonStop;
-
-    /**
      * Constructor of class Sound.
      */
     public Sound() {
@@ -41,10 +36,11 @@ public class Sound {
      */
     public void changeSong(String s)
     {
+      soundtrack.stop();
         if(s == "Gummibärenbande")
         {
             GreenfootSound gs = new GreenfootSound("sounds/gummibären.mp3");
-            this.soundtrack = gs;
+            this.soundtrack = gs;            
             this.soundtrack.playLoop();
         }
         if(s == "Cantinaband")
