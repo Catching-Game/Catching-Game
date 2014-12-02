@@ -131,19 +131,19 @@ public class TheFrame {
         return playerquantity;
     }
 
-    private void setisNewGame(boolean newGame) {
+    private void setIsNewGame(boolean newGame) {
         this.isNewGame = newGame;
     }
 
-    public boolean getisNewGame() {
+    public boolean getIsNewGame() {
         return isNewGame;
     }
 
-    public void setisLoadGame(boolean loadGame) {
+    public void setIsLoadGame(boolean loadGame) {
         this.isLoadGame = loadGame;
     }
 
-    public boolean getisLoadGame() {
+    public boolean getIsLoadGame() {
         return isLoadGame;
     }
 
@@ -164,13 +164,13 @@ public class TheFrame {
                 System.out.println("Button neues Spiel gedueckt");
                 System.out.println(combo.getSelectedItem());
                 setPlayerquantitiy((Integer) combo.getSelectedItem());
-                setisNewGame(true);
-                setisLoadGame(false);
+                setIsNewGame(true);
+                setIsLoadGame(false);
 
             } else if (arg0.getSource() == loadGame) {
                 System.out.println("Spiel Laden gedrueckt");
-                setisNewGame(false);
-                setisLoadGame(true);
+                setIsNewGame(false);
+                setIsLoadGame(true);
             } else if (arg0.getSource() == buttonMusic && buttonPressed != true) {
                 //stop the music
                 s.soundtrack.pause();
