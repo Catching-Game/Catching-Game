@@ -13,8 +13,10 @@ public class Zaehleranzeige extends Observable {
 		this.spielerNamen = name;
 		pointViewer = new Counter(name,lifes);
 		this.addObserver(pointViewer);
-		gw.addObject(pointViewer, XMLMapReader.getCounterPosition().get(playerID.getValue()).getX(),
-                        XMLMapReader.getCounterPosition().get(playerID.getValue()).getY() );
+		gw.addObject(pointViewer, XMLMapReader.getCounterPosition(playerID).getX(),XMLMapReader.getCounterPosition(playerID).getY() );
+		
+
+		
 	}
 
 	

@@ -82,8 +82,8 @@ public final class XMLMapReader {
      * Get Counter Image.
      * @return the image file path of the counter
      */
-    private static Element getCounter() {
-      return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("counter");
+    public static Element getCounter() {
+      return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("counters");
     }
 
     /**
@@ -124,7 +124,7 @@ public final class XMLMapReader {
      * @return The player data
      */
     private static Element getPlayer() {
-        return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("player");
+        return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("players");
     }
 
     /**
@@ -152,39 +152,15 @@ public final class XMLMapReader {
         //get the current player
         Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
 
-        return player.getChildText("image_stands");
-    }
-    /**
-     * Returns player image path for going left.
-     * @param playerID the player which image should be returned.
-     * @return the player image
-     */
-    public static String getPlayerImageLeft(final PlayerID playerID)
-    {
-        //get current player
-        Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
-
-        return player.getChildText("image_left");
+        return player.getChildText("image");
     }
 
-    /**
-     * Returns player image path for going right.
-     * @param playerID the player which image should be returned.
-     * @return the player image
-     */
-    public static String getPlayerImageRight(final PlayerID playerID)
-    {
-        //get current player
-        Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
-
-        return player.getChildText("image_right");
-    }
     /**
      * A Getter for the playerName of the wanted ID.
      * @param playerID the ID of the player
      * @return return the name of the player of the wanted playerID
      */
-    public static String getPlayerName(final PlayerID playerID) {
+    public static String getPlayerName(PlayerID playerID){
 //get current player name
     	Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
 
@@ -254,12 +230,12 @@ public final class XMLMapReader {
                                                         XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
                                             Direction.valueOf(mouse.getChildText("position_direction"))));
         }
-
+       
         return mousePositions;
     }
 
     /**
-     * Returns the Tree image path.
+     * Returns the Tree image path
      * @return The tree image path
      */
     public static String getTreeImage() {
@@ -311,7 +287,7 @@ public final class XMLMapReader {
      * Returns a PositionArrayList with Position x and Position y.
      * @return ArrayList<Position> with Position x and Position y
      */
-    public static ArrayList<Position> getHoundPositions() {
+    public static ArrayList<Position> getHoundPositions(){
         List<Element> hounds = getHounds().getChildren("hound");
         ArrayList<Position> houndPositions = new ArrayList<Position>();
 
@@ -336,16 +312,14 @@ public final class XMLMapReader {
      * Returns a PositionArrayList with Position x and Position y.
      * @return ArrayList<Position> with Position x and Position y
      */
-    public static ArrayList<Position> getCounterPosition() {
-    	List<Element> counters = getCounter().getChildren("counter");
-    	ArrayList<Position> counterPosition = new ArrayList<Position>();
+  public static Position getCounterPosition(PlayerID playerID) {
+        Position counterPosition;
+        
+        //get the current player
+        Element counter = XMLMapReader.getCounter().getChild("counter" + playerID.getValue());
 
-    	for(Element counter : counters){
-    		counterPosition.add(new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
-    				                         XML_Helper.parseStrToInt(counter.getChildText("position_y"))
-    				                         ));
-    	}
-
-    	return counterPosition;
+        counterPosition = new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
+                                    XML_Helper.parseStrToInt(counter.getChildText("position_y")));
+        return counterPosition;
     }
 }

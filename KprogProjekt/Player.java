@@ -11,28 +11,41 @@ public class Player extends MovableActor {
  
     private int lifes;
     private int speed;
+    private String keyUp;
+    private String keyDown;
+    private String keyRight;
+    private String keyLeft;
     private Direction wantedDir; //the direction the player wants to walk
     private Zaehleranzeige zaehler;
     private String playerName;
    
     private PlayerID playerID;
 
-    public Player(int cellSize, String name, GameWorld gw, PlayerID playerID) {
+    public Player(int cellSize, String name, GameWorld gw, PlayerID playerID, String keyUp, 
+    									String keyDown, String keyLeft, String keyRight) {
         super(cellSize, XMLMapReader.getPlayerImage(playerID));
         this.playerID = playerID;
-        init(name, gw, playerID);
+        initKeyVars(keyUp, keyDown, keyLeft, keyRight);
+        initGameVars(name, gw, playerID);
     }
 
     /**
-     * init all variables of the actor
+     * init all game variables of the actor
      */
-    private void init(String name, GameWorld gw, PlayerID playerID) {
+    private void initGameVars(String name, GameWorld gw, PlayerID playerID) {
         this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
         this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
         this.zaehler = new Zaehleranzeige(name, this.lifes, gw, playerID);
         this.playerName = name;
         
     }
+    
+   private void initKeyVars(String keyUp, String keyDown, String keyLeft, String keyRight) {
+	   this.keyUp = keyUp;
+	   this.keyDown = keyDown;
+	   this.keyRight = keyRight;
+	   this.keyLeft = keyLeft;
+   }
 
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -49,18 +62,15 @@ public class Player extends MovableActor {
      * Get the current wanted direction and saves it in wantedDir
      */
     private void input() {
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown(keyUp)) {
             this.wantedDir = Direction.UP;
-        } else if (Greenfoot.isKeyDown("down")) {
+        } else if (Greenfoot.isKeyDown(keyDown)) {
             this.wantedDir = Direction.DOWN;
-        } else if (Greenfoot.isKeyDown("left")) {
+        } else if (Greenfoot.isKeyDown(keyLeft)) {
             this.wantedDir = Direction.LEFT;
-        } else if (Greenfoot.isKeyDown("right")) {
+        } else if (Greenfoot.isKeyDown(keyRight)) {
             this.wantedDir = Direction.RIGHT;
-        } else if(Greenfoot.isKeyDown("escape")) {
-        	Greenfoot.stop();
-        	XMLSavestateWriter.save((GameWorld) this.getWorld());
-        } else{
+        } else {
             this.wantedDir = Direction.NONE;
         }
     }

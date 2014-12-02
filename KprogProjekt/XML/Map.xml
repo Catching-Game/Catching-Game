@@ -3,37 +3,35 @@
     <worlddata>
         <width>30</width>   <!-- Positions going from 0 to width (excluding) -->
         <height>15</height> <!-- Positions going from 0 to height (excluding) -->
-        <cellsize>50</cellsize>
+        <cellsize>30</cellsize>
         <image>images/wiese.jpg</image>
     </worlddata>
-    <player>
+    <players>
         <player1>
             <position_x>1</position_x>
             <position_y>1</position_y>
-            <image_stands>images/cat_stands.png</image_stands>
-            <image_left>images/cat_left.png</image_left>
-            <image_right>images/cat_right.png</image_right>
+            <image>images/cat_stands.png</image>
             <player_name>Spieler1</player_name>
         </player1>
         <player2>
             <position_x>1</position_x>
             <position_y>13</position_y>
-            <image>images/player2.gif</image>
-            <player_name>Spieler1</player_name>
+            <image>images/cat_stands.png</image>
+            <player_name>Spieler2</player_name>
         </player2>
         <player3>
             <position_x>28</position_x>
             <position_y>2</position_y>
-            <image>images/player3.gif</image>
+            <image>images/cat_stands.png</image>
             <player_name>Spieler3</player_name>
         </player3>
         <player4>
             <position_x>28</position_x>
             <position_y>13</position_y>
-            <image>images/player4.gif</image>
+            <image>images/cat_stands.png</image>
             <player_name>Spieler4</player_name>
         </player4>
-    </player>
+    </players>
     <walls>
         <image>images/wall.jpg</image>
         <wall>

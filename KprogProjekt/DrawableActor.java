@@ -35,4 +35,3 @@ public class DrawableActor extends Actor
         // Add your action code here.
     }    
 }
-

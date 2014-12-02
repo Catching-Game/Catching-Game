@@ -1,60 +1,30 @@
-
-
 import greenfoot.GreenfootSound;
-import java.awt.Button;
-import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * @author Matthias Köhler
  */
-public class Sound {
+public class Sound
+{
+  /**
+   * The current soundtrack
+   */
+  private GreenfootSound soundtrack;
+  /**
+   * Constructor of class Sound.
+   */
+  public Sound()
+  {
+    createSound();
+    soundtrack.playLoop();
+    System.out.println("Sound created and loop started.Have fun!");
+  }
 
-    /**
-     * The current soundtrack
-     */
-    public GreenfootSound soundtrack;
-
-    /**
-     * Constructor of class Sound.
-     */
-    public Sound() {
-        createSound();
-        soundtrack.playLoop();
-    }
-
-    /**
-     * Creates a sound for greenfoot from the folder sounds.
-     */
-    private void createSound() {
-        GreenfootSound gs = new GreenfootSound("sounds/cantina.mp3");
-        this.soundtrack = gs;
-    }
-    /**
-     * Change your current Song -- change to XML
-     */
-    public void changeSong(String s)
-    {
-      soundtrack.stop();
-        if(s == "Gummibärenbande")
-        {
-            GreenfootSound gs = new GreenfootSound("sounds/gummibären.mp3");
-            this.soundtrack = gs;            
-            this.soundtrack.playLoop();
-        }
-        if(s == "Cantinaband")
-        {
-            GreenfootSound gs = new GreenfootSound("sounds/cantina.mp3");
-            this.soundtrack = gs;
-            this.soundtrack.playLoop();
-        }
-        if(s == "I3est Song")
-        {
-            GreenfootSound gs = new GreenfootSound("sounds/fantasy.mp3");
-            this.soundtrack = gs;
-            this.soundtrack.playLoop();
-        }
-        
-    }
+  /**
+   * Creates a sound for greenfoot from the folder sounds.
+   */
+  private void createSound()
+  {
+    GreenfootSound gs = new GreenfootSound("sounds/cantina.mp3");
+    this.soundtrack = gs;
+  }
 }

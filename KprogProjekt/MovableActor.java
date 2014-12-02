@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import org.jdom2.Element;
 
 /**
  * Write a description of class MovableActor here.
@@ -6,8 +7,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MovableActor extends DrawableActor
+public abstract class MovableActor extends DrawableActor
 {
+    abstract public Element save();
+    
     protected MovableActor(int cellSize, String IMAGEPATH) {
         super(cellSize, IMAGEPATH);
     }

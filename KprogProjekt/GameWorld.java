@@ -16,15 +16,14 @@ public class GameWorld extends World{
     private static final int WORLD_HEIGHT      = XMLMapReader.getWorldHeight();
     private static final int WORLD_CELLSIZE    = XMLMapReader.getWorldCellsize();
     
-
-
     /**
      * Constructor for objects of class GameWorld.
      * 
      */
     public GameWorld(){
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-
+        Greenfoot.stop();	//Stops Greenfoot until the loading stuff is done
+        
         this.setGui();
 
         
@@ -41,15 +40,13 @@ public class GameWorld extends World{
     /**
      * Sets up the World
      */
-    private void setUpWorld(){
+    private void setUpWorld(int playerCount){
         this.setWalls();
-        this.setPlayer();
+        this.setPlayer(playerCount);
         this.setTrees();
         this.setHounds();
         this.setMice();
         //anstatt der 1 muss noch die genaue spieleranzahl eingefgt werden 
-      
-       
     }
     
     /**
@@ -74,10 +71,30 @@ public class GameWorld extends World{
     /**
      * Sets up the player in the Gameworld
      */
-    private void setPlayer() {   
-        this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(PlayerID.FIRST), this, PlayerID.FIRST), XMLMapReader.getPlayerPosition(PlayerID.FIRST).getX(),
-            XMLMapReader.getPlayerPosition(PlayerID.FIRST).getY());
-        //TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
+    private void setPlayer(int playerCount) {
+        PlayerID p;
+        
+        if (playerCount == 4) {
+            p = PlayerID.FOURTH;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "5", "8", "7", "9"), XMLMapReader.getPlayerPosition(p).getX(),
+            XMLMapReader.getPlayerPosition(p).getY());
+        }
+        if (playerCount >= 3) {
+            p = PlayerID.THIRD;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "t", "g", "f", "h"), XMLMapReader.getPlayerPosition(p).getX(),
+                    XMLMapReader.getPlayerPosition(p).getY());
+        }
+        if (playerCount >=2) {
+            p = PlayerID.SECOND;  
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "w", "s", "a", "d"), XMLMapReader.getPlayerPosition(p).getX(),
+                    XMLMapReader.getPlayerPosition(p).getY());
+            
+            p = PlayerID.FIRST;
+            this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "up", "down", "left", "right"), XMLMapReader.getPlayerPosition(p).getX(),
+            XMLMapReader.getPlayerPosition(p).getY());
+        }
+        
+        //this.addObject(new Pause(), 0, 0);
     }
 
     /**
@@ -128,23 +145,22 @@ public class GameWorld extends World{
 
 
 
-   private void setGui(){
-       TheFrame frame = new TheFrame();
+   private void setGui() {
+	   TheFrame frame = new TheFrame();
        boolean isLoadGame = false;
        boolean isNewGame = false;
        
-       while (isLoadGame == isNewGame) {
-    	   isLoadGame = frame.getIsLoadGame();
-    	   isNewGame  = frame.getIsNewGame();
-    	   Greenfoot.stop();
+/*       while (isLoadGame == isNewGame) {
+           isLoadGame = frame.getIsLoadGame();
+           isNewGame  = frame.getIsNewGame();
        }
        
        if(isLoadGame) {
-    	   
-       } else if (isNewGame) {
-    	   Greenfoot.start();
+           
+       } else if (isNewGame) {*/
+           Greenfoot.start();
            this.setBackground();
-           this.setUpWorld();
-       }
+           this.setUpWorld(/*frame.getPlayerquantity()*/ 2);
+       //}
    }
 }
