@@ -130,3 +130,5 @@ public class Counter extends Actor implements Observer
     	return spielerName;
     }
 }
+
+//test
