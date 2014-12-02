@@ -1,17 +1,14 @@
 #BlueJ class context
 comment0.params=cellSize
 comment0.target=Hound(int)
-comment0.text=\n\ Set\ Up\ the\ Hound\ Image,\ Movement,etc.\n\ @param\ cellSize\n
+comment0.text=\r\n\ Set\ Up\ the\ Hound\ Image,\ Movement,etc.\r\n\ @param\ cellSize\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Hound\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Hound\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=cellSize
 comment2.target=void\ init(int)
 comment3.params=
 comment3.target=void\ input()
 comment4.params=
 comment4.target=void\ move()
-comment5.params=
-comment5.target=org.jdom2.Element\ save()
-comment5.text=\n\ saves\ the\ current\ state\ of\ the\ hound\n
-numComments=6
+numComments=5

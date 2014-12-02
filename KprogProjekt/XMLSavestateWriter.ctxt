@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=XMLSavestateWriter()
-comment1.params=gw
-comment1.target=void\ save(GameWorld)
-comment1.text=\n\ \n\ @param\ gw\n
-numComments=2

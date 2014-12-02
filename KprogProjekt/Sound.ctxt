@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Sound()
-comment0.text=\n\ Constructor\ of\ class\ Sound.\n
+comment0.text=\r\n\ Constructor\ of\ class\ Sound.\r\n
 comment1.params=
 comment1.target=void\ createSound()
-comment1.text=\n\ Creates\ a\ sound\ for\ greenfoot\ from\ the\ folder\ sounds.\n
+comment1.text=\r\n\ Creates\ a\ sound\ for\ greenfoot\ from\ the\ folder\ sounds.\r\n
 comment2.params=s
 comment2.target=void\ changeSong(java.lang.String)
-comment2.text=\n\ Change\ your\ current\ Song\ --\ change\ to\ XML\n
+comment2.text=\r\n\ Change\ your\ current\ Song\ --\ change\ to\ XML\r\n
 numComments=3
