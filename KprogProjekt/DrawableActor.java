@@ -36,4 +36,3 @@ public class DrawableActor extends Actor
     }    
 }
 
-//test
