@@ -134,8 +134,8 @@ public class GameWorld extends World{
        boolean isNewGame = false;
        
        while (isLoadGame == isNewGame) {
-    	   isLoadGame = frame.getIsLoadGame();
-    	   isNewGame  = frame.getIsNewGame();
+    	   isLoadGame = frame.getisLoadGame();
+    	   isNewGame  = frame.getisNewGame();
     	   Greenfoot.stop();
        }
        
