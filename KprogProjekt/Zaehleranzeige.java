@@ -4,52 +4,38 @@ import java.util.*;
 public class Zaehleranzeige extends Observable {
 	
 	private int anzeige;
-	private int posX;
-	private int posY;
+
 	private String spielerNamen;
-	private Counter count;
+	private Counter pointViewer;
 	
-	public Zaehleranzeige(String name,int leben, int posX, int posY){
-		this.anzeige = leben;
+	public Zaehleranzeige(String name,int lifes, GameWorld gw, PlayerID playerID){
+		this.anzeige = lifes;
 		this.spielerNamen = name;
-		//count = new Counter(name,leben);
-		//this.addObserver(count);
-		this.posX = posX;
-		this.posY = posY;
-		
+		pointViewer = new Counter(name,lifes);
+		this.addObserver(pointViewer);
+		gw.addObject(pointViewer, XMLMapReader.getCounterPosition().get(playerID.getValue()).getX(),
+                        XMLMapReader.getCounterPosition().get(playerID.getValue()).getY() );
 	}
+
 	
-	public int getX(){
-		return posX;
-	}
+
 	
-	public int getY(){
-		return posY;
-	}
-	
-	public void setAnzeige(int newValue){
-		this.anzeige = newValue;
-		count.erhoehen(newValue);
-	}
-	
-	public Counter getCounter(){
-		return count;
-	}
+
 	
 	/*
 	 * Change anzeige and notifies observers
 	 */
-	public void changeAnzeige(){
-		this.anzeige++;	
-		notifyObservers(this.anzeige);
+	public void changeAnzeige(int lifes){
+	
+		this.notifyObservers(lifes);
 	}
 	
 	/*
 	 * Define Object as changed and notifies observers
 	 */
-	void notifyObservers(int life){
+	void notifyObservers(int lifes){
 		setChanged();
-		super.notifyObservers(life);
+		super.notifyObservers(lifes);
 	}
 	
 	public String getPlayerName(){

@@ -83,11 +83,11 @@ public class TheFrame {
 		return playerquantity;
 	}
 	
-	private void setisNewGame(boolean newGame){
+	private void setIsNewGame(boolean newGame){
 		this.isNewGame = newGame;
 	}
 	
-	public boolean getisNewGame(){
+	public boolean getIsNewGame(){
 		return isNewGame;
 	}
 	
@@ -95,7 +95,7 @@ public class TheFrame {
 		this.isLoadGame = loadGame;
 	}
 	
-	public boolean getisLoadGame(){
+	public boolean getIsLoadGame(){
 		return isLoadGame;
 	}
 	
@@ -113,12 +113,12 @@ public class TheFrame {
 				System.out.println("Button neues Spiel gedueckt");
 				System.out.println(combo.getSelectedItem());
 				setPlayerquantitiy((Integer)combo.getSelectedItem());
-				setisNewGame(true);
+				setIsNewGame(true);
 				setisLoadGame(false);
 				
 			} else if(arg0.getSource() == loadGame){
 				System.out.println("Spiel Laden gedrueckt");
-				setisNewGame(false);
+				setIsNewGame(false);
 				setisLoadGame(true);
 			}
 
