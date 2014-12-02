@@ -1,3 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<save>
-</save>
+<?xml version="1.0" encoding="UTF-8"?>
+<savestate>
+  <players>
+    <player0>
+      <position_x>3</position_x>
+      <position_y>4</position_y>
+      <position_direction>4</position_direction>
+      <lifes>7</lifes>
+    </player0>
+  </players>
+  <mice>
+    <mouse>
+      <position_x>3</position_x>
+      <position_y>1</position_y>
+      <position_direction>2</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>6</position_x>
+      <position_y>8</position_y>
+      <position_direction>3</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>15</position_x>
+      <position_y>12</position_y>
+      <position_direction>3</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>12</position_x>
+      <position_y>3</position_y>
+      <position_direction>1</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>24</position_x>
+      <position_y>12</position_y>
+      <position_direction>0</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>21</position_x>
+      <position_y>1</position_y>
+      <position_direction>2</position_direction>
+    </mouse>
+  </mice>
+  <hounds>
+    <hound>
+      <position_x>16</position_x>
+      <position_y>6</position_y>
+    </hound>
+    <hound>
+      <position_x>16</position_x>
+      <position_y>7</position_y>
+    </hound>
+    <hound>
+      <position_x>17</position_x>
+      <position_y>6</position_y>
+    </hound>
+    <hound>
+      <position_x>17</position_x>
+      <position_y>7</position_y>
+    </hound>
+  </hounds>
+</savestate>

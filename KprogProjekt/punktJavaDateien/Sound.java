@@ -15,7 +15,7 @@ public class Sound
   public Sound()
   {
     createSound();
-    soundtrack.playLoop();
+//    soundtrack.playLoop();
     System.out.println("Sound created and loop started.Have fun!");
   }
 

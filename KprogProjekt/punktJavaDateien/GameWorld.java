@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import javax.swing.text.Position;
 
 /**
- * Delete me iam a test. 3.0
- */
-
-/**
  * Write a description of class GameWorld here.
  * 
  * @author simonhoinkis
@@ -20,8 +16,7 @@ public class GameWorld extends World{
     private static final int WORLD_HEIGHT      = XMLMapReader.getWorldHeight();
     private static final int WORLD_CELLSIZE    = XMLMapReader.getWorldCellsize();
     
-    public static ArrayList<Zaehleranzeige> zaehleranzeige = new ArrayList<Zaehleranzeige>();
-    public static ArrayList<Counter> counteranzeige = new ArrayList<Counter>();
+
 
     /**
      * Constructor for objects of class GameWorld.
@@ -30,10 +25,8 @@ public class GameWorld extends World{
     public GameWorld(){
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
 
-        this.setBackground();
-        this.setUpWorld();
         this.setGui();
-        this.playSound();
+
         
         prepare();
     }
@@ -43,14 +36,6 @@ public class GameWorld extends World{
      */
     private void setBackground(){
         this.setBackground(XMLMapReader.getWorldBackgroundImage());
-    }
-    
-    /**
-     * Play a sound
-     */
-    private void playSound()
-    {
-      Sound s = new Sound();
     }
 
     /**
@@ -63,8 +48,8 @@ public class GameWorld extends World{
         this.setHounds();
         this.setMice();
         //anstatt der 1 muss noch die genaue spieleranzahl eingefgt werden 
-        this.setLiveCounter(1);
-        this.initObserver();
+      
+       
     }
     
     /**
@@ -89,8 +74,8 @@ public class GameWorld extends World{
     /**
      * Sets up the player in the Gameworld
      */
-    private void setPlayer(){   
-        this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(PlayerID.FIRST)), XMLMapReader.getPlayerPosition(PlayerID.FIRST).getX(),
+    private void setPlayer() {   
+        this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(PlayerID.FIRST), this, PlayerID.FIRST), XMLMapReader.getPlayerPosition(PlayerID.FIRST).getX(),
             XMLMapReader.getPlayerPosition(PlayerID.FIRST).getY());
         //TODO ID System zum Test wurde nur die PlayerID.First eingefuegt
     }
@@ -140,53 +125,26 @@ public class GameWorld extends World{
     private void prepare(){
     }
     
-    private void setLiveCounter(int anzahlSpieler){
-        for(int i = 0; i < anzahlSpieler;i = i + 1){
-            String name = XMLMapReader.getPlayerName(PlayerID.FIRST);
-            int posX = XMLMapReader.getCounterPosition().get(i).getX();
-            int posY = XMLMapReader.getCounterPosition().get(i).getY();
-            int life = 7; // XML_Gamelogic_Reader.getPlayerLifes();
-            Zaehleranzeige zaehler = (new Zaehleranzeige(name,life,posX,posY));
-            Counter counter = (new Counter(name, life));
-            this.counteranzeige.add(counter);
-            this.zaehleranzeige.add(zaehler);
-            addObject(counter,zaehler.getX(),zaehler.getY());
-                    
-            }
-        }
-    private void initObserver(){
-        this.getZaehler().addObserver(this.getCounteranzeige());
-    
-    }
-    
-    private Zaehleranzeige getZaehler(){
-        Zaehleranzeige player = null;
-        for(Zaehleranzeige zaehler : zaehleranzeige){
-        //  if(zaehler.getPlayerName().equals(getCounteranzeige().getPlayerName())){
-            player = zaehler;
-        //  }
-            
-                
-        
-        
-    }
-    return player;
-}
-    
-    private Counter getCounteranzeige(){
-        Counter player = null;
-        for(Counter counter : counteranzeige){
-         //if(counter.getPlayerName().equals(getZaehler().getPlayerName()   )){
-                player = counter;
-            
-                
-    //  }        
-    }
-    
- return player;
-}
+
+
 
    private void setGui(){
        TheFrame frame = new TheFrame();
+       boolean isLoadGame = false;
+       boolean isNewGame = false;
+       
+       while (isLoadGame == isNewGame) {
+    	   isLoadGame = frame.getIsLoadGame();
+    	   isNewGame  = frame.getIsNewGame();
+    	   Greenfoot.stop();
+       }
+       
+       if(isLoadGame) {
+    	   
+       } else if (isNewGame) {
+    	   Greenfoot.start();
+           this.setBackground();
+           this.setUpWorld();
+       }
    }
 }

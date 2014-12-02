@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import org.jdom2.Element;
 
 /**
  * this class represents our Player in the game
@@ -13,19 +14,24 @@ public class Player extends MovableActor {
     private Direction wantedDir; //the direction the player wants to walk
     private Zaehleranzeige zaehler;
     private String playerName;
+   
+    private PlayerID playerID;
 
-    public Player(int cellSize, String name) {
-        super(cellSize, XMLMapReader.getPlayerImage(PlayerID.FIRST));
-        init(name);
+    public Player(int cellSize, String name, GameWorld gw, PlayerID playerID) {
+        super(cellSize, XMLMapReader.getPlayerImage(playerID));
+        this.playerID = playerID;
+        init(name, gw, playerID);
     }
 
     /**
      * init all variables of the actor
      */
-    private void init(String name) {
+    private void init(String name, GameWorld gw, PlayerID playerID) {
         this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
         this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
+        this.zaehler = new Zaehleranzeige(name, this.lifes, gw, playerID);
         this.playerName = name;
+        
     }
 
     /**
@@ -51,7 +57,10 @@ public class Player extends MovableActor {
             this.wantedDir = Direction.LEFT;
         } else if (Greenfoot.isKeyDown("right")) {
             this.wantedDir = Direction.RIGHT;
-        } else {
+        } else if(Greenfoot.isKeyDown("escape")) {
+        	Greenfoot.stop();
+        	XMLSavestateWriter.save((GameWorld) this.getWorld());
+        } else{
             this.wantedDir = Direction.NONE;
         }
     }
@@ -104,14 +113,25 @@ public class Player extends MovableActor {
             Mouse mouse = (Mouse) this.getOneIntersectingObject(Mouse.class);
             this.lifes += mouse.getLifeIncreasement();
             this.removeTouching(Mouse.class);
-            for(Zaehleranzeige anzeige : GameWorld.zaehleranzeige){
-            	if(anzeige.getPlayerName().equals(this.playerName)){
-            		anzeige.changeAnzeige();
-            	}
-            	
-            }
-        }
+            zaehler.changeAnzeige(this.lifes);
+        }   	
     }
     
-
+    /**
+     * saves the current state of the player
+     */
+    public Element save() {
+    	Element player = new Element("player" + this.playerID.ordinal());
+    	player.addContent(new Element("position_x").setText(String.valueOf(this.getX())));
+    	player.addContent(new Element("position_y").setText(String.valueOf(this.getY())));
+    	player.addContent(new Element("position_direction").setText(String.valueOf(this.wantedDir.ordinal())));
+    	
+    	player.addContent(new Element("lifes").setText(String.valueOf(this.lifes)));
+    	
+    	return player;
+    }
 }
+    
+    
+
+

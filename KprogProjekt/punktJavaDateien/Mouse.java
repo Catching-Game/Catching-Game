@@ -1,4 +1,5 @@
 import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import org.jdom2.Element;
 
 import java.util.Random;
 
@@ -159,5 +160,17 @@ public class Mouse extends MovableActor {
      */
     public int getLifeIncreasement() {
     	return this.lifeIncrease;
+    }
+    
+    /**
+     * saves the current state of the mouse
+     */
+    public Element save() {
+    	Element mouse = new Element("mouse");
+    	mouse.addContent(new Element("position_x").setText(String.valueOf(this.getX())));
+    	mouse.addContent(new Element("position_y").setText(String.valueOf(this.getY())));
+    	mouse.addContent(new Element("position_direction").setText(String.valueOf(this.wantedDir.ordinal())));
+   
+    	return mouse;
     }
 }
