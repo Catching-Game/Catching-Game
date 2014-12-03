@@ -30,11 +30,14 @@ public class GameWorld extends World
   /**
    * Constructor for objects of class GameWorld.
    */
-  public GameWorld()
+  public GameWorld(int playerCount)
   {
-    super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-    Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
-    this.setGui();
+      super(0,0,0);
+    //super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
+   //Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
+    //this.setGui();
+      this.setBackground();
+    this.setUpWorld(playerCount);
   }
 
   /**
