@@ -37,7 +37,7 @@ public final class XML_Map_Reader {
      * @return The world data element ("worlddata")
      */
     private static Element getWorlddata() {
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("worlddata");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("worlddata");
     }
     
     /**
@@ -45,7 +45,7 @@ public final class XML_Map_Reader {
      * @return The player data
      */
     public static Element getPlayer() {
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("player");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("player");
     }
     
     /**
@@ -53,7 +53,7 @@ public final class XML_Map_Reader {
      * @return The Walls
      */
     private static Element getWalls() {
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("walls");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("walls");
     }
     
     /**
@@ -61,7 +61,7 @@ public final class XML_Map_Reader {
      * @return The mice
      */
     private static Element getMice() {
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("mice");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("mice");
     }
     
     /**
@@ -69,21 +69,21 @@ public final class XML_Map_Reader {
      * @return the trees
      */
     private static Element getTrees() {
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("trees");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("trees");
     }
     
     /**
      * 
      */
     private static Element getHounds(){
-        return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("hounds");
+        return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("hounds");
     }
     
     /**
      * Get Counter Image
      */
     private static Element getCounters(){
-    	return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("counters");
+    	return XMLHelper.getRoot(XML_Map_Reader.FILEPATH).getChild("counters");
     }
 
     /**
@@ -91,7 +91,7 @@ public final class XML_Map_Reader {
      * @return The width of the world
      */
     public static int getWorldWidth() {
-        return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("width"));       
+        return XMLHelper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("width"));       
     }
     
     /**
@@ -99,7 +99,7 @@ public final class XML_Map_Reader {
      * @return The height of the world
      */
     public static int getWorldHeight() {
-        return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("height"));
+        return XMLHelper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("height"));
     }
     
     /**
@@ -107,7 +107,7 @@ public final class XML_Map_Reader {
      * @return The cell size of the world
      */
     public static int getWorldCellsize() {
-        return XML_Helper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("cellsize"));
+        return XMLHelper.parseStrToInt(XML_Map_Reader.getWorlddata().getChildText("cellsize"));
     }
     
     /**
@@ -131,8 +131,8 @@ public final class XML_Map_Reader {
         
         
         
-        playerPosition = new Position(XML_Helper.parseStrToInt(player.getChildText("position_x")), 
-                                    XML_Helper.parseStrToInt(player.getChildText("position_y")));
+        playerPosition = new Position(XMLHelper.parseStrToInt(player.getChildText("position_x")), 
+                                    XMLHelper.parseStrToInt(player.getChildText("position_y")));
         
         return playerPosition;
     }
@@ -208,8 +208,8 @@ public final class XML_Map_Reader {
         
         //add the positions to a list
         for(Element wall : walls) {
-            wallPositions.add(new Position(XML_Helper.parseStrToInt(wall.getChildText("position_x")),
-                                        XML_Helper.parseStrToInt(wall.getChildText("position_y"))));
+            wallPositions.add(new Position(XMLHelper.parseStrToInt(wall.getChildText("position_x")),
+                                        XMLHelper.parseStrToInt(wall.getChildText("position_y"))));
         }
         
         return wallPositions;
@@ -241,8 +241,8 @@ public final class XML_Map_Reader {
         
         //add the positions to a list
         for(Element mouse : mice) {
-            mousePositions.add(new PositionWithDirection(XML_Helper.parseStrToInt(mouse.getChildText("position_x")),
-                                                        XML_Helper.parseStrToInt(mouse.getChildText("position_y")),
+            mousePositions.add(new PositionWithDirection(XMLHelper.parseStrToInt(mouse.getChildText("position_x")),
+                                                        XMLHelper.parseStrToInt(mouse.getChildText("position_y")),
                                             Direction.valueOf(mouse.getChildText("position_direction"))));
         }
         
@@ -276,8 +276,8 @@ public final class XML_Map_Reader {
         
         //add the positions to a list
         for(Element tree : trees) {
-            treePositions.add(new Position(XML_Helper.parseStrToInt(tree.getChildText("position_x")),
-                                            XML_Helper.parseStrToInt(tree.getChildText("position_y"))));
+            treePositions.add(new Position(XMLHelper.parseStrToInt(tree.getChildText("position_x")),
+                                            XMLHelper.parseStrToInt(tree.getChildText("position_y"))));
         }
         
         return treePositions;
@@ -308,8 +308,8 @@ public final class XML_Map_Reader {
         
         //add the positions to a list
         for(Element hound : hounds){
-            houndPositions.add(new Position(XML_Helper.parseStrToInt(hound.getChildText("position_x")),
-                                             XML_Helper.parseStrToInt(hound.getChildText("position_y"))
+            houndPositions.add(new Position(XMLHelper.parseStrToInt(hound.getChildText("position_x")),
+                                             XMLHelper.parseStrToInt(hound.getChildText("position_y"))
                                              ));
         }
         return houndPositions;
@@ -331,8 +331,8 @@ public final class XML_Map_Reader {
     	ArrayList<Position> counterPosition = new ArrayList<Position>();
     	
     	for(Element counter : counters){
-    		counterPosition.add(new Position(XML_Helper.parseStrToInt(counter.getChildText("position_x")),
-    				                         XML_Helper.parseStrToInt(counter.getChildText("position_y"))
+    		counterPosition.add(new Position(XMLHelper.parseStrToInt(counter.getChildText("position_x")),
+    				                         XMLHelper.parseStrToInt(counter.getChildText("position_y"))
     				                         ));
     	}
     	

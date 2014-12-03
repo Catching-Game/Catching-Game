@@ -1,17 +1,20 @@
 #BlueJ class context
 comment0.params=cellSize
 comment0.target=Hound(int)
-comment0.text=\r\n\ Set\ Up\ the\ Hound\ Image,\ Movement,etc.\r\n\ @param\ cellSize\r\n
+comment0.text=\r\n\ Setup\ an\ image\ and\ the\ movement\ of\ a\ hound.\r\n\ @param\ cellSize\ the\ cellsize\ of\ the\ gameworld\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Hound\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Hound\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\r\n\ the\ environment.\r\n
 comment2.params=cellSize
 comment2.target=void\ init(int)
+comment2.text=\r\n\ Initialize\ class\ hound\ with\ a\ specific\ speed.\r\n\ @param\ cellSize\ defines\ the\ speed\ of\ a\ hound.\r\n
 comment3.params=
 comment3.target=void\ input()
+comment3.text=\r\n\ The\ input\ of\ a\ hound.\r\n
 comment4.params=
 comment4.target=void\ move()
+comment4.text=\r\n\ Defines\ how\ a\ hound\ moves.\r\n
 comment5.params=
 comment5.target=org.jdom2.Element\ save()
-comment5.text=\r\n\ saves\ the\ current\ state\ of\ the\ hound\r\n
+comment5.text=\r\n\ saves\ the\ current\ state\ of\ the\ hound.\r\n
 numComments=6

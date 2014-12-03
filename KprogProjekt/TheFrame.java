@@ -14,6 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+/**
+Generates a start Window where you can choose players and start game.
+**/
 public class TheFrame {
 
     private JFrame myFrame;
@@ -36,17 +39,23 @@ public class TheFrame {
     /**
      * This icon represents the stop.gif of buttonMusic inside our frame.
      */
-    final Icon STOP_ICON = new ImageIcon("images/stop128x128.gif");
+    final Icon STOPICON = new ImageIcon("images/stop128x128.gif");
     /**
      * This icon represents the play.gif of buttonMusic inside our frame.
      */
-    final Icon PLAY_ICON = new ImageIcon("images/play128x128.gif");
+    final Icon PLAYICON = new ImageIcon("images/play128x128.gif");
 
+    /**
+     * Constructor for TheFrame.
+     */
     public TheFrame() {
         init();
         s = new Sound();
     }
 
+    /**
+     * Init everything the frame needs.
+     */
     private void init() {
         //Initial Elements
         //SetLoadGameButton
@@ -62,7 +71,7 @@ public class TheFrame {
         newGame.setSize(200, 100);
         newGame.addActionListener(new ButtonListener());
         //Create MediaPlayer Button
-        buttonMusic = new JButton(STOP_ICON);
+        buttonMusic = new JButton(STOPICON);
         buttonMusic.setToolTipText("By clicking on this button music will stop!");
         buttonMusic.setForeground(Color.black);
         buttonMusic.setBackground(Color.white);
@@ -121,15 +130,24 @@ public class TheFrame {
 
         //This part is for the Song
     }
-
+/**
+ * sets playerquantity
+ * @param quantitiy 
+ */
     private void setPlayerquantitiy(int quantitiy) {
         this.playerquantity = quantitiy;
     }
-
+/**
+ * returns playerquantity
+ * @return 
+ */
     public int getPlayerquantity() {
         return playerquantity;
     }
-
+/**
+ * set to a new game.
+ * @param newGame 
+ */
     private void setisNewGame(boolean newGame) {
         this.isNewGame = newGame;
     }
@@ -147,7 +165,7 @@ public class TheFrame {
     }
 
     /**
-     * Action Listener Class for the Buttons
+     * Action Listener Class for the Buttons.
      *
      * @author Max
      * @author modified Matthias Köhler
@@ -156,7 +174,7 @@ public class TheFrame {
     private class ButtonListener implements ActionListener {
 
         /**
-         * Action Listener for the Buttons
+         * Action Listener for the Buttons.
          */
         public void actionPerformed(ActionEvent arg0) {
             if (arg0.getSource() == newGame) {
@@ -174,31 +192,29 @@ public class TheFrame {
                 //stop the music
                 s.pauseSong();
                 buttonPressed = true;
-                buttonMusic.setIcon(PLAY_ICON);
-                buttonMusic.setText("Play!                                ");               
+                buttonMusic.setIcon(PLAYICON);
+                buttonMusic.setText("Play!");
             } else if (arg0.getSource() == buttonMusic && buttonPressed == true) {
                 //play music again
                 s.playSong();
-                buttonMusic.setIcon(STOP_ICON);
+                buttonMusic.setIcon(STOPICON);
                 buttonPressed = false;
                 buttonMusic.setText("Please stop this shit omg!");
             }
 
         }
     }
-    
     /**
-     * Action Listener Class for Combo Box
+     * Action Listener Class for Combo Box.
      * @author Matthias Köhler
      */
-    private class ComboListener implements ActionListener 
+    private class ComboListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
             JComboBox cb = (JComboBox) e.getSource();
-            String songName = (String) cb.getSelectedItem();            
+            String songName = (String) cb.getSelectedItem();
             s.changeSongWithHashMap(songName);
         }
-        
     }
 }

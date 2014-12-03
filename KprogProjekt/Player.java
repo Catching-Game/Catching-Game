@@ -33,8 +33,8 @@ public class Player extends MovableActor {
      * init all game variables of the actor
      */
     private void initGameVars(String name, GameWorld gw, PlayerID playerID) {
-        this.lifes = XML_Gamelogic_Reader.getPlayerLifes();
-        this.speed = XML_Gamelogic_Reader.getPlayerSpeed();
+        this.lifes = XMLGamelogicReader.getPlayerLifes();
+        this.speed = XMLGamelogicReader.getPlayerSpeed();
         this.zaehler = new Zaehleranzeige(name, this.lifes, gw, playerID);
         this.playerName = name;
         
