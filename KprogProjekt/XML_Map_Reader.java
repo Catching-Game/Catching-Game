@@ -44,7 +44,7 @@ public final class XML_Map_Reader {
      * Get Player
      * @return The player data
      */
-    private static Element getPlayer() {
+    public static Element getPlayer() {
         return XML_Helper.getRoot(XML_Map_Reader.FILEPATH).getChild("player");
     }
     

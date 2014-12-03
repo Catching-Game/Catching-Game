@@ -58,7 +58,7 @@ public final class XMLMapReader {
      * Get Mice.
      * @return The mice
      */
-    private static Element getMice() {
+    public static Element getMice() {
         return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("mice");
     }
 
@@ -123,7 +123,7 @@ public final class XMLMapReader {
      * Get Player.
      * @return The player data
      */
-    private static Element getPlayer() {
+    public static Element getPlayer() {
         return XML_Helper.getRoot(XMLMapReader.FILEPATH).getChild("players");
     }
 

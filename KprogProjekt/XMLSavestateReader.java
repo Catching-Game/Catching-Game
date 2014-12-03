@@ -26,7 +26,14 @@ public final class XMLSavestateReader {
 	}
 	
 	public static int getPlayerCount(){
-		return XML_Helper.getRoot(XMLSavestateReader.FILEPATH).getChild("players").size();
+		int maxPlayers = 4;
+		int playerCount = 0;
+		for(int i = 0;i <= maxPlayers; i++){
+			if(getPlayer().getChild("player" + i) != null){
+				playerCount = playerCount + 1;
+			}
+		}
+		return playerCount;
 	}
 	
 	public static Element getCounters(){
@@ -38,7 +45,7 @@ public final class XMLSavestateReader {
         Position playerPosition;
         
         //get the current player
-        Element player = XMLSavestatReader.getPlayer().getChild("player" + playerID.getValue());
+        Element player = XMLSavestateReader.getPlayer().getChild("player" + playerID.getValue());
 
         playerPosition = new Position(XML_Helper.parseStrToInt(player.getChildText("position_x")),
                                     XML_Helper.parseStrToInt(player.getChildText("position_y")));
