@@ -19,10 +19,7 @@ public class Start extends World {
     private ThreePlayerButton threePlayerButton;
     private FourPlayerButton fourPlayerButton;
     
-    //The number of players who want to play the game
-    private final int ONEPLAYER = 1;
-    private final int TWOPLAYERS = 2;
-    private final int THREEPLAYERS = 3;
+    
 
     /**
      * Constructor for objects of class StartScreen.
@@ -33,8 +30,7 @@ public class Start extends World {
         super(600, 400, 1);
         //super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
         this.initStartScreen();
-        System.out.println("Number of actors currently in this world: " + numberOfObjects());
-        //Greenfoot.start();
+        Greenfoot.start();
     }
 
     private void initStartScreen() {
@@ -47,7 +43,7 @@ public class Start extends World {
         this.addObject(twoPlayerButton, 100, 300);
         this.addObject(threePlayerButton, 200, 300);
         this.addObject(fourPlayerButton, 300, 300);
-
+        
         setBackground(XMLMapReader.getWorldBackgroundImage());
 
     }
@@ -63,59 +59,35 @@ public class Start extends World {
 
     private class PlayButton extends Actor {
         
-        GreenfootImage gi = new GreenfootImage(XMLMapReader.getCounterImage());
-        private boolean alreadyClicked;
-        
-        int i = 0;
-
-        public PlayButton() {
-            
-            act();
-            this.setImage(gi);
-            
-
-        }
 
         public void act() {
             buttonClick();
         }
 
         private void buttonClick() {
-            System.out.println("---- inside buttonClick of start.java");
-            i++;
-            System.out.println("Count: " +i);
-            System.out.println("-- buttonAlreadyClicked = ´" + alreadyClicked + "´");
-            if (Greenfoot.mouseClicked(this) && alreadyClicked == false) {
-                setPlayerCount(ONEPLAYER);
-                System.out.println("´" + ONEPLAYER + "´ player mode selected.");
-                Greenfoot.stop();
-                GameWorld gameWorld = new GameWorld(2);                
-                this.alreadyClicked = true;
-            }
-        }
-    }
-
-    private class TwoPlayerButton extends Actor {
-
-        public TwoPlayerButton() {
-
-        }
-
-        private final int PLAYERCOUNT = 2;
-
-        @Override
-        public void act() {
             if (Greenfoot.mouseClicked(this)) {
-                setPlayerCount(PLAYERCOUNT);
+                GameWorld gameWorld = new GameWorld(playerCount);
             }
         }
     }
 
-    private class ThreePlayerButton extends Actor {
+        private class TwoPlayerButton extends Actor {
 
+            private final int PLAYERCOUNT = 2;
+
+            @Override
+            public void act() {
+                if (Greenfoot.mouseClicked(this)) {
+                    setPlayerCount(PLAYERCOUNT);
+                }
+            }
+        }
+
+        private class ThreePlayerButton extends Actor {
+
+        }
+
+        private class FourPlayerButton extends Actor {
+
+        }
     }
-
-    private class FourPlayerButton extends Actor {
-
-    }
-}
