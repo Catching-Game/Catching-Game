@@ -40,7 +40,6 @@ public class GameWorld extends World {
         this.setBackground();
         System.out.println("--- going to setUpWorld");
         this.setUpWorld(playerCount);
-        act();
         System.out.println("---- leave GameWorld Konstruktor");
     }
 
