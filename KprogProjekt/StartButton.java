@@ -58,7 +58,7 @@ public class StartButton extends Actor
      */
     public void setImage()
     {
-        GreenfootImage image = new GreenfootImage(XMLMapReader.getCounterImage());
+        GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
         GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
         
         if (text.getWidth() > image.getWidth() - 20)

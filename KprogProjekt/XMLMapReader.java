@@ -87,24 +87,6 @@ public final class XMLMapReader {
     }
 
     /**
-     * Get Counter Image.
-     *
-     * @return the image file path of the counter
-     */
-    public static Element getCounter() {
-        return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("counters");
-    }
-    
-    /**
-     * Get Button images
-     * @return the image file path of button
-     */
-    public static Element getButton()
-    {
-      return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("buttons");
-    }
-
-    /**
      * Returns the width of the world.
      *
      * @return The width of the world
@@ -335,8 +317,17 @@ public final class XMLMapReader {
             ));
         }
         return houndPositions;
+    }    
+    
+    /**
+     * Get Counter Image.
+     *
+     * @return the image file path of the counter
+     */
+    public static Element getCounter() {
+        return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("counters");
     }
-
+    
     /**
      * Get the image for the counter.
      *
@@ -347,11 +338,20 @@ public final class XMLMapReader {
     }
     
     /**
+     * Get Button images
+     * @return the image file path of button
+     */
+    public static Element getButton()
+    {
+      return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("buttons");
+    }
+    
+    /**
      * @return buttonimage 2 players
      */
     public static String getButtonImageTwoPlayers()
     {
-      return XMLMapReader.getCounter().getChildText("image2player");
+      return XMLMapReader.getButton().getChildText("image2player");
     }
     
     /**
