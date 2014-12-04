@@ -8,7 +8,6 @@ import greenfoot.World;
  * @author simonhoinkis & Maximilian Schmidt
  * @version 0.2
  */
-<<<<<<< HEAD
 public class GameWorld extends World {
     /**
      * The width of the gameworld.
@@ -40,77 +39,13 @@ public class GameWorld extends World {
         Greenfoot.start();
     }
 
-    /**
-     * Sets up the World.
-     *
-     * @param playerCount the number of players that will play this game.
-     */
-    public void setUpWorld(int playerCount) {
-        this.setWalls();
-        this.setPlayer(playerCount);
-        this.setTrees();
-        this.setHounds();
-        this.setMice();
-    }
-
-    /**
-     * Set up Load world from SaveXML.
-     */
-    private void setUpLoadWorld() {
-        setWalls();
-        setTrees();
-        setLoadPlayers();
-        setLoadHounds();
-        setLoadMice();
-=======
-public class GameWorld extends World
-{
-
-  /**
-   * The width of the gameworld.
-   */
-  private static final int WORLD_WIDTH = XMLMapReader.getWorldWidth();
-  /**
-   * The height of the gameworld.
-   */
-  private static final int WORLD_HEIGHT = XMLMapReader.getWorldHeight();
-  /**
-   * The cellsize of the gameworld.
-   */
-  private static final int WORLD_CELLSIZE = XMLMapReader.getWorldCellsize();
-
-  /**
-   * Constructor for objects of class GameWorld.
-   */
-  public GameWorld()
-  {
-    super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-//        System.out.println("");
-//        System.out.println("----- Konstruktor Gameworld");
-//        Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
-//        System.out.println("-- stoped the gameworld");
-    //this.setGui();
-//        this.setBackground();
-    this.setupStart();
-//        this.setUpWorld(playerCount);
-    System.out.println("leave Konstruktor Gameworld");
-  }
-
-  /**
-   * Sets the Background.
-   */
-  private void setBackground()
-  {
-    this.setBackground(XMLMapReader.getWorldBackgroundImage());
-    Greenfoot.start();
-  }
 
   /**
    * Sets up the World.
    *
    * @param playerCount the number of players that will play this game.
    */
-  private void setUpWorld(final int playerCount)
+  public void setUpWorld(int playerCount)
   {
     this.setWalls();
     this.setPlayer(playerCount);
@@ -129,27 +64,6 @@ public class GameWorld extends World
     this.setLoadPlayers();
     this.setLoadHounds();
     this.setLoadMice();
-  }
-
-  private void setupStart()
-  {
-
-    StartButton playButton = StartButton.createButton(1);
-    StartButton twoPlayerButton = StartButton.createButton(2);
-    StartButton threePlayerButton = StartButton.createButton(3);
-    StartButton fourPlayerButton = StartButton.createButton(4);
-
-    this.addObject(playButton, 5, 5);
-    this.addObject(twoPlayerButton, 6, 6);
-    this.addObject(threePlayerButton, 7, 7);
-    this.addObject(fourPlayerButton, 8, 8);
-
-    setBackground(XMLMapReader.getWorldBackgroundImage());
-
-    //if (Greenfoot.mouseClicked(playButton))
-    //{
-      //System.out.println("PlayButton");
-    //}  
   }
 
   /**
@@ -171,7 +85,6 @@ public class GameWorld extends World
       p = PlayerID.THIRD;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "t", "g", "f", "h"), XMLSavestateReader.getPlayerPosition(p).getX(),
               XMLSavestateReader.getPlayerPosition(p).getY());
->>>>>>> origin/master
     }
     if (playerCount >= 2)
     {
@@ -289,9 +202,9 @@ public class GameWorld extends World
       int cellSize = this.getCellSize();
       this.addObject(new Hound(cellSize), posX, posY);
     }
-<<<<<<< HEAD
+  }
     
-    private void setupStart(){
+  private void setupStart(){
         StartButton loadButton = StartButton.createButton();
         loadButton.setName("Spiel Laden");
         loadButton.setImage();
@@ -311,14 +224,8 @@ public class GameWorld extends World
         this.addObject(fourPlayerButton, 8, 8);
 
         setBackground(XMLMapReader.getWorldBackgroundImage());
-
-
-    }
-=======
-
   }
->>>>>>> origin/master
-
+  
   /**
    * Set up the Mice in the Gameworld.
    */
@@ -333,26 +240,4 @@ public class GameWorld extends World
       this.addObject(new Mouse(cellSize, dir), posX, posY);
     }
   }
-
-    //    /**
-  //     * Sets up the graphical user interface.
-  //     */
-  //    private void setGui() {
-  //        TheFrame frame = new TheFrame();
-  //        boolean isLoadGame = false;
-  //        boolean isNewGame = false;
-  //
-  //        /*       while (isLoadGame == isNewGame) {
-  //         isLoadGame = frame.getIsLoadGame();
-  //         isNewGame  = frame.getIsNewGame();
-  //         }
-  //
-  //         if(isLoadGame) {
-  //
-  //         } else if (isNewGame) {*/
-  //        Greenfoot.start();
-  //        this.setBackground();
-  //        this.setUpWorld(/*frame.getPlayerquantity()*/2);
-  //        //}
-  //    }
 }

@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.params=playerCount
-comment0.target=StartButton(int)
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
 comment1.params=
-<<<<<<< HEAD
 comment1.target=StartButton\ createButton()
 comment2.params=e
 comment2.target=void\ setName(java.lang.String)
@@ -12,10 +12,3 @@ comment3.text=\r\n\ Update\ the\ image\ on\ screen\ to\ show\ the\ current\ valu
 comment4.params=
 comment4.target=int\ getPlayercount()
 numComments=5
-=======
-comment1.target=void\ act()
-comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ y\ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ the\ sum\ of\ x\ and\ y\r\n
-comment2.params=playerCount
-comment2.target=StartButton\ createButton(int)
-numComments=3
->>>>>>> origin/master
