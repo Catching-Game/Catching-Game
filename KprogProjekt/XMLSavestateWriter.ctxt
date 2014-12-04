@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=XMLSavestateWriter()
-comment0.text=\r\n\ constructor\ from\ class\ XMLSavestateWriter.\r\n
+comment0.text=\n\ Private\ Constructor\ of\ XMLSavestateWriter\n
 comment1.params=gw
 comment1.target=void\ save(GameWorld)
-comment1.text=\r\n\r\n\ @param\ gw\r\n
+comment1.text=\n\ Saves\ the\ movableActors\ in\ a\ seperate\ file\n\ @param\ gw\ GameWorld\n
 numComments=2

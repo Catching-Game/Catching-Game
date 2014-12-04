@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ Win\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.params=
+comment1.target=boolean\ checkEnd()
+comment1.text=\n\ Checks\ if\ the\ game\ is\ ending\n\ @return\treturns\ true\ if\ the\ game\ is\ ending\ and\ false\ if\ not\n
+comment2.params=
+comment2.target=java.lang.String\ checksWhoWon()
+comment2.text=\n\ Decides\ who\ won\ the\ game,\ the\ game\ can\ also\ be\ one\ by\ n\ people\n\ its\ possible\ that\ everyone\ wins,\ one\ wins,\ a\ few\ are\ winning\ and\ nobody\ is\ winning.\n\ @return\ Who\ won\ the\ game\n
+comment3.params=infoMessage\ titleBar
+comment3.target=void\ infoBox(java.lang.String,\ java.lang.String)
+comment3.text=\n\ The\ info\ box\ method\ to\ show\ who\ won.\n\ @param\ infoMessage\ the\ message\ displayed\n\ @param\ titleBar\ the\ title\ of\ the\ window\n
+numComments=4
