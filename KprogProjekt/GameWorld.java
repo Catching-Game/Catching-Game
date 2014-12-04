@@ -10,10 +10,6 @@ import greenfoot.World;
  * @version 0.2
  */
 public class GameWorld extends World {
-
-    /**
-     *
-     */
     /**
      * The width of the gameworld.
      */
@@ -209,27 +205,27 @@ public class GameWorld extends World {
         }
     }
 
-//    /**
-//     * Sets up the graphical user interface.
-//     */
-//    private void setGui() {
-//        TheFrame frame = new TheFrame();
-//        boolean isLoadGame = false;
-//        boolean isNewGame = false;
-//
-//        /*       while (isLoadGame == isNewGame) {
-//         isLoadGame = frame.getIsLoadGame();
-//         isNewGame  = frame.getIsNewGame();
-//         }
-//
-//         if(isLoadGame) {
-//
-//         } else if (isNewGame) {*/
-//        Greenfoot.start();
-//        this.setBackground();
-//        this.setUpWorld(/*frame.getPlayerquantity()*/2);
-//        //}
-//    }
+    //    /**
+    //     * Sets up the graphical user interface.
+    //     */
+    //    private void setGui() {
+    //        TheFrame frame = new TheFrame();
+    //        boolean isLoadGame = false;
+    //        boolean isNewGame = false;
+    //
+    //        /*       while (isLoadGame == isNewGame) {
+    //         isLoadGame = frame.getIsLoadGame();
+    //         isNewGame  = frame.getIsNewGame();
+    //         }
+    //
+    //         if(isLoadGame) {
+    //
+    //         } else if (isNewGame) {*/
+    //        Greenfoot.start();
+    //        this.setBackground();
+    //        this.setUpWorld(/*frame.getPlayerquantity()*/2);
+    //        //}
+    //    }
     
     private void setupStart(){
         
@@ -244,5 +240,10 @@ public class GameWorld extends World {
         this.addObject(fourPlayerButton, 8, 8);
 
         setBackground(XMLMapReader.getWorldBackgroundImage());
-    }
+        
+        if(Greenfoot.mouseClicked(playButton)){
+            System.out.println("PlayButton");
+}
+}
+
 }
