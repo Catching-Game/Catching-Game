@@ -58,17 +58,47 @@ public class StartButton extends Actor
      */
     public void setImage()
     {
-        GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
-        GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
-        
-        if (text.getWidth() > image.getWidth() - 20)
+        if(this.name == "Spiel Laden"){
+                System.out.println("Spiel Laden");
+                GreenfootImage image = new GreenfootImage(XMLMapReader.getCounterImage());
+                GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
+                if (text.getWidth() > image.getWidth() - 20)
         {
             image.scale(text.getWidth() + 20, image.getHeight());
         }
-        
-        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
+                image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
                         (image.getHeight()-text.getHeight())/2);
-        setImage(image);
+                        setImage(image);
+            } else if(this.name == "2 Spieler"){
+            	this.playerCount = 2;
+                System.out.println("2 Spieler");
+                GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
+               
+                setImage(image);
+            } else if(this.name == "3 Spieler"){
+            	this.playerCount = 3;
+            	GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageThreePlayers());
+                System.out.println("3 Spieler");
+                         
+               setImage(image);
+            } else if(this.name == "4 Spieler"){
+            	this.playerCount = 4;
+                System.out.println("4 Spieler");
+                GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageFourPlayers());
+                
+                        setImage(image);
+            }
+        //GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
+        //GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
+        
+        //if (text.getWidth() > image.getWidth() - 20)
+        //{
+          //  image.scale(text.getWidth() + 20, image.getHeight());
+        //}
+        
+        //image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
+                       // (image.getHeight()-text.getHeight())/2);
+       // setImage(image);
     }
     
     public static int getPlayercount(){
