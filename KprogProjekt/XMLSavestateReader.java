@@ -15,17 +15,17 @@ public final class XMLSavestateReader {
 
     private XMLSavestateReader() {
     }
-/**
- * get mice from xml.
- * @return 
- */
+    /**
+    * get mice from xml.
+    * @return 
+    */
     private static Element getMice() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("mice");
     }
-/**
- * get hounds from xml.
- * @return
- */
+    /**
+    * get hounds from xml.
+    * @return
+    */
     private static Element getHounds() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("hounds");
     }
@@ -36,32 +36,33 @@ public final class XMLSavestateReader {
     private static Element getPlayer() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("players");
     }
-/**
- * get player count from xml.
- * @return 
- */
+    /**
+    * get player count from xml.
+    * @return 
+    */
     public static int getPlayerCount() {
         int maxPlayers = 4;
         int playerCount = 0;
         for (int i = 0; i <= maxPlayers; i++) {
-            if (getPlayer().getChild("player" + i) != null) {
+            if (getPlayer().getChildText("player" + i) != null) {
+                System.out.println("player" + i);
                 playerCount = playerCount + 1;
             }
         }
         return playerCount;
     }
-/**
- * get counters from xml.
- * @return
- */
+    /**
+    * get counters from xml.
+    * @return
+    */
     public static Element getCounters() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("counters");
     }
-/**
- * get player position from xml.
- * @param playerID
- * @return
- */
+    /**
+    * get player position from xml.
+    * @param playerID
+    * @return
+    */
     //TODO playerID.ordinal da inder XML falsch gespeichert wird von Player Klasse
     public static Position getPlayerPosition(PlayerID playerID) {
         Position playerPosition;

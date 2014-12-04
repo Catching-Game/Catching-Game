@@ -132,7 +132,7 @@ public class Player extends MovableActor {
      * saves the current state of the player
      */
     public Element save() {
-    	Element player = new Element("player" + this.playerID.ordinal());
+    	Element player = new Element("player" + (this.playerID.Ordinal()));
     	player.addContent(new Element("position_x").setText(String.valueOf(this.getX())));
     	player.addContent(new Element("position_y").setText(String.valueOf(this.getY())));
     	player.addContent(new Element("position_direction").setText(String.valueOf(this.wantedDir.ordinal())));

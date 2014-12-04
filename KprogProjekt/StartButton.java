@@ -26,6 +26,7 @@ public class StartButton extends Actor
         if(Greenfoot.mouseClicked(this)){
             if(this.name == "Spiel Laden"){
                 System.out.println("Spiel Laden");
+                ((GameWorld) this.getWorld()).setUpLoadWorld();
             } else if(this.name == "2 Spieler"){
             	this.playerCount = 2;
                 System.out.println("2 Spieler");

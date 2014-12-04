@@ -52,13 +52,14 @@ public class GameWorld extends World {
     this.setTrees();
     this.setHounds();
     this.setMice();
+    this.addObject(new Pause(), 0,0);
   }
 
   /**
    * Set up Load world from SaveXML.
    */
-  private void setUpLoadWorld()
-  {
+  public void setUpLoadWorld() {
+    removeObjects(getObjects(StartButton.class));
     this.setWalls();
     this.setTrees();
     this.setLoadPlayers();
@@ -69,25 +70,19 @@ public class GameWorld extends World {
   /**
    * Loads the number of players into the game.
    */
-  private void setLoadPlayers()
-  {
+  public void setLoadPlayers() {
     int playerCount = XMLSavestateReader.getPlayerCount();
     PlayerID p;
 
-    if (playerCount == 4)
-    {
+    if (playerCount == 4) {
       p = PlayerID.FOURTH;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "5", "8", "7", "9"), XMLSavestateReader.getPlayerPosition(p).getX(),
               XMLSavestateReader.getPlayerPosition(p).getY());
-    }
-    if (playerCount >= 3)
-    {
+    } else if (playerCount >= 3) {
       p = PlayerID.THIRD;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "t", "g", "f", "h"), XMLSavestateReader.getPlayerPosition(p).getX(),
               XMLSavestateReader.getPlayerPosition(p).getY());
-    }
-    if (playerCount >= 2)
-    {
+    } else if (playerCount >= 2) {
       p = PlayerID.SECOND;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "w", "s", "a", "d"), XMLSavestateReader.getPlayerPosition(p).getX(),
               XMLSavestateReader.getPlayerPosition(p).getY());
@@ -101,10 +96,8 @@ public class GameWorld extends World {
   /**
    * Load hounds.
    */
-  private void setLoadHounds()
-  {
-    for (int i = 0; i < XMLSavestateReader.getHoundCount(); i++)
-    {
+  private void setLoadHounds() {
+    for (int i = 0; i < XMLSavestateReader.getHoundCount(); i++) {
       int posY = XMLSavestateReader.getHoundPositions().get(i).getY();
       int posX = XMLSavestateReader.getHoundPositions().get(i).getX();
       int cellSize = this.getCellSize();
@@ -115,10 +108,8 @@ public class GameWorld extends World {
   /**
    * Set up the Load Mice in the Gameworld.
    */
-  private void setLoadMice()
-  {
-    for (int i = 0; i < XMLSavestateReader.getMiceCount(); i++)
-    {
+  private void setLoadMice() {
+    for (int i = 0; i < XMLSavestateReader.getMiceCount(); i++) {
       int posY = XMLSavestateReader.getMicePositions().get(i).getY();
       int posX = XMLSavestateReader.getMicePositions().get(i).getX();
       Direction dir = XMLSavestateReader.getMicePositions().get(i).getDir();
@@ -130,11 +121,9 @@ public class GameWorld extends World {
   /**
    * Sets up the walls.
    */
-  private void setWalls()
-  {
+  private void setWalls() {
     //Iteration to set up the walls
-    for (int i = 0; i < XMLMapReader.getWallCount(); i++)
-    {
+    for (int i = 0; i < XMLMapReader.getWallCount(); i++) {
       this.addObject(new Wall(this.getCellSize()),
               XMLMapReader.getWallPositions().get(i).getX(),
               XMLMapReader.getWallPositions().get(i).getY());
@@ -146,24 +135,20 @@ public class GameWorld extends World {
    *
    * @param playerCount the number of players
    */
-  private void setPlayer(final int playerCount)
-  {
+  private void setPlayer(final int playerCount) {
     PlayerID p;
 
-    if (playerCount == 4)
-    {
+    if (playerCount == 4) {
       p = PlayerID.FOURTH;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "5", "8", "7", "9"), XMLMapReader.getPlayerPosition(p).getX(),
               XMLMapReader.getPlayerPosition(p).getY());
     }
-    if (playerCount >= 3)
-    {
+    if (playerCount >= 3) {
       p = PlayerID.THIRD;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "t", "g", "f", "h"), XMLMapReader.getPlayerPosition(p).getX(),
               XMLMapReader.getPlayerPosition(p).getY());
     }
-    if (playerCount >= 2)
-    {
+    if (playerCount >= 2) {
       p = PlayerID.SECOND;
       this.addObject(new Player(this.getCellSize(), XMLMapReader.getPlayerName(p), this, p, "w", "s", "a", "d"), XMLMapReader.getPlayerPosition(p).getX(),
               XMLMapReader.getPlayerPosition(p).getY());
@@ -179,10 +164,8 @@ public class GameWorld extends World {
   /**
    * Set up Tree Image from xml
    */
-  private void setTrees()
-  {
-    for (int i = 0; i < XMLMapReader.getTreeCount(); i++)
-    {
+  private void setTrees() {
+    for (int i = 0; i < XMLMapReader.getTreeCount(); i++) {
       int posY = XMLMapReader.getTreePositions().get(i).getY();
       int posX = XMLMapReader.getTreePositions().get(i).getX();
       int cellSize = this.getCellSize();
@@ -193,10 +176,8 @@ public class GameWorld extends World {
   /**
    * Set up the Hounds in the Gameworld.
    */
-  private void setHounds()
-  {
-    for (int i = 0; i < XMLMapReader.getHoundCount(); i++)
-    {
+  private void setHounds() {
+    for (int i = 0; i < XMLMapReader.getHoundCount(); i++) {
       int posY = XMLMapReader.getHoundPositions().get(i).getY();
       int posX = XMLMapReader.getHoundPositions().get(i).getX();
       int cellSize = this.getCellSize();
@@ -229,10 +210,8 @@ public class GameWorld extends World {
   /**
    * Set up the Mice in the Gameworld.
    */
-  private void setMice()
-  {
-    for (int i = 0; i < XMLMapReader.getMiceCount(); i++)
-    {
+  private void setMice() {
+    for (int i = 0; i < XMLMapReader.getMiceCount(); i++) {
       int posY = XMLMapReader.getMicePositions().get(i).getY();
       int posX = XMLMapReader.getMicePositions().get(i).getX();
       Direction dir = XMLMapReader.getMicePositions().get(i).getDir();
