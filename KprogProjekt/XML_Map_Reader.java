@@ -320,7 +320,7 @@ public final class XML_Map_Reader {
      */
     public static String getCounterImage(){
     	return XML_Map_Reader.getCounters().getChildText("image");
-    }
+    }  
     
     /**
      * Returns a PositionArrayList with Position x and Position y

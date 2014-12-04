@@ -1085,4 +1085,9 @@
     		<position_y>14</position_y>
     	</counter4>
     </counters>
+    <buttons>
+        <image2player>images/TwoPlayer.png</image2player>
+        <image3player>images/3Player.png</image3player>
+        <image4player>images/4Player.png</image4player>
+    </buttons>
 </map>

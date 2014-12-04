@@ -94,6 +94,15 @@ public final class XMLMapReader {
     public static Element getCounter() {
         return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("counters");
     }
+    
+    /**
+     * Get Button images
+     * @return the image file path of button
+     */
+    public static Element getButton()
+    {
+      return XMLHelper.getRoot(XMLMapReader.FILEPATH).getChild("buttons");
+    }
 
     /**
      * Returns the width of the world.
@@ -336,6 +345,31 @@ public final class XMLMapReader {
     public static String getCounterImage() {
         return XMLMapReader.getCounter().getChildText("image");
     }
+    
+    /**
+     * @return buttonimage 2 players
+     */
+    public static String getButtonImageTwoPlayers()
+    {
+      return XMLMapReader.getCounter().getChildText("image2player");
+    }
+    
+    /**
+     * @return buttonimage 3 players
+     */
+    public static String getButtonImageThreePlayers()
+    {
+      return XMLMapReader.getButton().getChildText("image3player");
+    }
+    
+    /**
+     * @return buttinimage 4 players
+     */
+    public static String getButtonImageFourPlayers()
+    {
+      return XMLMapReader.getButton().getChildText("image4player");
+    }
+    
 
     /**
      * Returns a PositionArrayList with Position x and Position y.
