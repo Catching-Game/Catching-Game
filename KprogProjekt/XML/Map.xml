@@ -11,25 +11,25 @@
             <position_x>1</position_x>
             <position_y>1</position_y>
             <image>images/cat_stands.png</image>
-            <player_name>Spieler1</player_name>
+            <player_name>Simon</player_name>
         </player1>
         <player2>
             <position_x>1</position_x>
             <position_y>13</position_y>
             <image>images/cat_stands.png</image>
-            <player_name>Spieler2</player_name>
+            <player_name>Matthias</player_name>
         </player2>
         <player3>
             <position_x>28</position_x>
             <position_y>2</position_y>
             <image>images/cat_stands.png</image>
-            <player_name>Spieler3</player_name>
+            <player_name>Maximilian</player_name>
         </player3>
         <player4>
             <position_x>28</position_x>
             <position_y>13</position_y>
             <image>images/cat_stands.png</image>
-            <player_name>Spieler4</player_name>
+            <player_name>Heiko</player_name>
         </player4>
     </players>
     <walls>
