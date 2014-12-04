@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.params=cellSize\ IMAGEPATH
+comment0.params=cellSize\ imagepath
 comment0.target=DrawableActor(int,\ java.lang.String)
-comment0.text=\r\n\ Constructor\ of\ class\ DrawableActor.\r\n\ @param\ cellSize\ the\ cellsize\ to\ scale\ the\ image\r\n\ @param\ IMAGEPATH\ the\ path\ of\ the\ image\r\n
+comment0.text=\r\n\ Constructor\ of\ class\ DrawableActor.\r\n\ @param\ cellSize\ the\ cellsize\ to\ scale\ the\ image\r\n\ @param\ imagepath\ the\ path\ of\ the\ image\r\n
 comment1.params=cellSize
 comment1.target=void\ setUpImage(int)
 comment1.text=\r\n\ Sets\ up\ the\ image.\r\n\ @param\ cellSize\ The\ CellSize\ of\ the\ World\r\n

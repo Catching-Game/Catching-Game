@@ -4,7 +4,7 @@
         <width>30</width>   <!-- Positions going from 0 to width (excluding) -->
         <height>15</height> <!-- Positions going from 0 to height (excluding) -->
         <cellsize>30</cellsize>
-        <image>images/wiese.jpg</image>
+        <image>images/grass.png</image>
     </worlddata>
     <players>
         <player1>
@@ -1067,7 +1067,7 @@
         </hound>
     </hounds>
     <counters>
-    	<image>images/counter.png</image>
+    	<image>images/Counter.png</image>
     	<counter1>
     		<position_x>2</position_x>
     		<position_y>0</position_y>
@@ -1084,10 +1084,10 @@
     		<position_x>27</position_x>
     		<position_y>14</position_y>
     	</counter4>
-   	</counters>
-   	<buttons>
-        <image2player>images/2player.png</image2player>
-        <image3player>images/3player.png</image3player>
-        <image4player>images/4player.png</image4player>
+    </counters>
+    <buttons>
+        <image2player>images/TwoPlayer.png</image2player>
+        <image3player>images/3Player.png</image3player>
+        <image4player>images/4Player.png</image4player>
     </buttons>
 </map>

@@ -1,27 +1,21 @@
 import greenfoot.*;
 
 /**
- * Trees where players can hide.
- * @author simonhoinkis&maximilianschmidt
- * @version 1.0
+ * Tree where players can hide.
+ * @author Maximilian Schmidt
  */
-public class Tree extends DrawableActor{
+public class Tree extends DrawableActor {
 	private static final String TREEIMAGEPATH = XMLMapReader.getTreeImage();
 
-	/**
-	 * constructor for Tree.
-	 * @param cellSize the cellsize of the world
-	 */
+        /**
+         * contructor for Tree.
+         * @param cellSize
+         */
 	public Tree(int cellSize)
 	{
 		super(cellSize, XMLMapReader.getTreeImage());
 	}
-	
-	/**
-	 * Greenfoots act method
-	 */
 	public void act()
-	{
-		
+        {
 	}
 }

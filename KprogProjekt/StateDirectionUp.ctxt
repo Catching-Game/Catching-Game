@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=input
-comment0.target=State\ work(Direction)
-comment0.text=\r\n\ The\ work\ method\ for\ our\ State\r\n\ @param\ input\ input\ of\ the\ state\r\n\ @return\ the\ next\ State\r\n
-numComments=1

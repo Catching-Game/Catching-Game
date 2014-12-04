@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=posX\ posY\ dir
 comment0.target=PositionWithDirection(int,\ int,\ Direction)
-comment0.text=\r\n\ Constructor\ of\ PositionWithDirection.\r\n\ \r\n\ @param\ posX\ x\ position\ \r\n\ @param\ posY\ y\ position\r\n\ @param\ dir\ direction\r\n
+comment0.text=\r\n\ Constructor\ of\ PositionWithDirection.\r\n\r\n\ @param\ posX\ x\ position\r\n\ @param\ posY\ y\ position\r\n\ @param\ dir\ direction\r\n
 comment1.params=
 comment1.target=Direction\ getDir()
-comment1.text=\r\n\ Returns\ the\ direction.\r\n\ @return\ The\ direction\r\n
+comment1.text=\r\n\ Returns\ the\ direction.\r\n\r\n\ @return\ The\ direction\r\n
 comment2.params=dir
 comment2.target=void\ setDir(Direction)
-comment2.text=\r\n\ Sets\ a\ direction.\r\n\ @param\ dir\ The\ direction\ to\ be\ set\r\n
+comment2.text=\r\n\ Sets\ a\ direction.\r\n\r\n\ @param\ dir\ The\ direction\ to\ be\ set\r\n
 comment3.params=
 comment3.target=java.lang.String\ toString()
-comment3.text=\r\n\ Returns\ the\ Status\ of\ the\ PositionWithDirection\ Object.\r\n\ \r\n\ @return\ Status\ of\ the\ object\r\n
+comment3.text=\r\n\ Returns\ the\ Status\ of\ the\ PositionWithDirection\ Object.\r\n\r\n\ @return\ Status\ of\ the\ object\r\n
 numComments=4

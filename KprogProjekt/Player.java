@@ -1,74 +1,46 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+import greenfoot.Greenfoot;
 import org.jdom2.Element;
 
 /**
- * this class represents our Player in the game.
+ * this class represents our Player in the game
  *
  * @author simonhoinkis
- * @version 1.0
+ * @version 0.2
  */
 public class Player extends MovableActor {
-	//our state pattern used by the project
-	private TurnContext turnContext;
-	
-	//basic stats
+ 
     private int lifes;
     private int speed;
-    
-    //key vars for movement
     private String keyUp;
     private String keyDown;
     private String keyRight;
     private String keyLeft;
-    
-    //the direction the player wants to walk
-    private Direction wantedDir;
-    
-    //Vars used by the counter
-    private Counter counter;
+    private Direction wantedDir; //the direction the player wants to walk
+    private Zaehleranzeige zaehler;
     private String playerName;
    
-    //who is this player in the game context
     private PlayerID playerID;
 
-    /**
-     * Constructor of a player object in the game
-     * @param cellSize cellsize of the world
-     * @param name name of the player
-     * @param gw game world
-     * @param playerID the player id
-     * @param keyUp the up key
-     * @param keyDown the down key
-     * @param keyLeft the left key
-     * @param keyRight the right key
-     * @param lifes the lifes
-     */
     public Player(int cellSize, String name, GameWorld gw, PlayerID playerID, String keyUp, 
-    									String keyDown, String keyLeft, String keyRight, int lifes) {
+    									String keyDown, String keyLeft, String keyRight) {
         super(cellSize, XMLMapReader.getPlayerImage(playerID));
         this.playerID = playerID;
         initKeyVars(keyUp, keyDown, keyLeft, keyRight);
-        initGameVars(name, gw, playerID, lifes);
+        initGameVars(name, gw, playerID);
     }
 
     /**
      * init all game variables of the actor
      */
-    private void initGameVars(String name, GameWorld gw, PlayerID playerID, int lifes) {
-        this.lifes = lifes;
+    private void initGameVars(String name, GameWorld gw, PlayerID playerID) {
+        this.lifes = XMLGamelogicReader.getPlayerLifes();
         this.speed = XMLGamelogicReader.getPlayerSpeed();
-        this.counter = new Counter(name, this.lifes, gw, playerID);
+        this.zaehler = new Zaehleranzeige(name, this.lifes, gw, playerID);
         this.playerName = name;
-        this.turnContext = new TurnContext();
+        
     }
     
-   /**
-    * initialise the movement of the player
-    * @param keyUp the key used moving the player upwards
-    * @param keyDown the key used moving the player downwards
-    * @param keyLeft the key used moving the player left
-    * @param keyRight the key used moving the player right
-    */
    private void initKeyVars(String keyUp, String keyDown, String keyLeft, String keyRight) {
 	   this.keyUp = keyUp;
 	   this.keyDown = keyDown;
@@ -84,11 +56,11 @@ public class Player extends MovableActor {
         this.input();
         this.move();
         this.eat();
-        this.getsEaten();
+        // Add your action code here.
     }
 
     /**
-     * Get the current wanted direction and saves it in wantedDir.
+     * Get the current wanted direction and saves it in wantedDir
      */
     private void input() {
         if (Greenfoot.isKeyDown(keyUp)) {
@@ -105,25 +77,25 @@ public class Player extends MovableActor {
     }
 
     /**
-     * The Player Movement.
+     * The Player Movement
      */
     private void move() {
         for (int i = 0; i < this.speed; i++) {
             if (this.canWalk(this.wantedDir)) {
-                this.walk(this.wantedDir);
-                this.turnContext.step(this.wantedDir);
+                this.walk(wantedDir);
             }
         }
     }
 
     /**
-     * Checks if a player can walk into a certain direction.
+     * Checks if a player can walk into a certain direction
      *
      * @param dir The direction
      * @return True if we can walk into this direction, false if not
      */
     private boolean canWalk(Direction dir) {
         //some collision stuff
+        //TODO simplify
         if (dir == Direction.UP) {
             if (this.getOneObjectAtOffset(0, -1, Wall.class) != null) {
                 return false;
@@ -141,75 +113,26 @@ public class Player extends MovableActor {
                 return false;
             }
         }
-        
         return true;
     }
 
     /**
-     * Checks if a player touches a mouse, eats it and increases life if so.
+     * Checks if a player touches a mouse, eats it and increases life if so
      */
     private void eat() {
         if (this.isTouching(Mouse.class)) {
-        	//get the (or at least say a) mouse that is touching the player
             Mouse mouse = (Mouse) this.getOneIntersectingObject(Mouse.class);
-            
-            //increase life of the player
             this.lifes += mouse.getLifeIncreasement();
-            
-            //remove the mouse that is touched
             this.removeTouching(Mouse.class);
-            
-            //change the counter of our lifes
-            this.counter.changeAnzeige(this.lifes);
+            zaehler.changeAnzeige(this.lifes);
         }   	
     }
     
     /**
-     * Checks if a player touches a dog, and if so he geats eaten and loses life.
-     */
-    private void getsEaten() {
-        if (this.isTouching(Hound.class)) {
-        	//Set back the hound of the game to prevent "spawn-killing"
-        	((Hound) this.getOneIntersectingObject(Hound.class)).setLocation(XMLMapReader.getHoundPositions().get(0).getX(),
-        																	XMLMapReader.getHoundPositions().get(0).getY());
-        	this.lifes -= XMLGamelogicReader.getHoundLifeDecrease(); 
-        	
-        	//changes the counter of our lifes
-        	this.counter.changeAnzeige(this.lifes);
-        	
-        	//player is still "alive"
-        	if(this.lifes > 0) { 
-        		//set his location to his spawning position
-        		this.setLocation(XMLMapReader.getPlayerPosition(this.playerID).getX(), 
-        						XMLMapReader.getPlayerPosition(this.playerID).getY());
-        	} else {
-        		//removes the player from the world
-        		this.getWorld().removeObject((Actor) this);
-        	}
-        }
-    }
-    
-    /**
-     * Get the lifes of our players.
-     * @return the lifes of our players
-     */
-    public int getLifes() {
-    	return this.lifes;
-    }
-    
-    /**
-     * Returns the player name.
-     * @return the player name
-     */
-    public String getPlayerName() {
-    	return this.playerName;
-    }
-    
-    /**
-     * saves the current state of the player.
+     * saves the current state of the player
      */
     public Element save() {
-    	Element player = new Element("player" + this.playerID.getValue());
+    	Element player = new Element("player" + (this.playerID.ordinal()));
     	player.addContent(new Element("position_x").setText(String.valueOf(this.getX())));
     	player.addContent(new Element("position_y").setText(String.valueOf(this.getY())));
     	player.addContent(new Element("position_direction").setText(String.valueOf(this.wantedDir.ordinal())));
