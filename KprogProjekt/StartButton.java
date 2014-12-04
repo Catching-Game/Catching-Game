@@ -11,6 +11,10 @@ import greenfoot.Greenfoot;
 public class StartButton extends Actor
 { 
     protected int playerCount = 1; // at least one player
+    
+    
+    private final int THREEPLAYERS = 3;
+    private final int FOURPLAYERS = 4;
     public StartButton(int playerCount)
     {
         this.playerCount = playerCount;
