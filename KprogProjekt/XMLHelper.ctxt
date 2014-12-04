@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=XMLHelper()
-comment0.text=\n\ Constructor\ of\ XML_Helper\ set\ private\ because\ we\ don't\ need\ an\ object\n
+comment0.text=\r\n\ constructor\ for\ XMLHelper.\r\n
 comment1.params=filepath
 comment1.target=org.jdom2.Element\ getRoot(java.lang.String)
-comment1.text=\n\ Returns\ the\ root\ of\ a\ XML\ File.\n\ @param\ filepath\ The\ XML\ File\n\ @return\ The\ Root\ Element\n
+comment1.text=\r\n\ Returns\ the\ root\ of\ a\ XML\ File.\r\n\r\n\ @param\ filepath\ The\ XML\ File\r\n\ @return\ The\ Root\ Element\r\n
 comment2.params=str
 comment2.target=int\ parseStrToInt(java.lang.String)
-comment2.text=\n\ parses\ a\ string\ into\ an\ integer.\n\ @param\ str\ The\ string\ to\ be\ converted\n\ @return\ The\ integer\ that\ is\ converted\n
+comment2.text=\r\n\ parses\ a\ string\ into\ an\ integer.\r\n\r\n\ @param\ str\ The\ string\ to\ be\ converted\r\n\ @return\ The\ integer\ that\ is\ converted\r\n
 numComments=3

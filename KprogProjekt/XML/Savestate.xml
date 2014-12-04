@@ -1,45 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <savestate>
   <players>
-    <player2>
+    <player31>
+      <position_x>28</position_x>
+      <position_y>13</position_y>
+      <position_direction>4</position_direction>
+      <lifes>7</lifes>
+    </player31>
+    <player21>
+      <position_x>28</position_x>
+      <position_y>2</position_y>
+      <position_direction>4</position_direction>
+      <lifes>8</lifes>
+    </player21>
+    <player11>
       <position_x>1</position_x>
       <position_y>13</position_y>
       <position_direction>4</position_direction>
       <lifes>7</lifes>
-    </player2>
-    <player1>
-      <position_x>1</position_x>
-      <position_y>1</position_y>
+    </player11>
+    <player01>
+      <position_x>10</position_x>
+      <position_y>7</position_y>
       <position_direction>4</position_direction>
-      <lifes>6</lifes>
-    </player1>
+      <lifes>7</lifes>
+    </player01>
   </players>
   <mice>
     <mouse>
-      <position_x>20</position_x>
-      <position_y>12</position_y>
-      <position_direction>RIGHT</position_direction>
-    </mouse>
-    <mouse>
-      <position_x>11</position_x>
-      <position_y>8</position_y>
-      <position_direction>LEFT</position_direction>
-    </mouse>
-    <mouse>
-      <position_x>25</position_x>
-      <position_y>11</position_y>
-      <position_direction>LEFT</position_direction>
-    </mouse>
-    <mouse>
       <position_x>1</position_x>
+      <position_y>6</position_y>
+      <position_direction>1</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>10</position_x>
       <position_y>8</position_y>
-      <position_direction>UP</position_direction>
+      <position_direction>3</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>12</position_x>
+      <position_y>8</position_y>
+      <position_direction>3</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>23</position_x>
+      <position_y>1</position_y>
+      <position_direction>2</position_direction>
+    </mouse>
+    <mouse>
+      <position_x>15</position_x>
+      <position_y>8</position_y>
+      <position_direction>1</position_direction>
     </mouse>
   </mice>
   <hounds>
     <hound>
-      <position_x>6</position_x>
-      <position_y>2</position_y>
+      <position_x>16</position_x>
+      <position_y>6</position_y>
+    </hound>
+    <hound>
+      <position_x>16</position_x>
+      <position_y>7</position_y>
+    </hound>
+    <hound>
+      <position_x>17</position_x>
+      <position_y>6</position_y>
+    </hound>
+    <hound>
+      <position_x>17</position_x>
+      <position_y>7</position_y>
     </hound>
   </hounds>
 </savestate>

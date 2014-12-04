@@ -1,17 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\n\ Act\ method\ of\ Greenfoot\n
+comment0.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
 comment1.params=
 comment1.target=StartButton\ createButton()
-comment1.text=\n\ Creates\ the\ button\n\ @return\ the\ button\n
 comment2.params=e
 comment2.target=void\ setName(java.lang.String)
-comment2.text=\n\ Sets\ name\ of\ the\ Button\n\ @param\ e\ the\ new\ name\ of\ the\ button\n
 comment3.params=
 comment3.target=void\ setImage()
-comment3.text=\n\ Update\ the\ image\ on\ screen\ to\ show\ the\ current\ value.\n
+comment3.text=\r\n\ Update\ the\ image\ on\ screen\ to\ show\ the\ current\ value.\r\n\ @author\ Neil\ Brown\ and\ Michael\ K\u00F6lling\ \r\n
 comment4.params=
 comment4.target=int\ getPlayercount()
-comment4.text=\n\ Returns\ the\ current\ playerCount\ of\ the\ game.\n\ @return\ the\ player\ count\n
 numComments=5

@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=value
 comment0.target=PlayerID(int)
-comment0.text=\n\ set\ player\ id.\n\ @param\ value\ value\ of\ this\ playerid\n
+comment0.text=\r\n\ set\ player\ id.\r\n\ @param\ value\r\n
 comment1.params=
 comment1.target=int\ getValue()
-comment1.text=\n\ Get\ value.\n\ @return\ the\ value\ of\ playerid\n
+comment1.text=\r\n\ get\ value.\r\n\ @return\r\n
 numComments=2

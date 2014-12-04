@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=input
-comment0.target=void\ step(Direction)
-comment0.text=\n\ This\ is\ a\ small\ difference\ to\ the\ do\ while\ loops\ that\ were\ shown\ in\ the\ lectures.\n\ It\ also\ has\ a\ input\ and\ the\ same\ currentState.work\ thing\ but\ its\ not\ a\ loop\ it\ works\n\ step\ by\ step\ when\ called\ externally.\n\ \n\ @param\ input\ The\ Direction\ a\ player\ takes\ and\ walks\n
-numComments=1

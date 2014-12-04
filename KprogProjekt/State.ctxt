@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.params=dir
-comment0.target=State\ work(Direction)
-comment1.params=out
-comment1.target=void\ output(java.lang.String)
-comment1.text=\n\ prints\ a\ text\n\ @param\ out\ the\ text\n
-numComments=2

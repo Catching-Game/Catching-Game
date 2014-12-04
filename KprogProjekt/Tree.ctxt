@@ -1,8 +1,7 @@
 #BlueJ class context
 comment0.params=cellSize
 comment0.target=Tree(int)
-comment0.text=\n\ constructor\ for\ Tree.\n\ @param\ cellSize\ the\ cellsize\ of\ the\ world\n
+comment0.text=\r\n\ contructor\ for\ Tree.\r\n\ @param\ cellSize\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\n\ Greenfoots\ act\ method\n
 numComments=2

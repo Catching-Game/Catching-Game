@@ -4,63 +4,63 @@ import greenfoot.GreenfootImage;
 import java.awt.Color;
 
 /**
- * this class provides the start buttons in the main menu.
+ * Write a description of class StartButtons here.
  *
- * @author heikorehder,maximilianschmidt,matthiaskoehler,simonhoinkis
- * @version 1.0
+ * @author (your name)
+ * @version (a version number or a date)
  */
 public class StartButton extends Actor
 {
     private String name;
     private static final Color transparent = new Color(50,50,50,50);
     private static int playerCount;
-
     /**
-     * Act method of Greenfoot
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
      */
     public void act()
     {
         
         if(Greenfoot.mouseClicked(this)){
             if(this.name == "Spiel Laden"){
+                System.out.println("Spiel Laden");
                 ((GameWorld) this.getWorld()).setUpLoadWorld();
             } else if(this.name == "2 Spieler"){
             	this.playerCount = 2;
+                System.out.println("2 Spieler");
                 ((GameWorld) this.getWorld()).setUpWorld(this.playerCount);
                 
             } else if(this.name == "3 Spieler"){
             	this.playerCount = 3;
+                System.out.println("3 Spieler");
                 ((GameWorld) this.getWorld()).setUpWorld(this.playerCount);            
             } else if(this.name == "4 Spieler"){
             	this.playerCount = 4;
+                System.out.println("4 Spieler");
                 ((GameWorld) this.getWorld()).setUpWorld(this.playerCount);
             }
         }
         
     }
     
-    /**
-     * Creates the button
-     * @return the button
-     */
     public static StartButton createButton(){
         return new StartButton();
     }
     
-    /**
-     * Sets name of the Button
-     * @param e the new name of the button
-     */
     public void setName(String e){
         this.name = e;
     }
     
     /**
      * Update the image on screen to show the current value.
+     * @author Neil Brown and Michael Kölling 
      */
     public void setImage()
     {
         if(this.name == "Spiel Laden"){
+                System.out.println("Spiel Laden");
                 GreenfootImage image = new GreenfootImage(XMLMapReader.getCounterImage());
                 GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
                 if (text.getWidth() > image.getWidth() - 20)
@@ -72,19 +72,22 @@ public class StartButton extends Actor
                         setImage(image);
             } else if(this.name == "2 Spieler"){
             	this.playerCount = 2;
+                System.out.println("2 Spieler");
                 GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
                
                 setImage(image);
             } else if(this.name == "3 Spieler"){
             	this.playerCount = 3;
-            	GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageThreePlayers());     
+            	GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageThreePlayers());
+                System.out.println("3 Spieler");
+                         
                setImage(image);
             } else if(this.name == "4 Spieler"){
             	this.playerCount = 4;
-            	
+                System.out.println("4 Spieler");
                 GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageFourPlayers());
                 
-                setImage(image);
+                        setImage(image);
             }
         //GreenfootImage image = new GreenfootImage(XMLMapReader.getButtonImageTwoPlayers());
         //GreenfootImage text = new GreenfootImage(this.name, 22, Color.BLACK, transparent);
@@ -99,11 +102,7 @@ public class StartButton extends Actor
        // setImage(image);
     }
     
-    /**
-     * Returns the current playerCount of the game.
-     * @return the player count
-     */
     public static int getPlayercount(){
-    	return StartButton.playerCount;
+    	return playerCount;
     }
 }

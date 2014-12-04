@@ -4,83 +4,56 @@ import java.util.List;
 import org.jdom2.Element;
 
 /**
- * The XML_Savestate_Reader reads our savestate to provide our loading function.
+ * The XML_Savestate_Reader reads our savestate to provide our loading function
  *
  * @author simonhoinkis & Maximilian Schmidt
- * @version 1.0
+ * @version 0.11
  */
 public final class XMLSavestateReader {
+
     private static final String FILEPATH = "XML/Savestate.xml";
 
-    /**
-     * private constructor of the XMLSavestateReader, no Object required
-     */
     private XMLSavestateReader() {
     }
     /**
     * get mice from xml.
-    * @return The Mice elements
+    * @return 
     */
     private static Element getMice() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("mice");
     }
-    
     /**
     * get hounds from xml.
-    * @return Hounds
+    * @return
     */
     private static Element getHounds() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("hounds");
     }
-    
     /**
      * get player from xml.
-     * @return players
+     * @return
      */
     private static Element getPlayer() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("players");
     }
-    
     /**
     * get player count from xml.
-    * @return the count of the players.
+    * @return 
     */
     public static int getPlayerCount() {
         int maxPlayers = 4;
         int playerCount = 0;
         for (int i = 0; i <= maxPlayers; i++) {
             if (getPlayer().getChildText("player" + i) != null) {
+                System.out.println("player" + i);
                 playerCount = playerCount + 1;
             }
         }
         return playerCount;
     }
-    
-    /**
-     * Returns the Life of a certain player. 
-     * @param playerID the id of the player
-     * @return the life of the player
-     */
-    public static int getPlayerLife(PlayerID playerID) {
-    	return XMLHelper.parseStrToInt(getPlayer().getChild("player" + playerID.getValue()).getChildText("lifes"));
-    }
-    
-    /**
-     * Returns if a player is existing.
-     * @param playerID the id of the player
-     * @return true if he exists, false if not
-     */
-    public static boolean isExisting(PlayerID playerID) {
-    	if(getPlayer().getChild("player" + playerID.getValue()) != null) {
-    		return true;
-    	}
-    	
-    	return false;
-    }
-    
     /**
     * get counters from xml.
-    * @return return the counters
+    * @return
     */
     public static Element getCounters() {
         return XMLHelper.getRoot(XMLSavestateReader.FILEPATH).getChild("counters");
@@ -88,8 +61,9 @@ public final class XMLSavestateReader {
     /**
     * get player position from xml.
     * @param playerID
-    * @return the player position with (playerID)
+    * @return
     */
+    //TODO playerID.ordinal da inder XML falsch gespeichert wird von Player Klasse
     public static Position getPlayerPosition(PlayerID playerID) {
         Position playerPosition;
 
@@ -99,6 +73,40 @@ public final class XMLSavestateReader {
         playerPosition = new Position(XMLHelper.parseStrToInt(player.getChildText("position_x")),
                 XMLHelper.parseStrToInt(player.getChildText("position_y")));
         return playerPosition;
+    }
+
+    /**
+     * Returns player image path.
+     * @param playerID the player which image should be returned
+     * @return the player image path
+     */
+    public static String getPlayerImage(PlayerID playerID) {
+        //get the current player
+        Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
+
+        return player.getChildText("image");
+    }
+
+    /**
+     * A Getter for the playerName of the wanted ID.
+     *
+     * @param playerID the ID of the player
+     * @return return the name of the player of the wanted playerID
+     */
+    public static String getPlayerName(PlayerID playerID) {
+        //get current player name
+        Element player = XMLMapReader.getPlayer().getChild("player" + playerID.getValue());
+
+        return player.getChildText("player_name");
+    }
+
+    /**
+     * Returns the mice image paths.
+     *
+     * @return The image paths
+     */
+    public static String getMiceImage() {
+        return XMLMapReader.getMice().getChildText("image");
     }
 
     /**
@@ -144,11 +152,7 @@ public final class XMLSavestateReader {
      * @return a int with the qantity of Hount objects
      */
     public static int getHoundCount() {
-        if (XMLSavestateReader.getHounds().getChildren("hound") != null) {
-            return XMLSavestateReader.getHounds().getChildren("hound").size();
-        } else {
-            return 0;
-        }
+        return XMLSavestateReader.getHounds().getChildren("hound").size();
     }
 
     /**
@@ -181,7 +185,7 @@ public final class XMLSavestateReader {
     /**
      * Returns a PositionArrayList with Position x and Position y.
      *
-     * @return ArrayList with Position x and Position y
+     * @return ArrayList<Position> with Position x and Position y
      */
     public static Position getCounterPosition(PlayerID playerID) {
         Position counterPosition;
@@ -193,4 +197,6 @@ public final class XMLSavestateReader {
                 XMLHelper.parseStrToInt(counter.getChildText("position_y")));
         return counterPosition;
     }
+
+//TODO SavestateReader fertigstellen, sobald speicher Variablen bekannt
 }
