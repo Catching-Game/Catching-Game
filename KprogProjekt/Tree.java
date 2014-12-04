@@ -2,7 +2,7 @@ import greenfoot.*;
 
 /**
  * Tree where players can hide.
- * @author Heiko
+ * @author Maximilian Schmidt
  */
 public class Tree extends DrawableActor {
 	private static final String TREEIMAGEPATH = XMLMapReader.getTreeImage();

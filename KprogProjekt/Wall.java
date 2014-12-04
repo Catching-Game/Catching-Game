@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Wall here.
  *
- * @author simonhoinkis
+ * @author simonhoinkis & Maximilian Schmidt
  * @version 1.0
  */
 public class Wall extends DrawableActor {

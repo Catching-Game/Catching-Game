@@ -7,7 +7,7 @@ import org.jdom2.Element;
  * This class provides access to all variables, that are contained by our
  * Map.xml data.
  *
- * @author simonhoinkis
+ * @author simonhoinkis & Maximilian Schmidt
  * @version 1.1
  */
 public final class XMLMapReader {

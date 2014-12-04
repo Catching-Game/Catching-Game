@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * this class represents our mouse in the game.
  *
- * @author heikorehder&simonhoinkis
+ * @author heikorehder&simonhoinkis&Maximilian Schmidt
  * @version 0.4 / 26.11.2014
  */
 public class Mouse extends MovableActor {

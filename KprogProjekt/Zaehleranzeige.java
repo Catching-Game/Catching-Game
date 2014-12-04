@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Collects lifes from player to make them Observable.
- * @author Heiko
+ * @author Heiko & Maximilian Schmidt
  */
 public class Zaehleranzeige extends Observable {
 	private int anzeige;

@@ -6,7 +6,7 @@ import org.jdom2.Element;
 /**
  * The XML_Savestate_Reader reads our savestate to provide our loading function
  *
- * @author simonhoinkis
+ * @author simonhoinkis & Maximilian Schmidt
  * @version 0.11
  */
 public final class XMLSavestateReader {

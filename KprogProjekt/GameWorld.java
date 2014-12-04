@@ -1,11 +1,12 @@
 
+
 import greenfoot.Greenfoot;
 import greenfoot.World;
 
 /**
  * Write a description of class GameWorld here.
  *
- * @author simonhoinkis
+ * @author simonhoinkis & Maximilian Schmidt
  * @version 0.2
  */
 public class GameWorld extends World {
@@ -29,15 +30,16 @@ public class GameWorld extends World {
     /**
      * Constructor for objects of class GameWorld.
      */
-    public GameWorld(int playerCount) {
+    public GameWorld() {
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-        System.out.println("");
-        System.out.println("----- Konstruktor Gameworld");
-        Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
-        System.out.println("-- stoped the gameworld");
+//        System.out.println("");
+//        System.out.println("----- Konstruktor Gameworld");
+//        Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
+//        System.out.println("-- stoped the gameworld");
         //this.setGui();
-        this.setBackground();
-        this.setUpWorld(playerCount);
+//        this.setBackground();
+        this.setupStart();
+//        this.setUpWorld(playerCount);
         System.out.println("leave Konstruktor Gameworld");
     }
 
@@ -207,25 +209,40 @@ public class GameWorld extends World {
         }
     }
 
-    /**
-     * Sets up the graphical user interface.
-     */
-    private void setGui() {
-        TheFrame frame = new TheFrame();
-        boolean isLoadGame = false;
-        boolean isNewGame = false;
+//    /**
+//     * Sets up the graphical user interface.
+//     */
+//    private void setGui() {
+//        TheFrame frame = new TheFrame();
+//        boolean isLoadGame = false;
+//        boolean isNewGame = false;
+//
+//        /*       while (isLoadGame == isNewGame) {
+//         isLoadGame = frame.getIsLoadGame();
+//         isNewGame  = frame.getIsNewGame();
+//         }
+//
+//         if(isLoadGame) {
+//
+//         } else if (isNewGame) {*/
+//        Greenfoot.start();
+//        this.setBackground();
+//        this.setUpWorld(/*frame.getPlayerquantity()*/2);
+//        //}
+//    }
+    
+    private void setupStart(){
+        
+        StartButton playButton = StartButton.createButton();
+        StartButton twoPlayerButton = StartButton.createButton();
+        StartButton threePlayerButton = StartButton.createButton();
+        StartButton fourPlayerButton = StartButton.createButton();
 
-        /*       while (isLoadGame == isNewGame) {
-         isLoadGame = frame.getIsLoadGame();
-         isNewGame  = frame.getIsNewGame();
-         }
+        this.addObject(playButton, 5, 5);
+        this.addObject(twoPlayerButton, 6, 6);
+        this.addObject(threePlayerButton, 7, 7);
+        this.addObject(fourPlayerButton, 8, 8);
 
-         if(isLoadGame) {
-
-         } else if (isNewGame) {*/
-        Greenfoot.start();
-        this.setBackground();
-        this.setUpWorld(/*frame.getPlayerquantity()*/2);
-        //}
+        setBackground(XMLMapReader.getWorldBackgroundImage());
     }
 }
