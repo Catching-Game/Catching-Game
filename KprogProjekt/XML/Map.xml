@@ -1069,19 +1069,19 @@
     <counters>
     	<image>images/Counter.png</image>
     	<counter1>
-    		<position_x>3</position_x>
-    		<position_y>14</position_y>
+    		<position_x>2</position_x>
+    		<position_y>0</position_y>
     	</counter1>
     	<counter2>
-    		<position_x>6</position_x>
+    		<position_x>2</position_x>
     		<position_y>14</position_y>
     	</counter2>
     	<counter3>
-    		<position_x>9</position_x>
-    		<position_y>14</position_y>
+    		<position_x>27</position_x>
+    		<position_y>0</position_y>
     	</counter3>
     	<counter4>
-    		<position_x>12</position_x>
+    		<position_x>27</position_x>
     		<position_y>14</position_y>
     	</counter4>
     </counters>
