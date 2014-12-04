@@ -1,27 +1,48 @@
+
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
+
 /**
  * Write a description of class StartButtons here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class StartButton extends Actor
-{
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public void act()
+{ 
+    protected int playerCount = 1; // at least one player
+    public StartButton(int playerCount)
     {
-        if(Greenfoot.mouseClicked(this)){
-            System.out.println("PlayButton");
-}
+        this.playerCount = playerCount;
+    }
+  /**
+   * An example of a method - replace this comment with your own
+   *
+   * @param y a sample parameter for a method
+   * @return the sum of x and y
+   */
+  public void act()
+  {
+    if (Greenfoot.mouseClicked(this))
+    {
+      if (playerCount == 1)
+      {
+          System.out.println("One Player");
+        }
+        if (playerCount == 2)
+        {
+            System.out.println("Two Player");
+        }
     }
     
-    public static StartButton createButton(){
-        return new StartButton();
-    }
+    //if(Greenfoot.mouseClicked(twoPlayerButton))
+    //{
+    //  System.out.println("TwoPlayerButton");
+   // }
+  }
+
+  public static StartButton createButton(int playerCount)
+  {
+    return new StartButton(playerCount);
+  }
 }

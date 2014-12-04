@@ -1,7 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment0.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment0.params=playerCount
+comment0.target=StartButton(int)
 comment1.params=
-comment1.target=StartButton\ createButton()
-numComments=2
+comment1.target=void\ act()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ y\ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ the\ sum\ of\ x\ and\ y\r\n
+comment2.params=playerCount
+comment2.target=StartButton\ createButton(int)
+numComments=3
