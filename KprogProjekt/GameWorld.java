@@ -28,14 +28,7 @@ public class GameWorld extends World {
      */
     public GameWorld() {
         super(GameWorld.WORLD_WIDTH, GameWorld.WORLD_HEIGHT, GameWorld.WORLD_CELLSIZE);
-//        System.out.println("");
-//        System.out.println("----- Konstruktor Gameworld");
-//        Greenfoot.stop(); //Stops Greenfoot until the loading stuff is done
-//        System.out.println("-- stoped the gameworld");
-        //this.setGui();
-//        this.setBackground();
         this.setupStart();
-//        this.setUpWorld(playerCount);
         System.out.println("leave Konstruktor Gameworld");
     }
 
@@ -43,7 +36,7 @@ public class GameWorld extends World {
      * Sets the Background.
      */
     private void setBackground() {
-        this.setBackground(XMLMapReader.getWorldBackgroundImage());
+        setBackground(XMLMapReader.getWorldBackgroundImage());
         Greenfoot.start();
     }
 
@@ -52,7 +45,7 @@ public class GameWorld extends World {
      *
      * @param playerCount the number of players that will play this game.
      */
-    private void setUpWorld(final int playerCount) {
+    public void setUpWorld(int playerCount) {
         this.setWalls();
         this.setPlayer(playerCount);
         this.setTrees();
@@ -64,11 +57,11 @@ public class GameWorld extends World {
      * Set up Load world from SaveXML.
      */
     private void setUpLoadWorld() {
-        this.setWalls();
-        this.setTrees();
-        this.setLoadPlayers();
-        this.setLoadHounds();
-        this.setLoadMice();
+        setWalls();
+        setTrees();
+        setLoadPlayers();
+        setLoadHounds();
+        setLoadMice();
     }
 
     /**
@@ -204,46 +197,29 @@ public class GameWorld extends World {
             this.addObject(new Mouse(cellSize, dir), posX, posY);
         }
     }
-
-    //    /**
-    //     * Sets up the graphical user interface.
-    //     */
-    //    private void setGui() {
-    //        TheFrame frame = new TheFrame();
-    //        boolean isLoadGame = false;
-    //        boolean isNewGame = false;
-    //
-    //        /*       while (isLoadGame == isNewGame) {
-    //         isLoadGame = frame.getIsLoadGame();
-    //         isNewGame  = frame.getIsNewGame();
-    //         }
-    //
-    //         if(isLoadGame) {
-    //
-    //         } else if (isNewGame) {*/
-    //        Greenfoot.start();
-    //        this.setBackground();
-    //        this.setUpWorld(/*frame.getPlayerquantity()*/2);
-    //        //}
-    //    }
     
     private void setupStart(){
-        
-        StartButton playButton = StartButton.createButton();
+        StartButton loadButton = StartButton.createButton();
+        loadButton.setName("Spiel Laden");
+        loadButton.setImage();
         StartButton twoPlayerButton = StartButton.createButton();
+        twoPlayerButton.setName("2 Spieler");
+        twoPlayerButton.setImage();
         StartButton threePlayerButton = StartButton.createButton();
+        threePlayerButton.setName("3 Spieler");
+        threePlayerButton.setImage();
         StartButton fourPlayerButton = StartButton.createButton();
+        fourPlayerButton.setName("4 Spieler");     
+        fourPlayerButton.setImage();
 
-        this.addObject(playButton, 5, 5);
+        this.addObject(loadButton, 5, 5);
         this.addObject(twoPlayerButton, 6, 6);
         this.addObject(threePlayerButton, 7, 7);
         this.addObject(fourPlayerButton, 8, 8);
 
         setBackground(XMLMapReader.getWorldBackgroundImage());
-        
-        if(Greenfoot.mouseClicked(playButton)){
-            System.out.println("PlayButton");
-}
-}
+
+
+    }
 
 }
