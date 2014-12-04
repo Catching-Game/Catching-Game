@@ -45,8 +45,8 @@ public class GameWorld extends World {
    *
    * @param playerCount the number of players that will play this game.
    */
-  public void setUpWorld(int playerCount)
-  {
+  public void setUpWorld(int playerCount) {
+	removeObjects(getObjects(StartButton.class));
     this.setWalls();
     this.setPlayer(playerCount);
     this.setTrees();
