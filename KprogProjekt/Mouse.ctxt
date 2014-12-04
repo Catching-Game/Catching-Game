@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=cellSize\ dir
 comment0.target=Mouse(int,\ Direction)
-comment0.text=\r\n\ constructor\ for\ class\ mouse.\r\n\ @param\ cellSize\r\n\ @param\ dir\ \r\n
+comment0.text=\r\n\ constructor\ for\ class\ mouse.\r\n\ @param\ cellSize\ cellSize\ of\ the\ gameworld\ to\ scale\ the\ image\r\n\ @param\ dir\ the\ next\ moving\ direction\ of\ the\ mouse\r\n
 comment1.params=cellSize\ dir
 comment1.target=void\ init(int,\ Direction)
 comment1.text=\r\n\ init\ all\ variables\ of\ the\ actor.\r\n
@@ -24,5 +24,5 @@ comment7.target=int\ getLifeIncreasement()
 comment7.text=\r\n\ Returns\ the\ life\ increasement\ gained\ through\ a\ mouse.\r\n\r\n\ @return\ The\ life\ increasement\r\n
 comment8.params=
 comment8.target=org.jdom2.Element\ save()
-comment8.text=\r\n\ saves\ the\ current\ state\ of\ the\ mouse.\r\n
+comment8.text=\r\n\ Saves\ the\ current\ state\ of\ the\ mouse.\r\n\ @return\ all\ saved\ settings\ for\ mouse\r\n
 numComments=9
