@@ -5,10 +5,11 @@ import org.jdom2.Element;
 import java.util.Random;
 
 /**
- * this class represents our mouse in the game.
+ * This class represents your objective, chase the mouse to get some lifes.
  *
  * @author heikorehder&simonhoinkis&Maximilian Schmidt
  * @version 0.4 / 26.11.2014
+ * code cleaned by Matthias Köhler / Heiko Rehder
  */
 public class Mouse extends MovableActor {
 
@@ -18,8 +19,8 @@ public class Mouse extends MovableActor {
     private Direction wantedDir;
 /**
  * constructor for class mouse.
- * @param cellSize
- * @param dir 
+ * @param cellSize cellSize of the gameworld to scale the image
+ * @param dir the next moving direction of the mouse
  */
     public Mouse(int cellSize, Direction dir) {
         super(cellSize, XMLMapReader.getMiceImage());
@@ -35,6 +36,7 @@ public class Mouse extends MovableActor {
         this.sightRange = XMLGamelogicReader.getMouseSightRange();
         this.wantedDir = dir;
     }
+
 
     public void act() {
         move();
@@ -142,7 +144,7 @@ public class Mouse extends MovableActor {
 
         do {
             Random random = new Random();
-            int ranDir = random.nextInt(4);
+            int ranDir = random.nextInt(4); //choose your next direction randomly
 
             if (Direction.UP.ordinal() == ranDir) {
                 dir = Direction.UP;
@@ -168,7 +170,8 @@ public class Mouse extends MovableActor {
     }
 
     /**
-     * saves the current state of the mouse.
+     * Saves the current state of the mouse.
+     * @return all saved settings for mouse
      */
     public Element save() {
         Element mouse = new Element("mouse");
@@ -178,4 +181,4 @@ public class Mouse extends MovableActor {
 
         return mouse;
     }
-}
+} // end of class mouse

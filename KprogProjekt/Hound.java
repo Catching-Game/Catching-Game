@@ -2,10 +2,11 @@
 import org.jdom2.Element;
 
 /**
- * Write a description of class Hound here.
+ * This class represents the dog ingame, its the enemy that chases the player.
  *
  * @author simonhoinkis
  * @version 0.1
+ * code cleaned by MAtthias Köhler
  */
 public class Hound extends MovableActor
 {
@@ -33,7 +34,7 @@ public class Hound extends MovableActor
     this.input();
     this.move();
   }
-  
+
   /**
    * Initialize class hound with a specific speed.
    * @param cellSize defines the speed of a hound.
@@ -69,4 +70,4 @@ public class Hound extends MovableActor
     hound.addContent(new Element("position_y").setText(String.valueOf(this.getY())));
     return hound;
   }
-}
+} //end of class Hound

@@ -5,6 +5,7 @@ import greenfoot.GreenfootImage;
  * Write a description of class DrawableActor here.
  * @author simonhoinkis
  * @version 1.0
+ * code cleaned by MAtthias Köhler
  */
 public class DrawableActor extends Actor
 {
@@ -27,18 +28,17 @@ public class DrawableActor extends Actor
      * @param cellSize The CellSize of the World
      */
     private void setUpImage(final int cellSize) {
-    	GreenfootImage image = new GreenfootImage(imagepath);
-    	image.scale(cellSize, cellSize);
-    	this.setImage(image);
+      GreenfootImage image = new GreenfootImage(imagepath);
+      image.scale(cellSize, cellSize);
+      this.setImage(image);
     }
-    
+
     /**
      * Act - do whatever the DrawableActor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     @Override
-    public void act()
-    {
+    public void act() {
         // Add your action code here.
     }
 } //end of class DrawableActor.
