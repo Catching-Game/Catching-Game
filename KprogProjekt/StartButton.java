@@ -1,4 +1,5 @@
 import greenfoot.Actor;
+import greenfoot.Greenfoot;
 /**
  * Write a description of class StartButtons here.
  * 
@@ -15,6 +16,9 @@ public class StartButton extends Actor
      */
     public void act()
     {
+        if(Greenfoot.mouseClicked(this)){
+            System.out.println("PlayButton");
+}
     }
     
     public static StartButton createButton(){
