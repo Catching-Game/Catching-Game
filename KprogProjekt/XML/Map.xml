@@ -4,7 +4,7 @@
         <width>30</width>   <!-- Positions going from 0 to width (excluding) -->
         <height>15</height> <!-- Positions going from 0 to height (excluding) -->
         <cellsize>30</cellsize>
-        <image>images/wiese.jpg</image>
+        <image>images/grass.png</image>
     </worlddata>
     <players>
         <player1>
