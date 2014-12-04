@@ -1,2 +1,4 @@
 #BlueJ class context
-numComments=0
+comment0.params=dir
+comment0.target=boolean\ equals(Direction)
+numComments=1
