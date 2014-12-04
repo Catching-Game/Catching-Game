@@ -13,6 +13,10 @@ public class StartButton extends Actor
     protected int playerCount = 1; // at least one player
     private final int ONEPLAYER = 1;
     private final int TWOPLAYERS = 2;
+    
+    
+    private final int THREEPLAYERS = 3;
+    private final int FOURPLAYERS = 4;
     public StartButton(int playerCount)
     {
         this.playerCount = playerCount;
